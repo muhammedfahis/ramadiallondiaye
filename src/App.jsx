@@ -11,6 +11,11 @@ import {
   contactContent,
 } from './data/content'
 import OptimizedImage from './components/OptimizedImage'
+import ramaImg1 from './assets/rama/img1.jpeg'
+import ramaImg2 from './assets/rama/img2.png'
+import ramaImg3 from './assets/rama/img3.jpeg'
+import swinsunLogo from './assets/rama/swinsun-logo.jpeg'
+import sdrLogo from './assets/rama/sdr-logo.jpeg'
 
 const container = 'mx-auto w-full max-w-7xl px-6'
 
@@ -544,6 +549,12 @@ const About = () => {
     { value: '100K+', label: 'Lives Impacted', Icon: HiOutlineUserGroup },
   ]
 
+  const focusMoments = [
+    { title: 'Cultural Heritage', src: ramaImg1 },
+    { title: 'Empowering Youth', src: ramaImg2, objectPosition: 'object-top' },
+    { title: 'Thoughtful Leadership', src: ramaImg3 },
+  ]
+
   return (
     <section id="about" aria-labelledby="about-heading" className="relative overflow-hidden py-20">
       {/* Background Elements */}
@@ -794,6 +805,48 @@ const About = () => {
           </motion.div>
         </div>
 
+        <motion.div
+          className="mt-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={stagger}
+        >
+          <div className="grid gap-4 md:grid-cols-3">
+            {focusMoments.map((moment, index) => (
+              <motion.div
+                key={moment.title}
+                variants={fadeUp}
+                custom={0.3 + index * 0.15}
+                className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] p-3 backdrop-blur-xl"
+              >
+                <motion.div
+                  className="relative overflow-hidden rounded-2xl"
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.4, ease: 'easeOut' }}
+                >
+                  <img
+                    src={moment.src}
+                    alt={moment.title}
+                    className={`h-44 w-full rounded-2xl object-cover sm:h-52 ${moment.objectPosition ?? ''}`}
+                    loading="lazy"
+                  />
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    aria-hidden
+                  />
+                </motion.div>
+                <div className="mt-4 flex items-center justify-between gap-3">
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
+                    {moment.title}
+                  </p>
+                  <span className="h-px flex-1 rounded-full bg-gradient-to-r from-accent via-accent/40 to-transparent" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Biography Story */}
         <motion.div
           className="relative mt-16 rounded-[40px] border border-white/5 bg-gradient-to-br from-white/[0.05] to-transparent p-10 backdrop-blur-sm lg:p-16"
@@ -837,6 +890,25 @@ const Projects = () => {
           className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(76,111,255,0.1),transparent_60%)]"
           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        {/* Laser Flow Lines */}
+        <motion.div
+          className="pointer-events-none absolute inset-0 opacity-40"
+          style={{
+            backgroundImage:
+              'repeating-linear-gradient(90deg, transparent 0px, transparent 60px, rgba(56,189,248,0.08) 60px, rgba(56,189,248,0.35) 62px, transparent 62px, transparent 120px)',
+          }}
+          animate={{ backgroundPositionX: ['0%', '100%'] }}
+          transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+        />
+        <motion.div
+          className="pointer-events-none absolute inset-0 opacity-30"
+          style={{
+            backgroundImage:
+              'repeating-linear-gradient(180deg, transparent 0px, transparent 80px, rgba(129,140,248,0.08) 80px, rgba(129,140,248,0.3) 82px, transparent 82px, transparent 140px)',
+          }}
+          animate={{ backgroundPositionY: ['0%', '100%'] }}
+          transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
         />
         <motion.div
           className="absolute right-0 top-1/4 h-[600px] w-[600px] rounded-full bg-indigo-500/10 blur-[150px]"
@@ -900,12 +972,20 @@ const Projects = () => {
                     ? 'lg:col-span-5'
                     : 'lg:col-span-6'
                 }
+                style={{ perspective: 1200 }}
               >
                 <motion.a
                   href={url}
                   target="_blank"
                   rel="noreferrer"
                   whileHover="hover"
+                  variants={{
+                    hover: {
+                      rotateX: -4,
+                      rotateY: 4,
+                      y: -10,
+                    },
+                  }}
                   className="group relative block h-full overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl transition-all duration-500 hover:border-accent/50 hover:shadow-[0_30px_90px_rgba(76,111,255,0.25)]"
                   data-cursor="interactive"
                 >
@@ -1538,8 +1618,8 @@ const Contact = () => {
 
 const Partners = () => {
   const partners = [
-    { name: 'SWINSUN 3D BUILDERS', logo: '/rama/swinsun-logo.jpeg' },
-    { name: 'SDR', logo: '/rama/sdr-logo.jpeg' },
+    { name: 'SWINSUN 3D BUILDERS', logo: swinsunLogo },
+    { name: 'SDR', logo: sdrLogo },
   ]
 
   return (
@@ -1631,6 +1711,41 @@ const Partners = () => {
   )
 }
 
+const GhostCursor = () => {
+  const cursorX = useMotionValue(-100)
+  const cursorY = useMotionValue(-100)
+  const smoothX = useSpring(cursorX, { stiffness: 150, damping: 20, mass: 0.3 })
+  const smoothY = useSpring(cursorY, { stiffness: 150, damping: 20, mass: 0.3 })
+
+  const trailX = useTransform(smoothX, (value) => value - 32)
+  const trailY = useTransform(smoothY, (value) => value - 32)
+  const coreX = useTransform(smoothX, (value) => value - 6)
+  const coreY = useTransform(smoothY, (value) => value - 6)
+
+  useEffect(() => {
+    const handleMove = (event) => {
+      cursorX.set(event.clientX)
+      cursorY.set(event.clientY)
+    }
+
+    window.addEventListener('mousemove', handleMove)
+    return () => window.removeEventListener('mousemove', handleMove)
+  }, [cursorX, cursorY])
+
+  return (
+    <motion.div className="pointer-events-none fixed inset-0 z-40 mix-blend-screen" aria-hidden>
+      <motion.div
+        className="absolute h-16 w-16 rounded-full bg-accent/20 blur-2xl"
+        style={{ x: trailX, y: trailY }}
+      />
+      <motion.div
+        className="absolute h-3 w-3 rounded-full bg-accent shadow-[0_0_30px_rgba(76,111,255,0.9)]"
+        style={{ x: coreX, y: coreY }}
+      />
+    </motion.div>
+  )
+}
+
 const Footer = () => (
   <footer className="border-t border-white/5 bg-midnight/80 py-8">
     <div className={`${container} flex flex-col items-center justify-between gap-3 text-sm text-ivory/60 sm:flex-row`}>
@@ -1644,7 +1759,8 @@ const App = () => {
   const nav = useMemo(() => navLinks, [])
 
   return (
-    <div className="min-h-screen bg-midnight text-ivory">
+    <div className="min-h-screen bg-midnight text-ivory overflow-x-hidden">
+      <GhostCursor />
       <header className="sticky top-0 z-30 border-b border-white/5 bg-midnight/80 backdrop-blur">
         <div className={`${container} flex items-center justify-between gap-8 py-5`}>
           <a
@@ -1657,7 +1773,7 @@ const App = () => {
             R. ALLONDIAYE
           </a>
           <nav aria-label="Main navigation">
-            <ul className="flex items-center gap-8 text-sm font-medium text-ivory/70">
+            <ul className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-ivory/70 sm:justify-end sm:gap-8 sm:text-sm">
               {nav.map((link) => (
                 <li key={link.id}>
                   <a
