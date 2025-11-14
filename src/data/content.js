@@ -39,21 +39,25 @@ export const projects = [
     name: "Great Green Wall of Africa",
     description:
       "A foundation dedicated to Sustainable Development Goals that supports the Great Green Wall movement across the Sahel-Sudanese region.",
+    url: "https://ggwoa.org/",
   },
   {
     name: "Forbes Interview",
     description:
       "Seeds of Change in Africa – The Power of Collaboration, highlighting how partnerships accelerate impact.",
+    url: "https://www.forbes.com/sites/shaheenajanjuhajivrajeurope/2022/12/06/seeds-of-change-in-africathe-power-of-collaboration/",
   },
   {
     name: "Mali – Timbuktu Renaissance",
     description:
       "A platform mobilizing sustainable economic development in education, agriculture, renewable energy, and climate resilience.",
+    url: "https://www.timbukturenaissance.org/",
   },
   {
     name: "Mali Magic",
     description:
       "Celebrating the great legacy of Mali and the collective quest to preserve its cultural heritage.",
+    url: "https://artsandculture.google.com/project/mali-heritage",
   },
 ]
 

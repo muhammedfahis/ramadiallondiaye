@@ -1,0 +1,16 @@
+:root {
+  color-scheme: dark;
+  --color-background: #05060f;
+  --color-surface: rgba(17, 20, 45, 0.9);
+  --color-surface-strong: rgba(22, 25, 52, 0.95);
+  --color-foreground: #f7f8ff;
+  --color-text-muted: #d7dcff;
+  --color-text-muted-strong: #edf0ff;
+  --color-border: rgba(255, 255, 255, 0.18);
+  --color-border-strong: rgba(255, 255, 255, 0.28);
+  --color-accent: #4c6fff;
+  --color-accent-soft: #9aaeff;
+  --color-focus: #c0cbff;
+  --color-overlay-dark: rgba(7, 16, 30, 0.88);
+  --shadow-card: 0 24px 65px rgba(5, 9, 32, 0.55);
+}
