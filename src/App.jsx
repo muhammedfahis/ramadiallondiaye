@@ -253,9 +253,14 @@ const Hero = () => {
   return (
     <motion.section 
       id="home" 
-      className="relative min-h-screen pb-32 pt-40"
+      className="relative min-h-screen overflow-hidden pb-20 pt-32"
     >
-      {/* Liquid Ether Background */}
+      {/* Animated Mesh Grid Background */}
+      <div className="absolute inset-0" aria-hidden>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0a2824_1px,transparent_1px),linear-gradient(to_bottom,#0a2824_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+      </div>
+      
+      {/* Enhanced Liquid Ether Background */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden>
         {/* Primary Liquid Blob - Top Right */}
         <motion.div
@@ -380,211 +385,304 @@ const Hero = () => {
         className={`${container} relative`}
         style={{ y: heroY }}
       >
-        {/* Hero Content - Centered Layout */}
-        <motion.div
-          className="relative z-10 mx-auto max-w-5xl text-center"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={stagger}
-        >
-          <motion.span
-            variants={fadeUp}
-            className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accent backdrop-blur-sm"
-          >
-            The Office of Ramatoulaye Diallo N'Diaye
-          </motion.span>
+        {/* Split-Screen Hero Layout */}
+        <div className="relative z-10 grid min-h-[85vh] items-center gap-12 lg:grid-cols-2 lg:gap-20">
           
-          <h1
-            id="hero-heading"
-            className="mx-auto mt-8 max-w-4xl text-5xl font-extrabold leading-[1.12] tracking-tight text-white sm:text-6xl lg:text-7xl"
-          >
-            <ScrollFloat>Championing Culture,</ScrollFloat>{' '}
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
-              className="inline-block bg-gradient-to-r from-accent via-accentSoft to-accent bg-clip-text text-transparent"
-              animate={{ backgroundPosition: ['0%', '100%', '0%'] }}
-              style={{ backgroundSize: '200% 100%' }}
-            >
-              Resilience
-            </motion.span>{' '}
-            <ScrollFloat staggerDelay={0.08}>& Inclusive Growth</ScrollFloat>
-          </h1>
-          
-          <motion.p
-            variants={fadeUp}
-            custom={1}
-            className="mt-6 text-lg font-medium uppercase tracking-[0.35em] text-accentSoft/80"
-          >
-            Public Speaker • Strategist • Innovator
-          </motion.p>
-          
-          <motion.p 
-            variants={fadeUp} 
-            custom={1.5}
-            className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted"
-          >
-            International public speaker, former Minister for Culture and Tourism of Mali, 
-            and a lifelong advocate for communities across Africa.
-          </motion.p>
-          {/* Highlight Cards */}
-          <motion.ul 
-            variants={stagger} 
-            className="mx-auto mt-12 grid max-w-4xl gap-5 sm:grid-cols-3"
-          >
-            {heroHighlights.map((item, index) => (
-              <motion.li
-                key={item.title}
-                variants={fadeUp}
-                custom={2 + index * 0.3}
-                whileHover={{ y: -8, scale: 1.03 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] px-6 py-8 backdrop-blur-xl transition-all duration-500 hover:border-accent/50 hover:bg-white/[0.08] hover:shadow-[0_20px_60px_rgba(76,111,255,0.3)]"
-              >
-                <motion.div
-                  className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                  style={{
-                    background: 'radial-gradient(circle at center, rgba(76,111,255,0.15) 0%, transparent 70%)'
-                  }}
-                />
-                <HighlightBadge accent={item.accent} />
-                <p className="relative mt-4 text-sm leading-relaxed text-muted-strong transition-colors group-hover:text-white">
-                  {item.title}
-                </p>
-                <motion.span
-                  className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-accent/20 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                  aria-hidden
-                />
-              </motion.li>
-            ))}
-          </motion.ul>
-          {/* CTAs */}
+          {/* Left: Content */}
           <motion.div
-            variants={fadeUp}
-            custom={3.5}
-            className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="relative space-y-8"
           >
-            <motion.a
-              whileHover={{ scale: 1.06, y: -4 }}
-              whileTap={{ scale: 0.96 }}
-              href="#contact"
-              className="group relative inline-flex min-h-[52px] items-center justify-center overflow-hidden rounded-full bg-accent px-8 py-4 text-base font-semibold text-white shadow-[0_10px_40px_rgba(76,111,255,0.4)] transition-all hover:shadow-[0_20px_60px_rgba(76,111,255,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-              data-cursor="interactive"
+            {/* Floating Badge */}
+            <motion.div
+              variants={fadeUp}
+              className="inline-block"
             >
               <motion.span
-                className="absolute inset-0 bg-gradient-to-r from-accent via-white/20 to-accent"
-                animate={{ x: ['-100%', '100%'] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-                style={{ opacity: 0.3 }}
-              />
-              <span className="relative">Book me to speak</span>
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.06, y: -4 }}
-              whileTap={{ scale: 0.96 }}
-              href="#gallery"
-              className="inline-flex min-h-[52px] items-center justify-center rounded-full border-2 border-white/30 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-accent hover:bg-accent/10 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-              data-cursor="interactive"
+                whileHover={{ scale: 1.05, rotate: -1 }}
+                className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accent backdrop-blur-xl shadow-[0_8px_32px_rgba(34,197,94,0.15)]"
+              >
+                <motion.span
+                  className="h-2 w-2 rounded-full bg-accent"
+                  animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+                The Office of Ramatoulaye Diallo N'Diaye
+              </motion.span>
+            </motion.div>
+            
+            {/* Main Heading with Character Animation */}
+            <h1
+              id="hero-heading"
+              className="max-w-3xl text-5xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-8xl"
             >
-              Watch my talk
-            </motion.a>
-          </motion.div>
-          {/* Marquee */}
-          <motion.div
-            className="relative mx-auto mt-16 w-full max-w-4xl overflow-hidden rounded-full border border-accent/20 bg-gradient-to-r from-accent/5 via-accent/10 to-accent/5 py-4 backdrop-blur-sm"
-            variants={fadeUp}
-            custom={4}
-          >
-            <div
-              className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#05091a] via-[#05091a]/80 to-transparent z-10"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#05091a] via-[#05091a]/80 to-transparent z-10"
-              aria-hidden
-            />
+              <motion.span
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="block"
+              >
+                <BlurText delay={0.2}>Championing</BlurText>
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+                className="block"
+              >
+                <BlurText delay={0.35}>Culture,</BlurText>{' '}
+                <motion.span
+                  className="relative inline-block bg-gradient-to-r from-accent via-accentSoft to-emerald-300 bg-clip-text text-transparent"
+                  animate={{ backgroundPosition: ['0%', '100%', '0%'] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
+                  style={{ backgroundSize: '200% 100%' }}
+                >
+                  <motion.span
+                    className="absolute -inset-2 rounded-2xl bg-accent/10 blur-2xl"
+                    animate={{ opacity: [0.3, 0.6, 0.3] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                    aria-hidden
+                  />
+                  <span className="relative">Resilience</span>
+                </motion.span>
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.45 }}
+                className="block"
+              >
+                <BlurText delay={0.55}>& Inclusive</BlurText>{' '}
+                <BlurText delay={0.65}>Growth</BlurText>
+              </motion.span>
+            </h1>
+            
+            {/* Subtitle with Typing Effect */}
+            <motion.p
+              variants={fadeUp}
+              custom={1.2}
+              className="flex flex-wrap items-center gap-3 text-base font-medium uppercase tracking-[0.3em] text-accentSoft/90"
+            >
+              <span>Public Speaker</span>
+              <span className="h-1 w-1 rounded-full bg-accent/60" />
+              <span>Strategist</span>
+              <span className="h-1 w-1 rounded-full bg-accent/60" />
+              <span>Innovator</span>
+            </motion.p>
+            
+            {/* Description */}
+            <motion.p 
+              variants={fadeUp} 
+              custom={1.5}
+              className="max-w-xl text-lg leading-relaxed text-muted"
+            >
+              International public speaker, former Minister for Culture and Tourism of Mali, 
+              and a lifelong advocate for communities across Africa.
+            </motion.p>
+            {/* Premium Feature Cards */}
             <motion.div
-              className="flex items-center gap-16 whitespace-nowrap px-4 text-xs font-bold uppercase tracking-[0.45em] text-accent/80"
-              animate={{ x: ['0%', '-50%'] }}
-              transition={{ duration: 25, ease: 'linear', repeat: Infinity }}
-              aria-hidden
+              variants={stagger}
+              className="grid gap-4 sm:grid-cols-3 max-w-2xl"
             >
-              {marqueeSequence.map((item, index) => (
-                <span key={`${item}-${index}`} className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent/60" />
-                  {item}
-                </span>
-              ))}
+              {heroHighlights.map((item, index) => {
+                const icons = [FaGlobeAfrica, FaLeaf, FaSun]
+                const Icon = icons[index]
+                return (
+                  <motion.div
+                    key={item.title}
+                    variants={fadeUp}
+                    custom={2 + index * 0.2}
+                    whileHover={{ y: -8, scale: 1.03 }}
+                    transition={{ type: 'spring', stiffness: 280, damping: 24 }}
+                    className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.05] to-white/[0.02] p-5 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-accent/40 hover:shadow-[0_16px_48px_rgba(34,197,94,0.15)]"
+                  >
+                    <motion.div
+                      className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                      style={{
+                        background: 'radial-gradient(circle at top right, rgba(34,197,94,0.18), transparent 65%)',
+                      }}
+                      aria-hidden
+                    />
+                    <div className="relative space-y-3">
+                      <motion.div
+                        className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-accent/20 to-emerald-500/20 ring-1 ring-accent/30 shadow-[0_4px_20px_rgba(34,197,94,0.25)]"
+                        whileHover={{ rotate: [0, -5, 5, 0], scale: 1.1 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <Icon className="text-xl text-accent" />
+                      </motion.div>
+                      <div>
+                        <p className="mb-1 text-xs font-bold uppercase tracking-wider text-accent">
+                          {item.accent}
+                        </p>
+                        <p className="text-sm leading-snug text-muted-strong transition-colors group-hover:text-white">
+                          {item.title}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )
+              })}
+            </motion.div>
+            {/* Magnetic CTAs */}
+            <motion.div
+              variants={fadeUp}
+              custom={3}
+              className="flex flex-wrap gap-4"
+            >
+              <motion.a
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                href="#contact"
+                className="group relative inline-flex min-h-[56px] items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-accent to-emerald-400 px-8 py-4 text-base font-bold text-white shadow-[0_0_0_0_rgba(34,197,94,0.4),0_20px_50px_rgba(34,197,94,0.3)] transition-all hover:shadow-[0_0_0_4px_rgba(34,197,94,0.4),0_25px_60px_rgba(34,197,94,0.5)]"
+              >
+                <motion.span
+                  className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/25 to-white/0"
+                  animate={{ x: ['-200%', '200%'] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+                />
+                <span className="relative">Book me to speak</span>
+                <RiArrowRightUpLine className="relative text-xl transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                href="#gallery"
+                className="group inline-flex min-h-[56px] items-center justify-center gap-2 rounded-full border-2 border-accent/40 bg-accent/5 px-8 py-4 text-base font-bold text-white backdrop-blur-xl transition-all hover:border-accent hover:bg-accent/15 hover:shadow-[0_0_0_2px_rgba(34,197,94,0.2)]"
+              >
+                <span>Watch my talk</span>
+                <RiArrowRightUpLine className="text-xl transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </motion.a>
             </motion.div>
           </motion.div>
-        </motion.div>
-        
-        {/* Hero Image - Floating Effect */}
+
+          {/* Right: Hero Image with 3D Depth */}
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
+            style={{ y: imageY }}
+          >
+            <motion.div
+              className="relative"
+              style={{ x: parallaxX, y: parallaxY }}
+            >
+              {/* Floating Depth Layers */}
+              <motion.div
+                className="absolute -inset-12 rounded-[60px] bg-gradient-to-br from-accent/20 to-emerald-500/20 blur-3xl"
+                animate={{
+                  scale: [1, 1.1, 1],
+                  opacity: [0.3, 0.6, 0.3],
+                  rotate: [0, 5, 0],
+                }}
+                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+                aria-hidden
+              />
+              
+              {/* Main Image Container */}
+              <motion.div
+                whileHover={{ scale: 1.02, rotate: -1, z: 50 }}
+                transition={{ duration: 0.4, ease: 'easeOut' }}
+                className="relative overflow-hidden rounded-[48px] ring-1 ring-white/10"
+                style={{
+                  transformStyle: 'preserve-3d',
+                  perspective: '1000px',
+                }}
+              >
+                <OptimizedImage
+                  srcBase={heroImageBase}
+                  alt="Ramatoulaye Diallo N'Diaye speaking on stage"
+                  sizes="(min-width: 1024px) 700px, 90vw"
+                  widths={[640, 960, 1440]}
+                  className="relative z-10 w-full rounded-[48px] border-2 border-white/10 object-cover shadow-[0_50px_100px_rgba(0,0,0,0.7)]"
+                  priority
+                />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 rounded-[48px] bg-gradient-to-tr from-accent/20 via-transparent to-emerald-400/15" aria-hidden />
+              </motion.div>
+
+              {/* Floating 3D Accent Cards */}
+              <motion.div
+                className="absolute -right-8 -top-8 rounded-3xl border border-accent/30 bg-gradient-to-br from-accent/20 to-emerald-500/20 p-6 backdrop-blur-2xl shadow-[0_20px_60px_rgba(34,197,94,0.3)]"
+                animate={{
+                  y: [-10, 10, -10],
+                  rotate: [2, -2, 2],
+                }}
+                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                style={{
+                  transformStyle: 'preserve-3d',
+                  transform: 'translateZ(50px)',
+                }}
+              >
+                <p className="text-3xl font-bold text-white">20+</p>
+                <p className="text-xs uppercase tracking-wider text-muted">Years Leadership</p>
+              </motion.div>
+
+              <motion.div
+                className="absolute -bottom-6 -left-6 rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/20 to-accent/20 p-6 backdrop-blur-2xl shadow-[0_20px_60px_rgba(45,212,191,0.3)]"
+                animate={{
+                  y: [10, -10, 10],
+                  rotate: [-2, 2, -2],
+                }}
+                transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+                style={{
+                  transformStyle: 'preserve-3d',
+                  transform: 'translateZ(50px)',
+                }}
+              >
+                <p className="text-3xl font-bold text-white">50+</p>
+                <p className="text-xs uppercase tracking-wider text-muted">Global Talks</p>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
+        {/* Bottom Marquee */}
         <motion.div
-          className="relative mx-auto mt-20 max-w-4xl"
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.8, duration: 1, ease: 'easeOut' }}
-          style={{ y: imageY, scale: imageScale }}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="relative mx-auto mt-20 w-full overflow-hidden rounded-full border border-accent/20 bg-gradient-to-r from-accent/5 via-accent/10 to-accent/5 py-4 backdrop-blur-sm"
         >
-          <motion.div 
-            className="relative"
-            style={{ x: parallaxX, y: parallaxY }}
+          <div
+            className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background via-background/80 to-transparent z-10"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background via-background/80 to-transparent z-10"
+            aria-hidden
+          />
+          <motion.div
+            className="flex items-center gap-16 whitespace-nowrap px-4 text-xs font-bold uppercase tracking-[0.45em] text-accent/80"
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{ duration: 25, ease: 'linear', repeat: Infinity }}
+            aria-hidden
           >
-            {/* Glow Effect */}
-            <motion.div
-              className="absolute -inset-8 rounded-[48px] bg-emerald-500/30 blur-[80px]"
-              animate={{ opacity: [0.3, 0.6, 0.3], scale: [0.95, 1.05, 0.95] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              aria-hidden
-            />
-            
-            {/* Image Container */}
-            <motion.div
-              whileHover={{ scale: 1.02, rotate: -0.5 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
-              className="relative"
-            >
-              <OptimizedImage
-                srcBase={heroImageBase}
-                alt="Ramadi Allondiaye speaking on stage"
-                sizes="(min-width: 1024px) 800px, 90vw"
-                widths={[640, 960, 1440]}
-                className="relative z-10 w-full rounded-[40px] border-2 border-white/10 object-cover shadow-[0_40px_100px_rgba(0,0,0,0.6)] ring-1 ring-accent/30"
-                priority
-              />
-              {/* Accent Border */}
-              <div className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-accent/20 via-transparent to-emerald-500/20" aria-hidden />
-            </motion.div>
-            
-            {/* Floating Orbs */}
-            <motion.div
-              className="absolute -right-12 -top-12 h-40 w-40 rounded-full border-2 border-accent/30 bg-accent/10 blur-2xl"
-              animate={{ y: [-20, 20, -20], rotate: [0, 180, 360], opacity: [0.4, 0.8, 0.4] }}
-              transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-              aria-hidden
-            />
-            <motion.div
-              className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-gradient-to-br from-emerald-500/20 to-accent/30 blur-3xl"
-              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-              transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-              aria-hidden
-            />
+            {marqueeSequence.map((item, index) => (
+              <span key={`${item}-${index}`} className="flex items-center gap-3">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent/60" />
+                {item}
+              </span>
+            ))}
           </motion.div>
         </motion.div>
       </motion.div>
       <motion.a
         href="#about"
-        className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center text-xs font-semibold uppercase tracking-[0.4em] text-accent/80"
+        className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center justify-center gap-2 text-center text-xs font-semibold uppercase tracking-[0.4em] text-accent/80 transition-colors hover:text-accent"
         variants={scrollPulse}
         animate="animate"
       >
-        Scroll down
-        <RiArrowDownLine className="mt-2 text-xl" />
+        <span className="block">Scroll down</span>
+        <RiArrowDownLine className="text-xl" />
       </motion.a>
     </motion.section>
   )
@@ -675,7 +773,7 @@ const About = () => {
               <motion.div
                 className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(76,111,255,0.3) 0%, rgba(139,92,246,0.3) 100%)',
+                  background: 'linear-gradient(135deg, rgba(34,197,94,0.3) 0%, rgba(45,212,191,0.3) 100%)',
                   filter: 'blur(20px)',
                 }}
                 aria-hidden
@@ -957,7 +1055,7 @@ const Projects = () => {
           className="pointer-events-none absolute inset-0 opacity-30"
           style={{
             backgroundImage:
-              'repeating-linear-gradient(180deg, transparent 0px, transparent 80px, rgba(129,140,248,0.08) 80px, rgba(129,140,248,0.3) 82px, transparent 82px, transparent 140px)',
+              'repeating-linear-gradient(180deg, transparent 0px, transparent 80px, rgba(34,197,94,0.08) 80px, rgba(34,197,94,0.3) 82px, transparent 82px, transparent 140px)',
           }}
           animate={{ backgroundPositionY: ['0%', '100%'] }}
           transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
@@ -1042,7 +1140,7 @@ const Projects = () => {
                       y: -10,
                     },
                   }}
-                  className="group relative block h-full overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl transition-all duration-500 hover:border-accent/50 hover:shadow-[0_30px_90px_rgba(76,111,255,0.25)]"
+                  className="group relative block h-full overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl transition-all duration-500 hover:border-accent/50 hover:shadow-[0_30px_90px_rgba(34,197,94,0.25)]"
                   data-cursor="interactive"
                 >
                   {/* Image Container with Parallax */}
@@ -1806,10 +1904,46 @@ const GhostCursor = () => {
 }
 
 const Footer = () => (
-  <footer className="border-t border-white/5 bg-midnight/80 py-8">
-    <div className={`${container} flex flex-col items-center justify-between gap-3 text-sm text-ivory/60 sm:flex-row`}>
-      <p>© {new Date().getFullYear()} The Office of Ramatoulaye Diallo N’Diaye. All rights reserved.</p>
-      <span>Crafted with purpose and passion.</span>
+  <footer className="relative overflow-hidden border-t border-white/5 bg-gradient-to-b from-midnight/80 to-midnight py-12">
+    {/* Subtle Background Glow */}
+    <motion.div
+      className="pointer-events-none absolute left-1/2 top-0 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r from-transparent via-accent/30 to-transparent"
+      animate={{ opacity: [0.3, 0.6, 0.3] }}
+      transition={{ duration: 3, repeat: Infinity }}
+      aria-hidden
+    />
+    <div className={`${container} space-y-8`}>
+      {/* Top Section */}
+      <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+        <div className="flex items-center gap-3">
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-sm font-bold text-accent ring-1 ring-accent/30">
+            RD
+          </span>
+          <div>
+            <p className="text-sm font-semibold text-white">Ramatoulaye Diallo N'Diaye</p>
+            <p className="text-xs text-muted">Culture • Climate • Leadership</p>
+          </div>
+        </div>
+        <div className="flex gap-4">
+          <a
+            href="#home"
+            className="text-xs font-medium uppercase tracking-wider text-muted transition-colors hover:text-accent"
+          >
+            Back to top ↑
+          </a>
+        </div>
+      </div>
+      {/* Divider */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      {/* Bottom Section */}
+      <div className="flex flex-col items-center justify-between gap-3 text-xs text-ivory/50 sm:flex-row">
+        <p> 2023 The Office of Ramatoulaye Diallo N'Diaye. All rights reserved.</p>
+        <p className="flex items-center gap-2">
+          Crafted with
+          <span className="inline-block text-accent">♥</span>
+          purpose and passion
+        </p>
+      </div>
     </div>
   </footer>
 )
@@ -1822,15 +1956,20 @@ const App = () => {
       <GhostCursor />
       <header className="sticky top-0 z-30 border-b border-white/5 bg-midnight/80 backdrop-blur">
         <div className={`${container} flex items-center justify-between gap-8 py-5`}>
-          <a
+          <motion.a
             href="#home"
-            className="flex items-center gap-3 text-lg font-semibold uppercase tracking-[0.3em] text-white"
+            whileHover={{ scale: 1.02 }}
+            className="flex items-center gap-3 text-lg font-semibold uppercase tracking-[0.3em] text-white transition-opacity hover:opacity-80"
           >
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent text-base font-bold text-white shadow-glow">
+            <motion.span
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-accent to-emerald-400 text-base font-bold text-white shadow-[0_4px_20px_rgba(34,197,94,0.4)]"
+            >
               RD
-            </span>
+            </motion.span>
             R. ALLONDIAYE
-          </a>
+          </motion.a>
           <nav aria-label="Main navigation">
             <ul className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-ivory/70 sm:justify-end sm:gap-8 sm:text-sm">
               {nav.map((link) => (
