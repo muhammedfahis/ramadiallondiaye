@@ -134,6 +134,53 @@ const floatingBubbleSlow = {
   },
 }
 
+// ScrollFloat Animation Component - Works with plain text strings
+const ScrollFloat = ({ children, className = '', staggerDelay = 0.05 }) => {
+  const text = typeof children === 'string' ? children : ''
+  const words = text.split(' ').filter(word => word.length > 0)
+  
+  return (
+    <>
+      {words.map((word, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{
+            duration: 0.5,
+            delay: index * staggerDelay,
+            ease: [0.21, 0.47, 0.32, 0.98],
+          }}
+          className={`inline-block ${className}`}
+          style={{ marginRight: index < words.length - 1 ? '0.25em' : '0' }}
+        >
+          {word}
+        </motion.span>
+      ))}
+    </>
+  )
+}
+
+// BlurText Animation Component
+const BlurText = ({ children, className = '', delay = 0 }) => {
+  return (
+    <motion.span
+      initial={{ filter: 'blur(10px)', opacity: 0 }}
+      whileInView={{ filter: 'blur(0px)', opacity: 1 }}
+      viewport={{ once: true, margin: '-100px' }}
+      transition={{
+        duration: 1,
+        delay: delay,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      className={className}
+    >
+      {children}
+    </motion.span>
+  )
+}
+
 const marqueeItems = [
   'Culture Impact',
   'Climate Innovation',
@@ -212,7 +259,7 @@ const Hero = () => {
       <div className="absolute inset-0 overflow-hidden" aria-hidden>
         {/* Primary Liquid Blob - Top Right */}
         <motion.div
-          className="absolute -right-32 top-20 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-accent/30 via-purple-500/25 to-indigo-500/30 blur-[120px] md:h-[700px] md:w-[700px] md:blur-[140px]"
+          className="absolute -right-32 top-20 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-accent/30 via-emerald-400/25 to-teal-500/30 blur-[120px] md:h-[700px] md:w-[700px] md:blur-[140px]"
           animate={{
             x: [0, 100, -50, 0],
             y: [0, -80, 60, 0],
@@ -229,7 +276,7 @@ const Hero = () => {
 
         {/* Secondary Liquid Blob - Bottom Left */}
         <motion.div
-          className="absolute -left-40 bottom-0 h-[360px] w-[360px] rounded-full bg-gradient-to-tr from-indigo-500/25 via-blue-500/20 to-accent/25 blur-[110px] md:h-[600px] md:w-[600px] md:blur-[130px]"
+          className="absolute -left-40 bottom-0 h-[360px] w-[360px] rounded-full bg-gradient-to-tr from-emerald-500/25 via-teal-500/20 to-accent/25 blur-[110px] md:h-[600px] md:w-[600px] md:blur-[130px]"
           animate={{
             x: [0, -60, 80, 0],
             y: [0, 70, -50, 0],
@@ -246,7 +293,7 @@ const Hero = () => {
 
         {/* Tertiary Liquid Blob - Center */}
         <motion.div
-          className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-purple-500/20 via-accent/15 to-pink-500/15 blur-[100px] md:h-[500px] md:w-[500px] md:blur-[120px]"
+          className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-emerald-400/20 via-accent/15 to-teal-400/15 blur-[100px] md:h-[500px] md:w-[500px] md:blur-[120px]"
           animate={{
             x: [0, 50, -50, 0],
             y: [0, -40, 40, 0],
@@ -263,7 +310,7 @@ const Hero = () => {
 
         {/* Quaternary Liquid Blob - Top Left */}
         <motion.div
-          className="absolute -left-20 top-40 h-[280px] w-[280px] rounded-full bg-gradient-to-bl from-cyan-500/15 via-blue-500/20 to-indigo-500/25 blur-[90px] md:h-[450px] md:w-[450px] md:blur-[110px]"
+          className="absolute -left-20 top-40 h-[280px] w-[280px] rounded-full bg-gradient-to-bl from-emerald-300/15 via-teal-400/20 to-emerald-500/25 blur-[90px] md:h-[450px] md:w-[450px] md:blur-[110px]"
           animate={{
             x: [0, -70, 40, 0],
             y: [0, 50, -60, 0],
@@ -280,7 +327,7 @@ const Hero = () => {
 
         {/* Quinary Liquid Blob - Bottom Right */}
         <motion.div
-          className="absolute -bottom-20 right-20 h-[360px] w-[360px] rounded-full bg-gradient-to-tl from-violet-500/20 via-purple-500/15 to-fuchsia-500/20 blur-[105px] md:h-[550px] md:w-[550px] md:blur-[125px]"
+          className="absolute -bottom-20 right-20 h-[360px] w-[360px] rounded-full bg-gradient-to-tl from-emerald-500/20 via-teal-500/15 to-emerald-300/20 blur-[105px] md:h-[550px] md:w-[550px] md:blur-[125px]"
           animate={{
             x: [0, 60, -40, 0],
             y: [0, -50, 70, 0],
@@ -312,7 +359,7 @@ const Hero = () => {
         />
 
         <motion.div
-          className="absolute bottom-1/4 left-1/3 h-[130px] w-[130px] rounded-full bg-indigo-500/10 blur-[45px] md:h-[180px] md:w-[180px] md:blur-[55px]"
+          className="absolute bottom-1/4 left-1/3 h-[130px] w-[130px] rounded-full bg-emerald-500/10 blur-[45px] md:h-[180px] md:w-[180px] md:blur-[55px]"
           animate={{
             x: [0, -25, 25, 0],
             y: [0, 35, -25, 0],
@@ -348,23 +395,24 @@ const Hero = () => {
             The Office of Ramatoulaye Diallo N'Diaye
           </motion.span>
           
-          <motion.h1
+          <h1
             id="hero-heading"
             className="mx-auto mt-8 max-w-4xl text-5xl font-extrabold leading-[1.12] tracking-tight text-white sm:text-6xl lg:text-7xl"
-            variants={fadeUp}
-            custom={0.5}
           >
-            Championing Culture,{' '}
+            <ScrollFloat>Championing Culture,</ScrollFloat>{' '}
             <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.5, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
               className="inline-block bg-gradient-to-r from-accent via-accentSoft to-accent bg-clip-text text-transparent"
               animate={{ backgroundPosition: ['0%', '100%', '0%'] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
               style={{ backgroundSize: '200% 100%' }}
             >
               Resilience
             </motion.span>{' '}
-            & Inclusive Growth
-          </motion.h1>
+            <ScrollFloat staggerDelay={0.08}>& Inclusive Growth</ScrollFloat>
+          </h1>
           
           <motion.p
             variants={fadeUp}
@@ -489,7 +537,7 @@ const Hero = () => {
           >
             {/* Glow Effect */}
             <motion.div
-              className="absolute -inset-8 rounded-[48px] bg-accent/30 blur-[80px]"
+              className="absolute -inset-8 rounded-[48px] bg-emerald-500/30 blur-[80px]"
               animate={{ opacity: [0.3, 0.6, 0.3], scale: [0.95, 1.05, 0.95] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               aria-hidden
@@ -510,7 +558,7 @@ const Hero = () => {
                 priority
               />
               {/* Accent Border */}
-              <div className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-accent/20 via-transparent to-indigo-500/20" aria-hidden />
+              <div className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-accent/20 via-transparent to-emerald-500/20" aria-hidden />
             </motion.div>
             
             {/* Floating Orbs */}
@@ -521,7 +569,7 @@ const Hero = () => {
               aria-hidden
             />
             <motion.div
-              className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-gradient-to-br from-indigo-500/20 to-accent/30 blur-3xl"
+              className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-gradient-to-br from-emerald-500/20 to-accent/30 blur-3xl"
               animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
               transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
               aria-hidden
@@ -565,7 +613,7 @@ const About = () => {
           transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute -right-40 bottom-1/4 h-[360px] w-[360px] rounded-full bg-indigo-500/10 blur-[110px] md:h-[600px] md:w-[600px] md:blur-[140px]"
+          className="absolute -right-40 bottom-1/4 h-[360px] w-[360px] rounded-full bg-emerald-500/10 blur-[110px] md:h-[600px] md:w-[600px] md:blur-[140px]"
           animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -586,19 +634,23 @@ const About = () => {
           >
             About Rama
           </motion.span>
-          <motion.h2
+          <h2
             id="about-heading"
-            variants={fadeUp}
-            custom={0.5}
             className="mt-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl"
           >
-            Leading with{' '}
-            <span className="bg-gradient-to-r from-accent via-accentSoft to-accent bg-clip-text text-transparent">
+            <ScrollFloat>Leading with</ScrollFloat>{' '}
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.5, delay: 0.15, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="inline-block bg-gradient-to-r from-accent via-accentSoft to-accent bg-clip-text text-transparent"
+            >
               empathy
-            </span>
+            </motion.span>
             ,<br />
-            experience and vision
-          </motion.h2>
+            <ScrollFloat staggerDelay={0.08}>experience and vision</ScrollFloat>
+          </h2>
           <motion.p
             variants={fadeUp}
             custom={1}
@@ -648,7 +700,7 @@ const About = () => {
 
           {/* Quote Card */}
           <motion.div
-            className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-accent/10 to-indigo-500/10 p-6 backdrop-blur-xl lg:col-span-6 lg:h-[340px]"
+            className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-accent/10 to-emerald-500/10 p-6 backdrop-blur-xl lg:col-span-6 lg:h-[340px]"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -692,7 +744,7 @@ const About = () => {
               >
                 {/* Floating Glow Background */}
                 <motion.div
-                  className="pointer-events-none absolute -inset-2 -z-10 rounded-[28px] bg-gradient-to-br from-accent/20 to-indigo-500/20 opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100"
+                  className="pointer-events-none absolute -inset-2 -z-10 rounded-[28px] bg-gradient-to-br from-accent/20 to-emerald-500/20 opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100"
                   animate={{
                     scale: [1, 1.1, 1],
                     rotate: [0, 5, 0],
@@ -777,8 +829,8 @@ const About = () => {
                         aria-hidden
                       />
                       
-                      <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-white/30 bg-gradient-to-br from-accent/20 to-indigo-500/20 shadow-[inset_0_2px_20px_rgba(255,255,255,0.15)] backdrop-blur-xl">
-                        <metric.Icon className="text-4xl text-accent drop-shadow-[0_0_12px_rgba(76,111,255,0.8)]" />
+                      <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-white/30 bg-gradient-to-br from-accent/20 to-emerald-500/20 shadow-[inset_0_2px_20px_rgba(255,255,255,0.15)] backdrop-blur-xl">
+                        <metric.Icon className="text-4xl text-accent drop-shadow-[0_0_12px_rgba(34,197,94,0.8)]" />
                       </div>
                     </motion.div>
 
@@ -795,7 +847,7 @@ const About = () => {
 
                     {/* Bottom Border Accent */}
                     <motion.div
-                      className="absolute bottom-0 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full bg-gradient-to-r from-accent to-indigo-500 transition-all duration-500 group-hover:w-3/4"
+                      className="absolute bottom-0 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full bg-gradient-to-r from-accent to-emerald-500 transition-all duration-500 group-hover:w-3/4"
                       aria-hidden
                     />
                   </div>
@@ -887,7 +939,7 @@ const Projects = () => {
       <div className="absolute inset-0" aria-hidden>
         <div className="absolute inset-0 bg-gradient-to-b from-background via-charcoal/30 to-background" />
         <motion.div
-          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(76,111,255,0.1),transparent_60%)]"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(34,197,94,0.12),transparent_60%)]"
           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -911,7 +963,7 @@ const Projects = () => {
           transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
         />
         <motion.div
-          className="absolute right-0 top-1/4 h-[600px] w-[600px] rounded-full bg-indigo-500/10 blur-[150px]"
+          className="absolute right-0 top-1/4 h-[600px] w-[600px] rounded-full bg-emerald-500/10 blur-[150px]"
           animate={{ x: [0, 100, 0], y: [0, -50, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -932,17 +984,21 @@ const Projects = () => {
           >
             Impact Projects
           </motion.span>
-          <motion.h2
+          <h2
             id="projects-heading"
-            variants={fadeUp}
-            custom={0.5}
             className="mt-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl"
           >
-            Pioneering initiatives across{' '}
-            <span className="bg-gradient-to-r from-accent via-accentSoft to-accent bg-clip-text text-transparent">
+            <ScrollFloat>Pioneering initiatives across</ScrollFloat>{' '}
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.5, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="inline-block bg-gradient-to-r from-accent via-accentSoft to-accent bg-clip-text text-transparent"
+            >
               culture & climate
-            </span>
-          </motion.h2>
+            </motion.span>
+          </h2>
           <motion.p
             variants={fadeUp}
             custom={1}
@@ -1021,7 +1077,7 @@ const Projects = () => {
                         {/* Gradient Overlays */}
                         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-90" />
                         <motion.div
-                          className="absolute inset-0 bg-gradient-to-br from-accent/30 via-transparent to-indigo-500/20"
+                          className="absolute inset-0 bg-gradient-to-br from-accent/30 via-transparent to-emerald-500/20"
                           variants={{
                             hover: { opacity: [0, 0.4] },
                           }}
@@ -1128,7 +1184,7 @@ const Gallery = () => {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-midnight/20 to-background" aria-hidden />
       <motion.div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_rgba(76,111,255,0.08),transparent_50%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_rgba(34,197,94,0.12),transparent_50%)]"
         animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden
@@ -1136,38 +1192,37 @@ const Gallery = () => {
 
       <div className={container}>
         {/* Section Header */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={stagger}
-          className="mb-20 text-center"
-        >
+        <div className="mb-20 text-center">
           <motion.span
-            variants={fadeUp}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accent backdrop-blur-sm"
           >
             Gallery & Media
           </motion.span>
-          <motion.h2
+          <h2
             id="gallery-heading"
-            variants={fadeUp}
-            custom={0.5}
             className="mt-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl"
           >
-            Snapshots from{' '}
-            <span className="bg-gradient-to-r from-accent via-accentSoft to-accent bg-clip-text text-transparent">
-              global engagements
-            </span>
-          </motion.h2>
+            <BlurText delay={0.2}>Snapshots from</BlurText>{' '}
+            <BlurText delay={0.4}>
+              <span className="bg-gradient-to-r from-accent via-accentSoft to-accent bg-clip-text text-transparent">
+                global engagements
+              </span>
+            </BlurText>
+          </h2>
           <motion.p
-            variants={fadeUp}
-            custom={1}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-muted"
           >
             Browse a curated selection of speaking moments, strategic sessions, and cultural collaborations captured across continents.
           </motion.p>
-        </motion.div>
+        </div>
 
         {/* Masonry Grid Gallery */}
         <div className="columns-1 gap-4 space-y-4 md:columns-2 lg:columns-3 xl:columns-4">
@@ -1219,7 +1274,7 @@ const Gallery = () => {
                   
                   {/* Accent Overlay */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-accent/20 to-indigo-500/20 opacity-0"
+                    className="absolute inset-0 bg-gradient-to-br from-accent/20 to-emerald-500/20 opacity-0"
                     animate={{
                       opacity: hoveredIndex === index ? 1 : 0,
                     }}
@@ -1232,8 +1287,8 @@ const Gallery = () => {
                     animate={{
                       boxShadow:
                         hoveredIndex === index
-                          ? '0 0 0 2px rgba(76, 111, 255, 0.3), 0 20px 60px rgba(76, 111, 255, 0.2)'
-                          : '0 0 0 0px rgba(76, 111, 255, 0)',
+                          ? '0 0 0 2px rgba(34, 197, 94, 0.35), 0 20px 60px rgba(34, 197, 94, 0.22)'
+                          : '0 0 0 0px rgba(34, 197, 94, 0)',
                     }}
                     transition={{ duration: 0.3 }}
                   />
@@ -1252,24 +1307,27 @@ const Gallery = () => {
           className="mt-32"
         >
           {/* Section Header */}
-          <motion.div variants={fadeUp} className="mb-16 text-center">
+          <div className="mb-16 text-center">
             <motion.span
-              variants={fadeUp}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
               className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accent backdrop-blur-sm"
             >
               Featured Videos
             </motion.span>
-            <motion.h3
-              variants={fadeUp}
-              custom={0.2}
+            <h3
               className="mt-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl"
             >
-              Watch Our{' '}
-              <span className="bg-gradient-to-r from-accent via-accentSoft to-accent bg-clip-text text-transparent">
-                Impact Stories
-              </span>
-            </motion.h3>
-          </motion.div>
+              <BlurText delay={0.2}>Watch Our</BlurText>{' '}
+              <BlurText delay={0.4}>
+                <span className="bg-gradient-to-r from-accent via-accentSoft to-accent bg-clip-text text-transparent">
+                  Impact Stories
+                </span>
+              </BlurText>
+            </h3>
+          </div>
           
           <div className="grid gap-8 lg:grid-cols-2">
             {[
@@ -1319,7 +1377,7 @@ const Gallery = () => {
                 <motion.div
                   whileHover={{ y: -10, scale: 1.02 }}
                   transition={{ duration: 0.4, ease: 'easeOut' }}
-                  className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] backdrop-blur-sm transition-all hover:border-accent/40 hover:shadow-[0_25px_80px_rgba(76,111,255,0.25)]"
+                  className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] backdrop-blur-sm transition-all hover:border-accent/40 hover:shadow-[0_25px_80px_rgba(34,197,94,0.25)]"
                 >
                   {/* Video Embed Container */}
                   <div className="relative aspect-video w-full overflow-hidden bg-midnight/80">
@@ -1336,7 +1394,7 @@ const Gallery = () => {
                   {/* Title Bar with Gradient Overlay */}
                   <div className="relative overflow-hidden border-t border-white/10 bg-midnight/40 backdrop-blur-md">
                     <motion.div
-                      className="pointer-events-none absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-indigo-500/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                      className="pointer-events-none absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-emerald-500/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                       aria-hidden
                     />
                     <div className="relative px-6 py-5">
@@ -1344,7 +1402,7 @@ const Gallery = () => {
                         {video.title}
                       </h4>
                       <motion.div
-                        className="mt-2 h-0.5 w-0 bg-gradient-to-r from-accent to-indigo-500 transition-all duration-500 group-hover:w-16"
+                        className="mt-2 h-0.5 w-0 bg-gradient-to-r from-accent to-emerald-500 transition-all duration-500 group-hover:w-16"
                         aria-hidden
                       />
                     </div>
@@ -1366,7 +1424,7 @@ const Contact = () => {
       <div className="absolute inset-0" aria-hidden>
         <div className="absolute inset-0 bg-gradient-to-b from-background via-charcoal/40 to-background" />
         <motion.div
-          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(76,111,255,0.15),transparent_60%)]"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(34,197,94,0.18),transparent_60%)]"
           animate={{ 
             scale: [1, 1.3, 1], 
             opacity: [0.4, 0.7, 0.4],
@@ -1384,7 +1442,7 @@ const Contact = () => {
           transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute -right-20 bottom-1/4 h-[700px] w-[700px] rounded-full bg-indigo-500/10 blur-[180px]"
+          className="absolute -right-20 bottom-1/4 h-[700px] w-[700px] rounded-full bg-emerald-500/10 blur-[180px]"
           animate={{ 
             x: [0, -80, 0], 
             y: [0, 60, 0],
@@ -1409,18 +1467,22 @@ const Contact = () => {
           >
             Contact
           </motion.span>
-          <motion.h2
+          <h2
             id="contact-heading"
-            variants={fadeUp}
-            custom={0.5}
             className="mt-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl"
           >
-            Let's{' '}
-            <span className="bg-gradient-to-r from-accent via-accentSoft to-accent bg-clip-text text-transparent">
+            <ScrollFloat>Let's</ScrollFloat>{' '}
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.5, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="inline-block bg-gradient-to-r from-accent via-accentSoft to-accent bg-clip-text text-transparent"
+            >
               collaborate
-            </span>{' '}
-            for change
-          </motion.h2>
+            </motion.span>{' '}
+            <ScrollFloat staggerDelay={0.08}>for change</ScrollFloat>
+          </h2>
           <motion.p
             variants={fadeUp}
             custom={1}
@@ -1452,7 +1514,7 @@ const Contact = () => {
               aria-hidden
             />
             <motion.div
-              className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-indigo-500/20 blur-3xl"
+              className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-emerald-500/20 blur-3xl"
               animate={{ 
                 scale: [1.2, 1, 1.2], 
                 opacity: [0.3, 0.5, 0.3],
@@ -1565,7 +1627,7 @@ const Contact = () => {
                   type="submit"
                   whileHover={{ scale: 1.05, y: -3 }}
                   whileTap={{ scale: 0.97 }}
-                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-accent to-indigo-500 px-10 py-5 text-lg font-bold text-white shadow-[0_15px_50px_rgba(76,111,255,0.5)] transition-all hover:shadow-[0_25px_70px_rgba(76,111,255,0.7)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-accent to-emerald-500 px-10 py-5 text-lg font-bold text-white shadow-[0_15px_50px_rgba(34,197,94,0.45)] transition-all hover:shadow-[0_25px_70px_rgba(34,197,94,0.65)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
                 >
                   {/* Shimmer Effect */}
                   <motion.span
@@ -1627,7 +1689,7 @@ const Partners = () => {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-midnight/30 to-background" aria-hidden />
       <motion.div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_rgba(76,111,255,0.06),transparent_50%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_rgba(34,197,94,0.06),transparent_50%)]"
         animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden
@@ -1635,30 +1697,27 @@ const Partners = () => {
       
       <div className={container}>
         {/* Section Header */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={stagger}
-          className="mb-16 text-center"
-        >
+        <div className="mb-16 text-center">
           <motion.span
-            variants={fadeUp}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accent backdrop-blur-sm"
           >
             Our Partners
           </motion.span>
-          <motion.h2
-            variants={fadeUp}
-            custom={0.5}
+          <h2
             className="mt-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl"
           >
-            Collaborating for{' '}
-            <span className="bg-gradient-to-r from-accent via-accentSoft to-accent bg-clip-text text-transparent">
-              global impact
-            </span>
-          </motion.h2>
-        </motion.div>
+            <BlurText delay={0.2}>Collaborating for</BlurText>{' '}
+            <BlurText delay={0.4}>
+              <span className="bg-gradient-to-r from-accent via-accentSoft to-accent bg-clip-text text-transparent">
+                global impact
+              </span>
+            </BlurText>
+          </h2>
+        </div>
 
         {/* Partners Grid */}
         <motion.div
@@ -1677,14 +1736,14 @@ const Partners = () => {
               className="group relative"
             >
               <motion.div
-                className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.05] p-8 backdrop-blur-sm transition-all hover:border-accent/30 hover:bg-white/[0.1] hover:shadow-[0_20px_60px_rgba(76,111,255,0.15)]"
+                className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.05] p-8 backdrop-blur-sm transition-all hover:border-accent/30 hover:bg-white/[0.1] hover:shadow-[0_20px_60px_rgba(34,197,94,0.15)]"
                 whileHover={{ 
-                  boxShadow: '0 0 0 1px rgba(76, 111, 255, 0.2), 0 25px 70px rgba(76, 111, 255, 0.2)'
+                  boxShadow: '0 0 0 1px rgba(34, 197, 94, 0.3), 0 25px 70px rgba(34, 197, 94, 0.25)'
                 }}
               >
                 {/* Glow Effect */}
                 <motion.div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-indigo-500/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-emerald-500/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   aria-hidden
                 />
                 
@@ -1739,7 +1798,7 @@ const GhostCursor = () => {
         style={{ x: trailX, y: trailY }}
       />
       <motion.div
-        className="absolute h-3 w-3 rounded-full bg-accent shadow-[0_0_30px_rgba(76,111,255,0.9)]"
+        className="absolute h-3 w-3 rounded-full bg-accent shadow-[0_0_30px_rgba(34,197,94,0.9)]"
         style={{ x: coreX, y: coreY }}
       />
     </motion.div>

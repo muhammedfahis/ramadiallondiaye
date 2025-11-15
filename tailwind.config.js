@@ -22,12 +22,12 @@ export default {
         body: ['Inter', 'sans-serif'],
       },
       boxShadow: {
-        glow: '0 35px 120px rgba(76, 111, 255, 0.25)',
+        glow: '0 35px 120px rgba(34, 197, 94, 0.3)',
         card: '0 22px 60px rgba(3, 6, 23, 0.45)',
       },
       backgroundImage: {
         'hero-gradient':
-          'radial-gradient(circle at top left, rgba(76, 111, 255, 0.32), transparent 55%), radial-gradient(circle at bottom right, rgba(145, 167, 255, 0.18), transparent 45%), linear-gradient(180deg, #05060f 0%, #0b0d1c 100%)',
+          'radial-gradient(circle at top left, rgba(34, 197, 94, 0.3), transparent 55%), radial-gradient(circle at bottom right, rgba(45, 212, 191, 0.22), transparent 45%), linear-gradient(180deg, #020814 0%, #020f0a 100%)',
       },
     },
   },
