@@ -212,7 +212,7 @@ const Hero = () => {
       <div className="absolute inset-0 overflow-hidden" aria-hidden>
         {/* Primary Liquid Blob - Top Right */}
         <motion.div
-          className="absolute -right-32 top-20 h-[700px] w-[700px] rounded-full bg-gradient-to-br from-accent/30 via-purple-500/25 to-indigo-500/30 blur-[140px]"
+          className="absolute -right-32 top-20 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-accent/30 via-purple-500/25 to-indigo-500/30 blur-[120px] md:h-[700px] md:w-[700px] md:blur-[140px]"
           animate={{
             x: [0, 100, -50, 0],
             y: [0, -80, 60, 0],
@@ -229,7 +229,7 @@ const Hero = () => {
 
         {/* Secondary Liquid Blob - Bottom Left */}
         <motion.div
-          className="absolute -left-40 bottom-0 h-[600px] w-[600px] rounded-full bg-gradient-to-tr from-indigo-500/25 via-blue-500/20 to-accent/25 blur-[130px]"
+          className="absolute -left-40 bottom-0 h-[360px] w-[360px] rounded-full bg-gradient-to-tr from-indigo-500/25 via-blue-500/20 to-accent/25 blur-[110px] md:h-[600px] md:w-[600px] md:blur-[130px]"
           animate={{
             x: [0, -60, 80, 0],
             y: [0, 70, -50, 0],
@@ -246,7 +246,7 @@ const Hero = () => {
 
         {/* Tertiary Liquid Blob - Center */}
         <motion.div
-          className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-purple-500/20 via-accent/15 to-pink-500/15 blur-[120px]"
+          className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-purple-500/20 via-accent/15 to-pink-500/15 blur-[100px] md:h-[500px] md:w-[500px] md:blur-[120px]"
           animate={{
             x: [0, 50, -50, 0],
             y: [0, -40, 40, 0],
@@ -263,7 +263,7 @@ const Hero = () => {
 
         {/* Quaternary Liquid Blob - Top Left */}
         <motion.div
-          className="absolute -left-20 top-40 h-[450px] w-[450px] rounded-full bg-gradient-to-bl from-cyan-500/15 via-blue-500/20 to-indigo-500/25 blur-[110px]"
+          className="absolute -left-20 top-40 h-[280px] w-[280px] rounded-full bg-gradient-to-bl from-cyan-500/15 via-blue-500/20 to-indigo-500/25 blur-[90px] md:h-[450px] md:w-[450px] md:blur-[110px]"
           animate={{
             x: [0, -70, 40, 0],
             y: [0, 50, -60, 0],
@@ -280,7 +280,7 @@ const Hero = () => {
 
         {/* Quinary Liquid Blob - Bottom Right */}
         <motion.div
-          className="absolute -bottom-20 right-20 h-[550px] w-[550px] rounded-full bg-gradient-to-tl from-violet-500/20 via-purple-500/15 to-fuchsia-500/20 blur-[125px]"
+          className="absolute -bottom-20 right-20 h-[360px] w-[360px] rounded-full bg-gradient-to-tl from-violet-500/20 via-purple-500/15 to-fuchsia-500/20 blur-[105px] md:h-[550px] md:w-[550px] md:blur-[125px]"
           animate={{
             x: [0, 60, -40, 0],
             y: [0, -50, 70, 0],
@@ -297,7 +297,7 @@ const Hero = () => {
 
         {/* Small Floating Particles */}
         <motion.div
-          className="absolute right-1/4 top-1/3 h-[200px] w-[200px] rounded-full bg-accent/10 blur-[60px]"
+          className="absolute right-1/4 top-1/3 h-[140px] w-[140px] rounded-full bg-accent/10 blur-[50px] md:h-[200px] md:w-[200px] md:blur-[60px]"
           animate={{
             x: [0, 30, -30, 0],
             y: [0, -40, 20, 0],
@@ -312,7 +312,7 @@ const Hero = () => {
         />
 
         <motion.div
-          className="absolute bottom-1/4 left-1/3 h-[180px] w-[180px] rounded-full bg-indigo-500/10 blur-[55px]"
+          className="absolute bottom-1/4 left-1/3 h-[130px] w-[130px] rounded-full bg-indigo-500/10 blur-[45px] md:h-[180px] md:w-[180px] md:blur-[55px]"
           animate={{
             x: [0, -25, 25, 0],
             y: [0, 35, -25, 0],
@@ -560,12 +560,12 @@ const About = () => {
       {/* Background Elements */}
       <div className="absolute inset-0" aria-hidden>
         <motion.div
-          className="absolute -left-40 top-1/4 h-[500px] w-[500px] rounded-full bg-accent/10 blur-[120px]"
+          className="absolute -left-40 top-1/4 h-[320px] w-[320px] rounded-full bg-accent/10 blur-[100px] md:h-[500px] md:w-[500px] md:blur-[120px]"
           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute -right-40 bottom-1/4 h-[600px] w-[600px] rounded-full bg-indigo-500/10 blur-[140px]"
+          className="absolute -right-40 bottom-1/4 h-[360px] w-[360px] rounded-full bg-indigo-500/10 blur-[110px] md:h-[600px] md:w-[600px] md:blur-[140px]"
           animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -1733,7 +1733,7 @@ const GhostCursor = () => {
   }, [cursorX, cursorY])
 
   return (
-    <motion.div className="pointer-events-none fixed inset-0 z-40 mix-blend-screen" aria-hidden>
+    <motion.div className="pointer-events-none fixed inset-0 z-40 hidden mix-blend-screen lg:block" aria-hidden>
       <motion.div
         className="absolute h-16 w-16 rounded-full bg-accent/20 blur-2xl"
         style={{ x: trailX, y: trailY }}
@@ -1789,7 +1789,7 @@ const App = () => {
           </nav>
         </div>
       </header>
-      <main id="main" role="main" className="space-y-24">
+      <main id="main" role="main" className="space-y-16 md:space-y-24">
         <Hero />
         <About />
         <Projects />
