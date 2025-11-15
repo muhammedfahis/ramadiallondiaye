@@ -675,15 +675,17 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </motion.div>
-      <motion.a
-        href="#about"
-        className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center justify-center gap-2 text-center text-xs font-semibold uppercase tracking-[0.4em] text-accent/80 transition-colors hover:text-accent"
-        variants={scrollPulse}
-        animate="animate"
-      >
-        <span className="block">Scroll down</span>
-        <RiArrowDownLine className="text-xl" />
-      </motion.a>
+      <div className="absolute inset-x-0 bottom-10 flex justify-center">
+        <motion.a
+          href="#about"
+          className="group flex flex-col items-center justify-center gap-2 text-center text-xs font-semibold uppercase tracking-[0.4em] text-accent/80 transition-colors hover:text-accent"
+          variants={scrollPulse}
+          animate="animate"
+        >
+          <span className="block">Scroll down</span>
+          <RiArrowDownLine className="text-xl text-current transition-transform group-hover:translate-y-1" />
+        </motion.a>
+      </div>
     </motion.section>
   )
 }
