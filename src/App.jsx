@@ -1,5 +1,5 @@
-import { useMemo, useEffect, useState } from 'react'
-import { motion, useMotionValue, useSpring, useTransform, useScroll } from 'framer-motion'
+import { useMemo, useState } from 'react'
+import { motion, useSpring, useTransform, useScroll } from 'framer-motion'
 import { FaGlobeAfrica, FaLeaf, FaPeopleCarry, FaSun } from 'react-icons/fa'
 import { RiArrowDownLine, RiArrowRightUpLine, RiTeamLine, RiAwardLine } from 'react-icons/ri'
 import { HiOutlineUserGroup } from 'react-icons/hi'
@@ -228,22 +228,6 @@ const Hero = () => {
   const imageY = useTransform(scrollProgress, [0, 600], [0, 120])
   const imageScale = useTransform(scrollProgress, [0, 500], [1, 1.08])
 
-  const cursorX = useMotionValue(0)
-  const cursorY = useMotionValue(0)
-  const parallaxX = useSpring(useTransform(cursorX, (value) => value * 0.02), { stiffness: 90, damping: 18 })
-  const parallaxY = useSpring(useTransform(cursorY, (value) => value * 0.02), { stiffness: 90, damping: 18 })
-
-  useEffect(() => {
-    const onMouseMove = (e) => {
-      const centerX = window.innerWidth / 2
-      const centerY = window.innerHeight / 2
-      cursorX.set(e.clientX - centerX)
-      cursorY.set(e.clientY - centerY)
-    }
-    window.addEventListener('mousemove', onMouseMove)
-    return () => window.removeEventListener('mousemove', onMouseMove)
-  }, [cursorX, cursorY])
-
   const marqueeSequence = useMemo(() => [...marqueeItems, ...marqueeItems], [])
   const marqueeTransition = useMemo(
     () => ({ duration: 18, ease: 'linear', repeat: Infinity }),
@@ -255,11 +239,19 @@ const Hero = () => {
       id="home" 
       className="relative min-h-screen overflow-hidden pb-20 pt-32"
     >
-      {/* Animated Mesh Grid Background */}
+      {/* Rama Portrait Background */}
       <div className="absolute inset-0" aria-hidden>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0a2824_1px,transparent_1px),linear-gradient(to_bottom,#0a2824_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+        <OptimizedImage
+          srcBase={aboutPortraitBase}
+          alt="Portrait of Ramatoulaye Diallo N'Diaye"
+          sizes="100vw"
+          widths={[640, 960, 1440]}
+          className="h-full w-full object-cover opacity-60"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
       </div>
-      
+
       {/* Enhanced Liquid Ether Background */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden>
         {/* Primary Liquid Blob - Top Right */}
@@ -573,7 +565,6 @@ const Hero = () => {
           >
             <motion.div
               className="relative"
-              style={{ x: parallaxX, y: parallaxY }}
             >
               {/* Floating Depth Layers */}
               <motion.div
@@ -1870,41 +1861,6 @@ const Partners = () => {
   )
 }
 
-const GhostCursor = () => {
-  const cursorX = useMotionValue(-100)
-  const cursorY = useMotionValue(-100)
-  const smoothX = useSpring(cursorX, { stiffness: 150, damping: 20, mass: 0.3 })
-  const smoothY = useSpring(cursorY, { stiffness: 150, damping: 20, mass: 0.3 })
-
-  const trailX = useTransform(smoothX, (value) => value - 32)
-  const trailY = useTransform(smoothY, (value) => value - 32)
-  const coreX = useTransform(smoothX, (value) => value - 6)
-  const coreY = useTransform(smoothY, (value) => value - 6)
-
-  useEffect(() => {
-    const handleMove = (event) => {
-      cursorX.set(event.clientX)
-      cursorY.set(event.clientY)
-    }
-
-    window.addEventListener('mousemove', handleMove)
-    return () => window.removeEventListener('mousemove', handleMove)
-  }, [cursorX, cursorY])
-
-  return (
-    <motion.div className="pointer-events-none fixed inset-0 z-40 hidden mix-blend-screen lg:block" aria-hidden>
-      <motion.div
-        className="absolute h-16 w-16 rounded-full bg-accent/20 blur-2xl"
-        style={{ x: trailX, y: trailY }}
-      />
-      <motion.div
-        className="absolute h-3 w-3 rounded-full bg-accent shadow-[0_0_30px_rgba(34,197,94,0.9)]"
-        style={{ x: coreX, y: coreY }}
-      />
-    </motion.div>
-  )
-}
-
 const Footer = () => (
   <footer className="relative overflow-hidden border-t border-white/5 bg-gradient-to-b from-midnight/80 to-midnight py-12">
     {/* Subtle Background Glow */}
@@ -1955,22 +1911,23 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-midnight text-ivory overflow-x-hidden">
-      <GhostCursor />
       <header className="sticky top-0 z-30 border-b border-white/5 bg-midnight/80 backdrop-blur">
         <div className={`${container} flex items-center justify-between gap-8 py-5`}>
           <motion.a
             href="#home"
-            whileHover={{ scale: 1.02 }}
-            className="flex items-center gap-3 text-lg font-semibold uppercase tracking-[0.3em] text-white transition-opacity hover:opacity-80"
+            className="flex items-center gap-3 text-sm font-semibold text-white transition-opacity hover:opacity-80"
           >
-            <motion.span
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-accent to-emerald-400 text-base font-bold text-white shadow-[0_4px_20px_rgba(34,197,94,0.4)]"
-            >
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-accent/15 text-xs font-semibold text-accent ring-1 ring-accent/40">
               RD
-            </motion.span>
-            R. ALLONDIAYE
+            </span>
+            <div className="flex flex-col leading-tight">
+              <span className="text-sm font-semibold text-white">
+                Ramatoulaye Diallo N'Diaye
+              </span>
+              <span className="text-[0.65rem] font-medium uppercase tracking-[0.22em] text-ivory/60">
+                Culture • Climate • Leadership
+              </span>
+            </div>
           </motion.a>
           <nav aria-label="Main navigation">
             <ul className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-ivory/70 sm:justify-end sm:gap-8 sm:text-sm">
