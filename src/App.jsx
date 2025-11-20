@@ -252,11 +252,11 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
       </div>
 
-      {/* Enhanced Liquid Ether Background */}
+      {/* Enhanced Neutral Background Glow */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden>
-        {/* Primary Liquid Blob - Top Right */}
+        {/* Primary Blob - Top Right */}
         <motion.div
-          className="absolute -right-32 top-20 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-accent/30 via-emerald-400/25 to-teal-500/30 blur-[120px] md:h-[700px] md:w-[700px] md:blur-[140px]"
+          className="absolute -right-32 top-20 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-white/10 via-slate-700/40 to-black/70 blur-[120px] md:h-[700px] md:w-[700px] md:blur-[140px]"
           animate={{
             x: [0, 100, -50, 0],
             y: [0, -80, 60, 0],
@@ -271,9 +271,9 @@ const Hero = () => {
           }}
         />
 
-        {/* Secondary Liquid Blob - Bottom Left */}
+        {/* Secondary Blob - Bottom Left */}
         <motion.div
-          className="absolute -left-40 bottom-0 h-[360px] w-[360px] rounded-full bg-gradient-to-tr from-emerald-500/25 via-teal-500/20 to-accent/25 blur-[110px] md:h-[600px] md:w-[600px] md:blur-[130px]"
+          className="absolute -left-40 bottom-0 h-[360px] w-[360px] rounded-full bg-gradient-to-tr from-slate-700/40 via-slate-800/40 to-black/70 blur-[110px] md:h-[600px] md:w-[600px] md:blur-[130px]"
           animate={{
             x: [0, -60, 80, 0],
             y: [0, 70, -50, 0],
@@ -288,9 +288,9 @@ const Hero = () => {
           }}
         />
 
-        {/* Tertiary Liquid Blob - Center */}
+        {/* Tertiary Blob - Center */}
         <motion.div
-          className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-emerald-400/20 via-accent/15 to-teal-400/15 blur-[100px] md:h-[500px] md:w-[500px] md:blur-[120px]"
+          className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-slate-600/30 via-white/5 to-black/60 blur-[100px] md:h-[500px] md:w-[500px] md:blur-[120px]"
           animate={{
             x: [0, 50, -50, 0],
             y: [0, -40, 40, 0],
@@ -305,9 +305,9 @@ const Hero = () => {
           }}
         />
 
-        {/* Quaternary Liquid Blob - Top Left */}
+        {/* Quaternary Blob - Top Left */}
         <motion.div
-          className="absolute -left-20 top-40 h-[280px] w-[280px] rounded-full bg-gradient-to-bl from-emerald-300/15 via-teal-400/20 to-emerald-500/25 blur-[90px] md:h-[450px] md:w-[450px] md:blur-[110px]"
+          className="absolute -left-20 top-40 h-[280px] w-[280px] rounded-full bg-gradient-to-bl from-slate-700/30 via-slate-800/40 to-black/70 blur-[90px] md:h-[450px] md:w-[450px] md:blur-[110px]"
           animate={{
             x: [0, -70, 40, 0],
             y: [0, 50, -60, 0],
@@ -322,9 +322,9 @@ const Hero = () => {
           }}
         />
 
-        {/* Quinary Liquid Blob - Bottom Right */}
+        {/* Quinary Blob - Bottom Right */}
         <motion.div
-          className="absolute -bottom-20 right-20 h-[360px] w-[360px] rounded-full bg-gradient-to-tl from-emerald-500/20 via-teal-500/15 to-emerald-300/20 blur-[105px] md:h-[550px] md:w-[550px] md:blur-[125px]"
+          className="absolute -bottom-20 right-20 h-[360px] w-[360px] rounded-full bg-gradient-to-tl from-slate-700/35 via-slate-900/40 to-black/80 blur-[105px] md:h-[550px] md:w-[550px] md:blur-[125px]"
           animate={{
             x: [0, 60, -40, 0],
             y: [0, -50, 70, 0],
@@ -356,7 +356,7 @@ const Hero = () => {
         />
 
         <motion.div
-          className="absolute bottom-1/4 left-1/3 h-[130px] w-[130px] rounded-full bg-emerald-500/10 blur-[45px] md:h-[180px] md:w-[180px] md:blur-[55px]"
+          className="absolute bottom-1/4 left-1/3 h-[130px] w-[130px] rounded-full bg-white/5 blur-[45px] md:h-[180px] md:w-[180px] md:blur-[55px]"
           animate={{
             x: [0, -25, 25, 0],
             y: [0, 35, -25, 0],
@@ -394,8 +394,8 @@ const Hero = () => {
               className="inline-block"
             >
               <motion.span
-                whileHover={{ scale: 1.05, rotate: -1 }}
-                className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accent backdrop-blur-xl shadow-[0_8px_32px_rgba(34,197,94,0.15)]"
+                whileHover={{ scale: 1.02, rotate: -1 }}
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)]"
               >
                 <motion.span
                   className="h-2 w-2 rounded-full bg-accent"
@@ -429,7 +429,7 @@ const Hero = () => {
               >
                 <BlurText delay={0.35}>Culture,</BlurText>{' '}
                 <motion.span
-                  className="relative inline-block bg-gradient-to-r from-accent via-accentSoft to-emerald-300 bg-clip-text text-transparent"
+                  className="relative inline-block bg-gradient-to-r from-white via-white/70 to-white bg-clip-text text-transparent"
                   animate={{ backgroundPosition: ['0%', '100%', '0%'] }}
                   transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
                   style={{ backgroundSize: '200% 100%' }}
@@ -459,7 +459,7 @@ const Hero = () => {
             <motion.p
               variants={fadeUp}
               custom={1.2}
-              className="flex flex-wrap items-center gap-3 text-base font-medium uppercase tracking-[0.3em] text-accentSoft/90"
+              className="flex flex-wrap items-center gap-3 text-base font-medium uppercase tracking-[0.3em] text-muted"
             >
               <span>Public Speaker</span>
               <span className="h-1 w-1 rounded-full bg-accent/60" />
@@ -492,22 +492,22 @@ const Hero = () => {
                     custom={2 + index * 0.2}
                     whileHover={{ y: -8, scale: 1.03 }}
                     transition={{ type: 'spring', stiffness: 280, damping: 24 }}
-                    className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.05] to-white/[0.02] p-5 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-accent/40 hover:shadow-[0_16px_48px_rgba(34,197,94,0.15)]"
+                    className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.05] to-white/[0.02] p-5 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-accentSoft/50 hover:shadow-[0_16px_48px_rgba(0,0,0,0.7)]"
                   >
                     <motion.div
                       className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                       style={{
-                        background: 'radial-gradient(circle at top right, rgba(34,197,94,0.18), transparent 65%)',
+                        background: 'radial-gradient(circle at top right, rgba(229,229,229,0.15), transparent 65%)',
                       }}
                       aria-hidden
                     />
                     <div className="relative space-y-3">
                       <motion.div
-                        className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-accent/20 to-emerald-500/20 ring-1 ring-accent/30 shadow-[0_4px_20px_rgba(34,197,94,0.25)]"
+                        className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-white/10 to-white/5 ring-1 ring-white/30 shadow-[0_4px_20px_rgba(0,0,0,0.6)]"
                         whileHover={{ rotate: [0, -5, 5, 0], scale: 1.1 }}
                         transition={{ duration: 0.5 }}
                       >
-                        <Icon className="text-xl text-accent" />
+                        <Icon className="text-xl text-white" />
                       </motion.div>
                       <div>
                         <p className="mb-1 text-xs font-bold uppercase tracking-wider text-accent">
@@ -532,7 +532,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 href="#contact"
-                className="group relative inline-flex min-h-[56px] items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-accent to-emerald-400 px-8 py-4 text-base font-bold text-white shadow-[0_0_0_0_rgba(34,197,94,0.4),0_20px_50px_rgba(34,197,94,0.3)] transition-all hover:shadow-[0_0_0_4px_rgba(34,197,94,0.4),0_25px_60px_rgba(34,197,94,0.5)]"
+                className="group relative inline-flex min-h-[56px] items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-white/90 to-white/70 px-8 py-4 text-base font-bold text-black shadow-[0_0_0_0_rgba(0,0,0,0.4),0_20px_50px_rgba(0,0,0,0.7)] transition-all hover:shadow-[0_0_0_2px_rgba(229,229,229,0.6),0_25px_60px_rgba(0,0,0,0.9)]"
               >
                 <motion.span
                   className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/25 to-white/0"
@@ -546,7 +546,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 href="#gallery"
-                className="group inline-flex min-h-[56px] items-center justify-center gap-2 rounded-full border-2 border-accent/40 bg-accent/5 px-8 py-4 text-base font-bold text-white backdrop-blur-xl transition-all hover:border-accent hover:bg-accent/15 hover:shadow-[0_0_0_2px_rgba(34,197,94,0.2)]"
+                className="group inline-flex min-h-[56px] items-center justify-center gap-2 rounded-full border-2 border-white/30 bg-transparent px-8 py-4 text-base font-bold text-white backdrop-blur-xl transition-all hover:border-white hover:bg-white/10 hover:shadow-[0_0_0_1px_rgba(229,229,229,0.5)]"
               >
                 <span>Watch my talk</span>
                 <RiArrowRightUpLine className="text-xl transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -568,7 +568,7 @@ const Hero = () => {
             >
               {/* Floating Depth Layers */}
               <motion.div
-                className="absolute -inset-12 rounded-[60px] bg-gradient-to-br from-accent/20 to-emerald-500/20 blur-3xl"
+                className="absolute -inset-12 rounded-[60px] bg-gradient-to-br from-white/10 to-black/70 blur-3xl"
                 animate={{
                   scale: [1, 1.1, 1],
                   opacity: [0.3, 0.6, 0.3],
@@ -597,12 +597,12 @@ const Hero = () => {
                   priority
                 />
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 rounded-[48px] bg-gradient-to-tr from-accent/20 via-transparent to-emerald-400/15" aria-hidden />
+                <div className="absolute inset-0 rounded-[48px] bg-gradient-to-tr from-white/20 via-transparent to-black/60" aria-hidden />
               </motion.div>
 
               {/* Floating 3D Accent Cards */}
               <motion.div
-                className="absolute -right-8 -top-8 rounded-3xl border border-accent/30 bg-gradient-to-br from-accent/20 to-emerald-500/20 p-6 backdrop-blur-2xl shadow-[0_20px_60px_rgba(34,197,94,0.3)]"
+                className="absolute -right-8 -top-8 rounded-3xl border border-white/20 bg-gradient-to-br from-white/10 to-black/70 p-6 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.7)]"
                 animate={{
                   y: [-10, 10, -10],
                   rotate: [2, -2, 2],
@@ -618,7 +618,7 @@ const Hero = () => {
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-6 -left-6 rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/20 to-accent/20 p-6 backdrop-blur-2xl shadow-[0_20px_60px_rgba(45,212,191,0.3)]"
+                className="absolute -bottom-6 -left-6 rounded-3xl border border-white/15 bg-gradient-to-br from-black/80 to-white/5 p-6 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.8)]"
                 animate={{
                   y: [10, -10, 10],
                   rotate: [-2, 2, -2],
@@ -704,7 +704,7 @@ const About = () => {
           transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute -right-40 bottom-1/4 h-[360px] w-[360px] rounded-full bg-emerald-500/10 blur-[110px] md:h-[600px] md:w-[600px] md:blur-[140px]"
+          className="absolute -right-40 bottom-1/4 h-[360px] w-[360px] rounded-full bg-white/5 blur-[110px] md:h-[600px] md:w-[600px] md:blur-[140px]"
           animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -791,7 +791,7 @@ const About = () => {
 
           {/* Quote Card */}
           <motion.div
-            className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-accent/10 to-emerald-500/10 p-6 backdrop-blur-xl lg:col-span-6 lg:h-[340px]"
+            className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-white/10 to-black/70 p-6 backdrop-blur-xl lg:col-span-6 lg:h-[340px]"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -835,7 +835,7 @@ const About = () => {
               >
                 {/* Floating Glow Background */}
                 <motion.div
-                  className="pointer-events-none absolute -inset-2 -z-10 rounded-[28px] bg-gradient-to-br from-accent/20 to-emerald-500/20 opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100"
+                  className="pointer-events-none absolute -inset-2 -z-10 rounded-[28px] bg-gradient-to-br from-white/10 to-black/70 opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100"
                   animate={{
                     scale: [1, 1.1, 1],
                     rotate: [0, 5, 0],
@@ -920,8 +920,8 @@ const About = () => {
                         aria-hidden
                       />
                       
-                      <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-white/30 bg-gradient-to-br from-accent/20 to-emerald-500/20 shadow-[inset_0_2px_20px_rgba(255,255,255,0.15)] backdrop-blur-xl">
-                        <metric.Icon className="text-4xl text-accent drop-shadow-[0_0_12px_rgba(34,197,94,0.8)]" />
+                      <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-white/30 bg-gradient-to-br from-white/10 to-black/70 shadow-[inset_0_2px_20px_rgba(255,255,255,0.15)] backdrop-blur-xl">
+                        <metric.Icon className="text-4xl text-white" />
                       </div>
                     </motion.div>
 
@@ -938,7 +938,7 @@ const About = () => {
 
                     {/* Bottom Border Accent */}
                     <motion.div
-                      className="absolute bottom-0 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full bg-gradient-to-r from-accent to-emerald-500 transition-all duration-500 group-hover:w-3/4"
+                      className="absolute bottom-0 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full bg-gradient-to-r from-white/80 to-white/40 transition-all duration-500 group-hover:w-3/4"
                       aria-hidden
                     />
                   </div>
@@ -1515,7 +1515,7 @@ const Contact = () => {
       <div className="absolute inset-0" aria-hidden>
         <div className="absolute inset-0 bg-gradient-to-b from-background via-charcoal/40 to-background" />
         <motion.div
-          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(34,197,94,0.18),transparent_60%)]"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(229,229,229,0.14),transparent_60%)]"
           animate={{ 
             scale: [1, 1.3, 1], 
             opacity: [0.4, 0.7, 0.4],
@@ -1524,7 +1524,7 @@ const Contact = () => {
           transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute -left-20 top-1/4 h-[600px] w-[600px] rounded-full bg-accent/10 blur-[150px]"
+          className="absolute -left-20 top-1/4 h-[600px] w-[600px] rounded-full bg-white/5 blur-[150px]"
           animate={{ 
             x: [0, 100, 0], 
             y: [0, -50, 0],
@@ -1533,7 +1533,7 @@ const Contact = () => {
           transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute -right-20 bottom-1/4 h-[700px] w-[700px] rounded-full bg-emerald-500/10 blur-[180px]"
+          className="absolute -right-20 bottom-1/4 h-[700px] w-[700px] rounded-full bg-white/5 blur-[180px]"
           animate={{ 
             x: [0, -80, 0], 
             y: [0, 60, 0],
@@ -1594,7 +1594,7 @@ const Contact = () => {
           <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] p-8 backdrop-blur-xl lg:p-12">
             {/* Animated Gradient Orbs */}
             <motion.div
-              className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-accent/25 blur-3xl"
+              className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-white/10 blur-3xl"
               animate={{ 
                 scale: [1, 1.3, 1], 
                 opacity: [0.4, 0.6, 0.4],
@@ -1605,7 +1605,7 @@ const Contact = () => {
               aria-hidden
             />
             <motion.div
-              className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-emerald-500/20 blur-3xl"
+              className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-white/10 blur-3xl"
               animate={{ 
                 scale: [1.2, 1, 1.2], 
                 opacity: [0.3, 0.5, 0.3],
@@ -1718,7 +1718,7 @@ const Contact = () => {
                   type="submit"
                   whileHover={{ scale: 1.05, y: -3 }}
                   whileTap={{ scale: 0.97 }}
-                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-accent to-emerald-500 px-10 py-5 text-lg font-bold text-white shadow-[0_15px_50px_rgba(34,197,94,0.45)] transition-all hover:shadow-[0_25px_70px_rgba(34,197,94,0.65)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-white/90 to-white/70 px-10 py-5 text-lg font-bold text-black shadow-[0_15px_50px_rgba(0,0,0,0.6)] transition-all hover:shadow-[0_20px_70px_rgba(0,0,0,0.85)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
                 >
                   {/* Shimmer Effect */}
                   <motion.span

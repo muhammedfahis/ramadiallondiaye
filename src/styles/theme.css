@@ -1,16 +1,23 @@
 :root {
   color-scheme: dark;
-  --color-background: #020814;
-  --color-surface: rgba(3, 21, 18, 0.9);
-  --color-surface-strong: rgba(5, 30, 25, 0.95);
-  --color-foreground: #f7f8ff;
-  --color-text-muted: rgba(255, 255, 255, 0.6);
-  --color-text-muted-strong: rgba(255, 255, 255, 0.85);
-  --color-border: rgba(255, 255, 255, 0.18);
-  --color-border-strong: rgba(255, 255, 255, 0.28);
-  --color-accent: #22c55e;
-  --color-accent-soft: #4ade80;
-  --color-focus: #bbf7d0;
-  --color-overlay-dark: rgba(2, 12, 8, 0.9);
-  --shadow-card: 0 24px 65px rgba(5, 9, 32, 0.55);
+  /* Deep neutral navy background */
+  --color-background: #020617;
+  --color-surface: rgba(15, 23, 42, 0.92);
+  --color-surface-strong: rgba(15, 23, 42, 0.98);
+
+  /* Typography */
+  --color-foreground: #ffffff; /* main text */
+  --color-text-muted: rgb(145, 145, 145); /* sub text */
+  --color-text-muted-strong: rgb(210, 210, 210);
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.16);
+  --color-border-strong: rgba(255, 255, 255, 0.26);
+
+  /* Accent: neutral grayscale (no strong color) */
+  --color-accent: #e5e5e5;
+  --color-accent-soft: #9ca3af;
+  --color-focus: #f5f5f5;
+  --color-overlay-dark: rgba(3, 7, 18, 0.95);
+  --shadow-card: 0 24px 65px rgba(15, 23, 42, 0.65);
 }
