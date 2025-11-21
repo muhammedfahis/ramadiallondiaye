@@ -377,6 +377,12 @@ const Hero = () => {
         className={`${container} relative`}
         style={{ y: heroY }}
       >
+        {/* Left-side readability gradient (only from mid-hero down) */}
+        <div
+          className="pointer-events-none absolute bottom-0 left-0 top-1/3 w-full bg-gradient-to-t from-black/80 via-black/60 to-transparent lg:w-1/2"
+          aria-hidden
+        />
+
         {/* Split-Screen Hero Layout */}
         <div className="relative z-10 grid min-h-[85vh] items-center gap-12 lg:grid-cols-2 lg:gap-20">
           
@@ -427,21 +433,7 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.25 }}
                 className="block"
               >
-                <BlurText delay={0.35}>Culture,</BlurText>{' '}
-                <motion.span
-                  className="relative inline-block bg-gradient-to-r from-white via-white/70 to-white bg-clip-text text-transparent"
-                  animate={{ backgroundPosition: ['0%', '100%', '0%'] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
-                  style={{ backgroundSize: '200% 100%' }}
-                >
-                  <motion.span
-                    className="absolute -inset-2 rounded-2xl bg-accent/10 blur-2xl"
-                    animate={{ opacity: [0.3, 0.6, 0.3] }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                    aria-hidden
-                  />
-                  <span className="relative">Resilience</span>
-                </motion.span>
+                <BlurText delay={0.35}>Culture, Resilience</BlurText>
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, y: 30 }}
@@ -755,18 +747,18 @@ const About = () => {
         <div className="relative grid gap-4 lg:grid-cols-12">
           {/* Large Image Card - Spans 2 rows */}
           <motion.div
-            className="group relative overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] p-2 shadow-[0_20px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl lg:col-span-6 lg:row-span-2"
+            className="group relative overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] p-2 shadow-[0_20px_70px_rgba(0,0,0,0.7)] backdrop-blur-xl lg:col-span-6 lg:row-span-2"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <div className="relative h-full overflow-hidden rounded-[36px]">
-              {/* Animated Border Gradient */}
+              {/* Animated Border Gradient - Neutral Grey */}
               <motion.div
                 className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(34,197,94,0.3) 0%, rgba(45,212,191,0.3) 100%)',
+                  background: 'linear-gradient(135deg, rgba(229,229,229,0.25) 0%, rgba(82,82,82,0.25) 100%)',
                   filter: 'blur(20px)',
                 }}
                 aria-hidden
@@ -1030,31 +1022,31 @@ const Projects = () => {
       <div className="absolute inset-0" aria-hidden>
         <div className="absolute inset-0 bg-gradient-to-b from-background via-charcoal/30 to-background" />
         <motion.div
-          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(34,197,94,0.12),transparent_60%)]"
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(229,229,229,0.08),transparent_60%)]"
+          animate={{ scale: [1, 1.2, 1], opacity: [0.25, 0.45, 0.25] }}
           transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
         />
-        {/* Laser Flow Lines */}
+        {/* Laser Flow Lines - Neutral Grey */}
         <motion.div
-          className="pointer-events-none absolute inset-0 opacity-40"
+          className="pointer-events-none absolute inset-0 opacity-25"
           style={{
             backgroundImage:
-              'repeating-linear-gradient(90deg, transparent 0px, transparent 60px, rgba(56,189,248,0.08) 60px, rgba(56,189,248,0.35) 62px, transparent 62px, transparent 120px)',
+              'repeating-linear-gradient(90deg, transparent 0px, transparent 60px, rgba(82,82,82,0.35) 60px, rgba(23,23,23,0.9) 62px, transparent 62px, transparent 120px)',
           }}
           animate={{ backgroundPositionX: ['0%', '100%'] }}
           transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
         />
         <motion.div
-          className="pointer-events-none absolute inset-0 opacity-30"
+          className="pointer-events-none absolute inset-0 opacity-20"
           style={{
             backgroundImage:
-              'repeating-linear-gradient(180deg, transparent 0px, transparent 80px, rgba(34,197,94,0.08) 80px, rgba(34,197,94,0.3) 82px, transparent 82px, transparent 140px)',
+              'repeating-linear-gradient(180deg, transparent 0px, transparent 80px, rgba(82,82,82,0.3) 80px, rgba(23,23,23,0.9) 82px, transparent 82px, transparent 140px)',
           }}
           animate={{ backgroundPositionY: ['0%', '100%'] }}
           transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
         />
         <motion.div
-          className="absolute right-0 top-1/4 h-[600px] w-[600px] rounded-full bg-emerald-500/10 blur-[150px]"
+          className="absolute right-0 top-1/4 h-[600px] w-[600px] rounded-full bg-white/5 blur-[150px]"
           animate={{ x: [0, 100, 0], y: [0, -50, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -1133,7 +1125,7 @@ const Projects = () => {
                       y: -10,
                     },
                   }}
-                  className="group relative block h-full overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl transition-all duration-500 hover:border-accent/50 hover:shadow-[0_30px_90px_rgba(34,197,94,0.25)]"
+                  className="group relative block h-full overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl transition-all duration-500 hover:border-accentSoft/60 hover:shadow-[0_30px_90px_rgba(148,163,184,0.28)]"
                   data-cursor="interactive"
                 >
                   {/* Image Container with Parallax */}
@@ -1273,10 +1265,10 @@ const Gallery = () => {
   return (
     <section id="gallery" aria-labelledby="gallery-heading" className="relative overflow-hidden py-20">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-midnight/20 to-background" aria-hidden />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/30 to-background" aria-hidden />
       <motion.div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_rgba(34,197,94,0.12),transparent_50%)]"
-        animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_rgba(229,229,229,0.08),transparent_50%)]"
+        animate={{ scale: [1, 1.1, 1], opacity: [0.25, 0.45, 0.25] }}
         transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden
       />
@@ -1363,23 +1355,23 @@ const Gallery = () => {
                     }}
                   />
                   
-                  {/* Accent Overlay */}
+                  {/* Accent Overlay - Neutral Grey */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-accent/20 to-emerald-500/20 opacity-0"
+                    className="absolute inset-0 bg-gradient-to-br from-accentSoft/30 to-black/80 opacity-0"
                     animate={{
                       opacity: hoveredIndex === index ? 1 : 0,
                     }}
                     transition={{ duration: 0.4 }}
                   />
 
-                  {/* Border Glow on Hover */}
+                  {/* Border Glow on Hover - Neutral */}
                   <motion.div
                     className="pointer-events-none absolute inset-0 rounded-2xl"
                     animate={{
                       boxShadow:
                         hoveredIndex === index
-                          ? '0 0 0 2px rgba(34, 197, 94, 0.35), 0 20px 60px rgba(34, 197, 94, 0.22)'
-                          : '0 0 0 0px rgba(34, 197, 94, 0)',
+                          ? '0 0 0 2px rgba(229, 229, 229, 0.45), 0 20px 60px rgba(0, 0, 0, 0.85)'
+                          : '0 0 0 0px rgba(0, 0, 0, 0)',
                     }}
                     transition={{ duration: 0.3 }}
                   />
@@ -1468,10 +1460,10 @@ const Gallery = () => {
                 <motion.div
                   whileHover={{ y: -10, scale: 1.02 }}
                   transition={{ duration: 0.4, ease: 'easeOut' }}
-                  className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] backdrop-blur-sm transition-all hover:border-accent/40 hover:shadow-[0_25px_80px_rgba(34,197,94,0.25)]"
+                  className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] backdrop-blur-sm transition-all hover:border-accentSoft/60 hover:shadow-[0_25px_80px_rgba(0,0,0,0.85)]"
                 >
                   {/* Video Embed Container */}
-                  <div className="relative aspect-video w-full overflow-hidden bg-midnight/80">
+                  <div className="relative aspect-video w-full overflow-hidden bg-black/80">
                     <iframe
                       src={video.url}
                       title={video.title}
@@ -1483,9 +1475,9 @@ const Gallery = () => {
                   </div>
                   
                   {/* Title Bar with Gradient Overlay */}
-                  <div className="relative overflow-hidden border-t border-white/10 bg-midnight/40 backdrop-blur-md">
+                  <div className="relative overflow-hidden border-t border-white/10 bg-black/60 backdrop-blur-md">
                     <motion.div
-                      className="pointer-events-none absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-emerald-500/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                      className="pointer-events-none absolute inset-0 bg-gradient-to-r from-accentSoft/25 via-transparent to-black/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                       aria-hidden
                     />
                     <div className="relative px-6 py-5">
@@ -1493,7 +1485,7 @@ const Gallery = () => {
                         {video.title}
                       </h4>
                       <motion.div
-                        className="mt-2 h-0.5 w-0 bg-gradient-to-r from-accent to-emerald-500 transition-all duration-500 group-hover:w-16"
+                        className="mt-2 h-0.5 w-0 bg-gradient-to-r from-accentSoft to-accent transition-all duration-500 group-hover:w-16"
                         aria-hidden
                       />
                     </div>
@@ -1778,10 +1770,10 @@ const Partners = () => {
   return (
     <section className="relative overflow-hidden py-20">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-midnight/30 to-background" aria-hidden />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/30 to-background" aria-hidden />
       <motion.div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_rgba(34,197,94,0.06),transparent_50%)]"
-        animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.5, 0.3] }}
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_rgba(229,229,229,0.05),transparent_50%)]"
+        animate={{ scale: [1, 1.15, 1], opacity: [0.25, 0.45, 0.25] }}
         transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden
       />
@@ -1827,14 +1819,14 @@ const Partners = () => {
               className="group relative"
             >
               <motion.div
-                className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.05] p-8 backdrop-blur-sm transition-all hover:border-accent/30 hover:bg-white/[0.1] hover:shadow-[0_20px_60px_rgba(34,197,94,0.15)]"
+                className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.05] p-8 backdrop-blur-sm transition-all hover:border-accentSoft/40 hover:bg-white/[0.1] hover:shadow-[0_20px_60px_rgba(0,0,0,0.8)]"
                 whileHover={{ 
-                  boxShadow: '0 0 0 1px rgba(34, 197, 94, 0.3), 0 25px 70px rgba(34, 197, 94, 0.25)'
+                  boxShadow: '0 0 0 1px rgba(229, 229, 229, 0.45), 0 25px 70px rgba(0, 0, 0, 0.9)'
                 }}
               >
-                {/* Glow Effect */}
+                {/* Glow Effect - Neutral Grey */}
                 <motion.div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-emerald-500/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accentSoft/20 via-transparent to-black/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   aria-hidden
                 />
                 
@@ -1862,7 +1854,7 @@ const Partners = () => {
 }
 
 const Footer = () => (
-  <footer className="relative overflow-hidden border-t border-white/5 bg-gradient-to-b from-midnight/80 to-midnight py-12">
+  <footer className="relative overflow-hidden border-t border-white/5 bg-gradient-to-b from-background/90 to-background py-12">
     {/* Subtle Background Glow */}
     <motion.div
       className="pointer-events-none absolute left-1/2 top-0 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r from-transparent via-accent/30 to-transparent"
@@ -1910,8 +1902,8 @@ const App = () => {
   const nav = useMemo(() => navLinks, [])
 
   return (
-    <div className="min-h-screen bg-midnight text-ivory overflow-x-hidden">
-      <header className="sticky top-0 z-30 border-b border-white/5 bg-midnight/80 backdrop-blur">
+    <div className="min-h-screen bg-background text-ivory overflow-x-hidden">
+      <header className="sticky top-0 z-30 border-b border-white/5 bg-background/80 backdrop-blur">
         <div className={`${container} flex items-center justify-between gap-8 py-5`}>
           <motion.a
             href="#home"
