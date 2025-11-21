@@ -242,7 +242,7 @@ const Hero = () => {
       {/* Rama Portrait Background */}
       <div className="absolute inset-0" aria-hidden>
         <OptimizedImage
-          srcBase={aboutPortraitBase}
+          srcBase="/images/gallery-06"
           alt="Portrait of Ramatoulaye Diallo N'Diaye"
           sizes="100vw"
           widths={[640, 960, 1440]}
@@ -1866,7 +1866,7 @@ const Footer = () => (
       {/* Top Section */}
       <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
         <div className="flex items-center gap-3">
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-sm font-bold text-accent ring-1 ring-accent/30">
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-sm font-bold text-white ring-1 ring-white/30">
             RD
           </span>
           <div>
@@ -1909,7 +1909,7 @@ const App = () => {
             href="#home"
             className="flex items-center gap-3 text-sm font-semibold text-white transition-opacity hover:opacity-80"
           >
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-accent/15 text-xs font-semibold text-accent ring-1 ring-accent/40">
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-xs font-semibold text-white ring-1 ring-white/30">
               RD
             </span>
             <div className="flex flex-col leading-tight">
