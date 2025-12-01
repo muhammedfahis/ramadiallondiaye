@@ -10,10 +10,17 @@
   html {
     scroll-behavior: smooth;
   }
+
   body {
     @apply font-sans text-gray-dark antialiased;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-serif;
   }
 }
@@ -134,4 +141,42 @@
   body {
     cursor: auto;
   }
+}
+
+/* Ensure bottom navigation stays on top of ALL content */
+.bottom-nav,
+nav[class*="bottom"],
+footer nav,
+[class*="navigation"] {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+  /* Very high z-index to stay above everything */
+  pointer-events: auto !important;
+}
+
+/* Ensure all images stay below navigation */
+img,
+.hero-image,
+[class*="image"],
+section img {
+  position: relative;
+  z-index: 1;
+  /* Low z-index so navigation stays on top */
+}
+
+/* Ensure all sections stay below navigation */
+section,
+.section,
+div[class*="section"] {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add padding to body so content doesn't hide behind fixed nav */
+body {
+  padding-bottom: 80px;
+  /* Adjust based on actual nav height */
 }

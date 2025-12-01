@@ -12,68 +12,40 @@
 
 <body class="bg-black text-white font-sans antialiased">
 
-    <!-- Top Left Logo -->
-    <div class="fixed top-8 left-8 md:top-12 md:left-12 z-50">
-        <a href="/"
-            class="font-serif text-base md:text-lg text-white tracking-wide max-w-xs leading-snug block hover:text-gray-300 transition-colors">
-            The Office of<br />Dr. Ramatoulaye Diallo N'Diaye
-        </a>
-    </div>
 
-    <!-- Desktop: Vertical Left Navigation (Diplomatic Pillar) -->
-    <nav class="hidden lg:flex fixed left-12 top-1/2 -translate-y-1/2 z-40">
-        <div class="flex flex-col space-y-8">
-            <a href="/" class="group flex items-center">
-                <span
-                    class="text-xs uppercase tracking-[0.3em] text-gray-400 hover:text-white transition-all duration-300 group-hover:translate-x-2">Home</span>
-                <span class="w-0 h-px bg-white ml-4 group-hover:w-8 transition-all duration-300"></span>
-            </a>
-            <a href="/about.html" class="group flex items-center">
-                <span
-                    class="text-xs uppercase tracking-[0.3em] text-gray-400 hover:text-white transition-all duration-300 group-hover:translate-x-2">About</span>
-                <span class="w-0 h-px bg-white ml-4 group-hover:w-8 transition-all duration-300"></span>
-            </a>
-            <a href="/vision.html" class="group flex items-center">
-                <span class="text-xs uppercase tracking-[0.3em] text-white transition-all duration-300">Vision</span>
-                <span class="w-8 h-px bg-white ml-4 transition-all duration-300"></span>
-            </a>
-            <a href="/about.html#engagement" class="group flex items-center">
-                <span
-                    class="text-xs uppercase tracking-[0.3em] text-gray-400 hover:text-white transition-all duration-300 group-hover:translate-x-2">Engagement</span>
-                <span class="w-0 h-px bg-white ml-4 group-hover:w-8 transition-all duration-300"></span>
-            </a>
-        </div>
-    </nav>
-
-    <!-- Mobile: Bottom Fixed Bar -->
-    <nav class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-black/90 backdrop-blur-sm border-t border-white/10">
+    <!-- Mobile Navigation - Bottom Bar (Hidden on Desktop) -->
+    <nav class="bottom-nav md:hidden fixed bottom-0 left-0 right-0 bg-black border-t border-white/10"
+        style="z-index: 9999; position: fixed; bottom: 0;">
         <div class="flex justify-around items-center h-16 px-4">
             <a href="/"
-                class="text-xs uppercase tracking-[0.2em] text-gray-400 hover:text-white transition-colors">Home</a>
+                class="text-xs uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-all duration-300 py-2">Home</a>
             <a href="/about.html"
-                class="text-xs uppercase tracking-[0.2em] text-gray-400 hover:text-white transition-colors">About</a>
-            <a href="/vision.html" class="text-xs uppercase tracking-[0.2em] text-white transition-colors">Vision</a>
-            <a href="/about.html#engagement"
-                class="text-xs uppercase tracking-[0.2em] text-gray-400 hover:text-white transition-colors">Engagement</a>
+                class="text-xs uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-all duration-300 py-2">About</a>
+            <a href="/vision.html"
+                class="text-xs uppercase tracking-[0.15em] text-white transition-all duration-300 py-2 border-b-2 border-white">Vision</a>
+            <a href="/contact.html"
+                class="text-xs uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-all duration-300 py-2">Contact</a>
         </div>
     </nav>
 
     <!-- Section A: Hero -->
-    <header class="relative h-screen min-h-[700px] flex items-end overflow-hidden mt-24">
-        <div class="absolute inset-0">
-            <img src="/assets/portrait-professional-side.jpg" alt="Dr. Ramatoulaye Diallo N'Diaye"
-                class="w-full h-full object-cover object-center filter grayscale" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+    <header class="relative h-screen min-h-[700px] flex items-end overflow-hidden mt-20">
+        <div class="absolute top-8 left-8 md:top-12 md:left-12 z-20">
+            <h2 class="font-serif text-base md:text-lg text-white tracking-wide max-w-xs leading-snug">
+                The Office of<br />Dr. Ramatoulaye Diallo N'Diaye
+            </h2>
         </div>
+        <div class="absolute inset-0 bg-black"></div>
         <div class="relative z-10 px-6 pb-20 max-w-7xl mx-auto w-full">
-            <h1 class="font-serif text-6xl md:text-8xl text-white mb-4 max-w-4xl">Culture as an Asset Class</h1>
-            <p class="text-lg md:text-xl text-gray-300 tracking-[0.2em] uppercase font-light">A Vision by Dr.
+            <h1 class="font-serif text-5xl md:text-7xl text-white mb-4 max-w-4xl leading-tight">Culture as an Asset
+                Class</h1>
+            <p class="text-lg md:text-xl text-white tracking-[0.25em] uppercase font-semibold">A Vision by Dr.
                 Ramatoulaye Diallo N'Diaye</p>
         </div>
     </header>
 
     <!-- Section B: Introduction (Text Only) -->
-    <section class="py-32 px-6 lg:pl-64 xl:pl-80 bg-black">
+    <section class="py-32 px-6 md:px-12 bg-black">
         <div class="max-w-3xl mx-auto px-6">
             <div class="space-y-8 text-xl md:text-2xl leading-relaxed font-light text-gray-300">
                 <p>
@@ -96,7 +68,7 @@
                 class="w-full h-full object-cover object-top filter grayscale brightness-75" />
             <div class="absolute inset-0 bg-black/60"></div>
         </div>
-        <div class="relative z-10 px-6 lg:pl-64 xl:pl-80 max-w-5xl mx-auto text-center">
+        <div class="relative z-10 px-6 md:px-12 max-w-5xl mx-auto text-center">
             <blockquote class="font-serif text-3xl md:text-5xl text-white leading-tight">
                 "Culture is more than soft power. It is a world class asset that shapes identities, economies, and the
                 destiny of nations."
@@ -105,7 +77,7 @@
     </section>
 
     <!-- Section D: Philosophy Grid -->
-    <section class="py-32 px-6 lg:pl-64 xl:pl-80 bg-black">
+    <section class="py-32 px-6 md:px-12 bg-black">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10">
                 <!-- Card 1 -->
@@ -155,7 +127,7 @@
                 class="w-full h-full object-cover object-top filter grayscale brightness-75" />
             <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
         </div>
-        <div class="relative z-10 px-6 lg:pl-64 xl:pl-80 max-w-3xl">
+        <div class="relative z-10 px-6 md:px-12 max-w-3xl">
             <blockquote class="font-serif text-3xl md:text-5xl text-white leading-tight">
                 "When culture becomes an asset, communities flourish, youth rise, and nations transform."
             </blockquote>
@@ -163,7 +135,7 @@
     </section>
 
     <!-- Section F: Africa's Green Future & Economic Intelligence -->
-    <section class="py-32 px-6 lg:pl-64 xl:pl-80 bg-black">
+    <section class="py-32 px-6 md:px-12 bg-black">
         <div class="max-w-7xl mx-auto px-6">
             <!-- Green Future -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
@@ -220,7 +192,7 @@
                 class="w-full h-full object-cover object-top filter grayscale brightness-75" />
             <div class="absolute inset-0 bg-black/60"></div>
         </div>
-        <div class="relative z-10 px-6 lg:pl-64 xl:pl-80 max-w-5xl mx-auto text-center">
+        <div class="relative z-10 px-6 md:px-12 max-w-5xl mx-auto text-center">
             <blockquote class="font-serif text-3xl md:text-5xl text-white leading-tight">
                 "An Africa that invests in its culture invests in its power, its dignity, and its place in the world."
             </blockquote>
@@ -228,7 +200,7 @@
     </section>
 
     <!-- Section H: Strategic Engagement -->
-    <section class="py-32 px-6 lg:pl-64 xl:pl-80 bg-black text-center border-t border-white/10">
+    <section class="py-32 px-6 md:px-12 bg-black text-center border-t border-white/10">
         <div class="max-w-3xl mx-auto">
             <h2 class="font-serif text-4xl md:text-5xl text-white mb-8">Strategic Engagement</h2>
             <p class="text-xl md:text-2xl text-gray-300 leading-relaxed font-light mb-12">
@@ -247,7 +219,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-24 px-6 border-t border-white/10">
+    <footer class="bg-black text-white py-24 px-6 pb-32 md:pb-24 border-t border-white/10">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
             <div class="col-span-1 md:col-span-2">
                 <h3 class="font-serif text-3xl mb-8 text-white">The Office of Dr. Ramatoulaye Diallo N'Diaye</h3>
