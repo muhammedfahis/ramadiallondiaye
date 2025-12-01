@@ -12,169 +12,165 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --diplomatic-blue: #0f172a;
-            --deep-black: #000000;
-            --accent-gold: #d4af37;
-            --soft-grey: #e2e8f0;
-        }
-
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--diplomatic-blue);
+            background: #000;
         }
 
         .font-serif {
             font-family: 'Playfair Display', serif;
         }
 
-        /* Drop Cap - Proper Float */
+        /* Drop Cap */
         .drop-cap::first-letter {
             float: left;
-            font-size: 7rem;
-            line-height: 0.9;
-            padding-right: 0.5rem;
-            margin-right: 1.5rem;
-            margin-top: -0.5rem;
-            margin-bottom: 0.75rem;
+            font-size: 5rem;
+            line-height: 0.85;
+            padding-right: 0.75rem;
+            margin-top: 0.1rem;
             font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            color: var(--accent-gold);
+            font-weight: 400;
+            color: #fff;
         }
 
-        /* Parallax Background */
-        .parallax-bg {
-            background-attachment: fixed;
-            background-position: center top;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        /* Ghost Input Style */
-        .ghost-input {
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 0;
-            padding: 0.75rem 0;
-            transition: border-color 0.3s ease;
-        }
-
-        .ghost-input:focus {
-            outline: none;
-            border-bottom-color: var(--accent-gold);
-        }
-
-        /* Timeline Dot */
+        /* Timeline */
         .timeline-dot {
-            width: 0.75rem;
-            height: 0.75rem;
-            background: var(--accent-gold);
+            width: 8px;
+            height: 8px;
+            background: #fff;
             border-radius: 50%;
             position: absolute;
-            left: -0.375rem;
-            top: 0.5rem;
+            left: -4px;
+            top: 8px;
+        }
+
+        /* Quote styling for better readability */
+        .quote-text {
+            color: #f0ece4;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8), 0 4px 40px rgba(0, 0, 0, 0.6);
         }
     </style>
- </head>
+</head>
 
-<body class="text-white antialiased">
+<body class="text-white antialiased bg-black">
 
-    <!-- Fixed Top Navigation Bar -->
-    <nav class="fixed top-0 left-0 w-full h-24 flex items-center justify-between px-8 md:px-12 lg:px-16" style="z-index: 9999; background-color: transparent; border: none; box-shadow: none; backdrop-filter: none;">
-        <!-- Left: Branding -->
-        <div class="font-serif text-[11px] md:text-xs lg:text-sm uppercase text-white" style="letter-spacing: 0.25em;">
-            The Office of Dr. Ramatoulaye Diallo N'Diaye
-        </div>
-        
-        <!-- Right: Navigation Links -->
-        <div class="flex items-center gap-12 text-[11px] md:text-xs lg:text-sm font-semibold uppercase" style="gap: 3rem; letter-spacing: 0.2em;">
-            <a href="/" class="transition-colors duration-300" style="color: rgba(255, 255, 255, 0.65);" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.65)'">
-                Home
-            </a>
-            <a href="/about.html" class="border-b-2 pb-1 transition-colors duration-300" style="border-color: var(--accent-gold); color: var(--accent-gold);">
-                About
-            </a>
-            <a href="/vision.html" class="transition-colors duration-300" style="color: rgba(255, 255, 255, 0.65);" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.65)'">
-                Vision
-            </a>
-            <a href="#engagement" class="transition-colors duration-300" style="color: rgba(255, 255, 255, 0.65);" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.65)'">
-                Contact
-            </a>
+    <!-- Mobile Navigation Toggle -->
+    <button id="mobile-menu-btn" class="lg:hidden fixed top-6 right-6 flex flex-col justify-center items-center w-8 h-8" style="z-index: 999999;">
+        <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
+        <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
+        <span class="block w-6 h-0.5 bg-white transition-all"></span>
+    </button>
+
+    <!-- Mobile Navigation Menu -->
+    <nav id="mobile-menu" class="lg:hidden fixed inset-0 bg-black/95 hidden flex-col items-center justify-center" style="z-index: 999998;">
+        <div class="flex flex-col items-center space-y-8">
+            <a href="/" class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Home</a>
+            <a href="/about.html" class="text-xl uppercase tracking-[0.3em] text-white">About</a>
+            <a href="/vision.html" class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Vision</a>
+            <a href="/contact.html" class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Contact</a>
         </div>
     </nav>
 
-    <!-- Split-Screen Hero -->
-    <header class="min-h-screen grid grid-cols-1 lg:grid-cols-2 pt-48 pb-48">
-        <!-- Left: Title & Subtitle (40% width on large screens) -->
-        <div class="bg-slate-900 flex items-center justify-center px-8 md:px-16 py-32 lg:py-0">
-            <div class="max-w-xl">
-                <p class="text-xs uppercase tracking-[0.2em] mb-8" style="color: var(--accent-gold);">The Office of</p>
-                <h1 class="font-serif text-7xl md:text-8xl lg:text-9xl leading-none mb-10 italic font-semibold text-white">About</h1>
-                <div class="w-32 h-0.5 mb-10" style="background-color: var(--accent-gold);"></div>
-                <p class="text-xl md:text-2xl uppercase tracking-[0.2em] font-light text-gray-400">
-                    A Global African Leader
-                </p>
-            </div>
+    <!-- Desktop Fixed Navigation -->
+    <nav class="hidden lg:flex fixed left-0 right-0 items-center justify-between px-6 md:px-12 lg:px-16 top-6 md:top-10" style="z-index: 99999;">
+        <a href="/" class="font-serif text-[10px] md:text-xs uppercase tracking-[0.2em] text-white hover:text-white/70 transition-colors">
+            The Office of Dr. Ramatoulaye Diallo N'Diaye
+        </a>
+        <div class="flex items-center gap-4 md:gap-8 text-[10px] md:text-xs uppercase tracking-[0.15em]">
+            <a href="/" class="text-white/60 hover:text-white transition-colors">Home</a>
+            <a href="/about.html" class="text-white border-b border-white pb-0.5">About</a>
+            <a href="/vision.html" class="text-white/60 hover:text-white transition-colors">Vision</a>
+            <a href="/contact.html" class="text-white/60 hover:text-white transition-colors">Contact</a>
         </div>
-        <!-- Right: Portrait Image (60% width on large screens) -->
-        <div class="relative min-h-[600px] lg:min-h-screen">
-            <img src="/assets/portrait-professional-front.jpg" 
-                 alt="Dr. Ramatoulaye Diallo N'Diaye" 
-                 class="absolute inset-0 w-full h-full object-cover object-top filter grayscale" />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent"></div>
+    </nav>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+    </script>
+
+    <!-- CHAPTER 01: Full-Screen Portrait Hero -->
+    <header class="relative h-screen w-full overflow-hidden">
+        <img src="/assets/portrait-professional-front.jpg" 
+             alt="Dr. Ramatoulaye Diallo N'Diaye" 
+             class="absolute inset-0 w-full h-full object-cover object-[center_20%] filter grayscale" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
+        
+        <!-- Hero Text Overlay -->
+        <div class="relative z-10 h-full flex flex-col justify-end p-8 md:p-16 lg:p-24 pb-24">
+            <p class="text-xs uppercase tracking-[0.3em] text-white/60 mb-6">Chapter 01</p>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-none font-light">
+                A Global African<br/>Leader
+            </h1>
+            <div class="w-16 h-px bg-white/40 mb-6"></div>
+            <p class="text-lg md:text-xl text-white/70 max-w-xl font-light tracking-wide">
+                Dr. Ramatoulaye Diallo N'Diaye
+            </p>
         </div>
     </header>
 
-    <!-- Article Layout: Bio Content -->
-    <section class="py-48 md:py-52 px-6 md:px-12 bg-slate-900">
-        <article class="max-w-3xl mx-auto space-y-12">
-            <p class="drop-cap text-xl md:text-2xl leading-loose text-gray-200 font-light">
+    <!-- CHAPTER 02: The Introduction -->
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-black">
+        <article class="max-w-3xl mx-auto">
+            <p class="text-xs uppercase tracking-[0.3em] text-white/40 mb-12">Chapter 02 — Introduction</p>
+            <p class="drop-cap text-xl md:text-2xl leading-relaxed text-white/90 font-light mb-10">
                 Dr. Ramatoulaye Diallo N'Diaye is a global African leader whose work sits at the intersection of climate resilience, green industrialization, sustainable finance, peace, security, and cultural power.
             </p>
-            <p class="text-lg md:text-xl leading-loose text-gray-300 font-light">
+            <p class="text-lg md:text-xl leading-relaxed text-white/70 font-light mb-10">
                 As the CEO of the Great Green Wall of Africa Foundation and a former cabinet minister, she drives transformational alliances across the African Union, UNESCO, major international institutions, development finance platforms, and leading global partnerships.
             </p>
-            <p class="text-lg md:text-xl leading-loose text-gray-300 font-light">
+            <p class="text-lg md:text-xl leading-relaxed text-white/70 font-light">
                 Her leadership champions Africa's emergence as the world's most strategic frontier for green transition, regenerative finance, strategic green industrial partnerships, and large-scale capital mobilization for community-centered climate and restoration economies.
             </p>
         </article>
     </section>
 
-    <!-- Visual Breaker 1: Parallax Quote Banner -->
-    <section class="relative my-40 w-full h-[80vh] flex items-center justify-center overflow-hidden parallax-bg" style="background-image: url('/assets/quote-africa-future.jpg');">
-        <div class="absolute inset-0 bg-black/60"></div>
-        <div class="relative z-10 max-w-5xl mx-auto px-12 md:px-16 py-20 text-center">
-            <div class="w-24 h-0.5 mx-auto mb-12" style="background-color: var(--accent-gold);"></div>
-            <blockquote class="font-serif text-4xl md:text-5xl lg:text-7xl leading-tight italic text-white font-light">
-                <span style="color: var(--accent-gold);">"</span>Africa is not the future. Africa is the world's most strategic present moment of opportunity.<span style="color: var(--accent-gold);">"</span>
+    <!-- QUOTE 01: Full-Screen Image with Quote Overlay -->
+    <section class="relative h-screen w-full overflow-hidden">
+        <img src="/assets/quote-africa-future.jpg" 
+             alt="Dr. Ramatoulaye Diallo N'Diaye" 
+             class="absolute inset-0 w-full h-full object-cover object-[center_20%] filter grayscale" />
+        <div class="absolute inset-0 bg-black/70"></div>
+        
+        <!-- Quote Overlay -->
+        <div class="relative z-10 h-full flex flex-col items-center justify-center p-8 md:p-16 text-center">
+            <div class="w-12 h-px bg-white/60 mb-10"></div>
+            <blockquote class="font-serif text-3xl md:text-5xl lg:text-6xl leading-tight font-light max-w-5xl italic quote-text">
+                "Africa is not the future. Africa is the world's most strategic present moment of opportunity."
             </blockquote>
-            <div class="w-24 h-0.5 mx-auto mt-12" style="background-color: var(--accent-gold);"></div>
+            <div class="w-12 h-px bg-white/60 mt-10 mb-6"></div>
+            <p class="text-xs uppercase tracking-[0.3em] text-white/60">— Dr. Ramatoulaye Diallo N'Diaye</p>
         </div>
     </section>
 
-    <!-- Career Timeline (Visual Breaker) -->
-    <section class="py-48 md:py-52 px-6 md:px-12 bg-slate-900">
+    <!-- CHAPTER 03: The Journey Timeline -->
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-black">
         <div class="max-w-4xl mx-auto">
-            <h2 class="font-serif text-5xl md:text-6xl lg:text-7xl mb-24 text-center italic font-light text-white">The Journey</h2>
+            <p class="text-xs uppercase tracking-[0.3em] text-white/40 mb-8">Chapter 03</p>
+            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl mb-20 font-light text-white">The Journey</h2>
             
             <!-- Timeline Container -->
-            <div class="border-l-2 pl-12 space-y-32" style="border-color: rgba(255, 255, 255, 0.2);">
+            <div class="border-l border-white/20 pl-10 md:pl-16 space-y-20">
                 
                 <!-- Timeline Item 1 -->
                 <div class="relative">
                     <div class="timeline-dot"></div>
-                    <h3 class="font-serif text-3xl md:text-4xl mb-6 text-white font-light">Private Sector Leadership</h3>
-                    <p class="text-lg md:text-xl leading-loose text-gray-400 font-light">
+                    <h3 class="font-serif text-2xl md:text-3xl mb-4 text-white font-light">Private Sector Leadership</h3>
+                    <p class="text-base md:text-lg leading-relaxed text-white/60 font-light">
                         Built expertise in strategic intelligence, economic development, and cross-sector collaboration across Africa and global markets.
                     </p>
                 </div>
 
                 <!-- Timeline Item 2 -->
-                <div class="relative mb-20">
+                <div class="relative">
                     <div class="timeline-dot"></div>
-                    <h3 class="font-serif text-3xl md:text-4xl mb-6 text-white font-light">Cabinet Minister</h3>
-                    <p class="text-lg md:text-xl leading-loose text-gray-400 font-light">
+                    <h3 class="font-serif text-2xl md:text-3xl mb-4 text-white font-light">Cabinet Minister</h3>
+                    <p class="text-base md:text-lg leading-relaxed text-white/60 font-light">
                         Served at the highest levels of government, shaping policy on culture, heritage, and national development with transformative impact.
                     </p>
                 </div>
@@ -182,8 +178,8 @@
                 <!-- Timeline Item 3 -->
                 <div class="relative">
                     <div class="timeline-dot"></div>
-                    <h3 class="font-serif text-3xl md:text-4xl mb-6 text-white font-light">Global Climate Leader</h3>
-                    <p class="text-lg md:text-xl leading-loose text-gray-400 font-light">
+                    <h3 class="font-serif text-2xl md:text-3xl mb-4 text-white font-light">Global Climate Leader</h3>
+                    <p class="text-base md:text-lg leading-relaxed text-white/60 font-light">
                         Now leads the Great Green Wall of Africa Foundation, mobilizing billions for Africa's green transition and community-centered prosperity.
                     </p>
                 </div>
@@ -192,179 +188,184 @@
         </div>
     </section>
 
-    <!-- Philosophy Section (Black Background) -->
-    <section class="py-48 md:py-52 px-6 md:px-12" style="background-color: var(--deep-black);">
-        <article class="max-w-3xl mx-auto space-y-12">
-            <h2 class="font-serif text-5xl md:text-6xl lg:text-7xl italic font-light text-white">
+    <!-- Photo Break: Side Portrait -->
+    <section class="relative h-[70vh] w-full overflow-hidden">
+        <img src="/assets/portrait-profile.jpg" 
+             alt="Dr. Ramatoulaye Diallo N'Diaye" 
+             class="absolute inset-0 w-full h-full object-cover object-[center_25%] filter grayscale" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30"></div>
+    </section>
+
+    <!-- CHAPTER 04: Philosophy -->
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-black">
+        <article class="max-w-3xl mx-auto">
+            <p class="text-xs uppercase tracking-[0.3em] text-white/40 mb-8">Chapter 04</p>
+            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-white mb-12">
                 Culture as a World-Class Asset
             </h2>
-            <p class="text-xl md:text-2xl leading-loose text-gray-300 font-light">
+            <p class="text-lg md:text-xl leading-relaxed text-white/70 font-light mb-8">
                 Dr. Ramatoulaye Diallo N'Diaye's journey reflects a deep commitment to Africa's transformation and to elevating the continent as the land of opportunity, innovation, and green prosperity. Her work bridges climate action, peacebuilding, cultural sovereignty, and economic intelligence.
             </p>
-            <p class="text-xl md:text-2xl leading-loose text-gray-300 font-light">
+            <p class="text-lg md:text-xl leading-relaxed text-white/70 font-light mb-16">
                 Guided by the belief that communities, women, and youth are the true engines of Africa's rise, she integrates diplomacy, security foresight, cultural strategy, and green economic vision into a unified mission: to position Africa as a global powerhouse for climate solutions, regenerative economies, sustainable infrastructure, and cultural wealth creation.
             </p>
-            
-            <!-- Pull Quote Inside Section -->
-            <div class="border-l-4 pl-8 my-16" style="border-color: var(--accent-gold);">
-                <p class="font-serif text-3xl md:text-4xl italic text-white leading-loose font-light">
-                    "Culture is wealth. Culture is value. Culture is capital that connects our past to our global future."
-                </p>
-            </div>
 
-            <a href="/vision.html" class="inline-block mt-4 px-10 py-4 border-2 text-sm uppercase tracking-[0.2em] font-semibold hover:bg-white transition-all duration-300" style="border-color: var(--accent-gold); color: var(--accent-gold);">
+            <a href="/vision.html" class="inline-block px-8 py-4 border border-white/40 text-sm uppercase tracking-[0.2em] text-white/80 hover:bg-white hover:text-black transition-all duration-300">
                 Explore the Vision →
             </a>
         </article>
     </section>
 
-    <!-- Mission Section (Blue Background) -->
-    <section class="py-48 md:py-52 px-6 md:px-12 bg-slate-900">
+    <!-- QUOTE 02: Full-Screen Image with Culture Quote -->
+    <section class="relative h-screen w-full overflow-hidden">
+        <img src="/assets/rama-portrait-1.jpg" 
+             alt="Dr. Ramatoulaye Diallo N'Diaye" 
+             class="absolute inset-0 w-full h-full object-cover object-[center_20%] filter grayscale" />
+        <div class="absolute inset-0 bg-black/70"></div>
+        
+        <!-- Quote Overlay -->
+        <div class="relative z-10 h-full flex flex-col items-center justify-center p-8 md:p-16 text-center">
+            <div class="w-12 h-px bg-white/60 mb-10"></div>
+            <blockquote class="font-serif text-3xl md:text-5xl lg:text-6xl leading-tight font-light max-w-5xl italic quote-text">
+                "Culture is wealth. Culture is value. Culture is capital that connects our past to our global future."
+            </blockquote>
+            <div class="w-12 h-px bg-white/60 mt-10 mb-6"></div>
+            <p class="text-xs uppercase tracking-[0.3em] text-white/60">— Dr. Ramatoulaye Diallo N'Diaye</p>
+        </div>
+    </section>
+
+    <!-- CHAPTER 05: Mission with Side Image -->
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-black">
         <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                 <div>
-                    <h2 class="font-serif text-5xl md:text-6xl lg:text-7xl mb-24 italic font-light text-white">Our Mission</h2>
-                    <p class="text-2xl md:text-3xl lg:text-4xl leading-loose text-white mb-12 font-light">
+                    <p class="text-xs uppercase tracking-[0.3em] text-white/40 mb-8">Chapter 05</p>
+                    <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl mb-10 font-light text-white">Our Mission</h2>
+                    <p class="text-xl md:text-2xl leading-relaxed text-white/80 mb-8 font-light">
                         To restore dignity, opportunity, and resilience across African communities by mobilizing climate finance, advancing green industrialization, and strengthening peace, security, and cultural identity.
                     </p>
-                    <p class="text-xl md:text-2xl leading-loose text-gray-300 font-light">
+                    <p class="text-base md:text-lg leading-relaxed text-white/60 font-light">
                         Through the Great Green Wall of Africa Foundation and global alliances, she promotes land restoration, community prosperity, women's leadership, youth development, strategic education, and large-scale investment frameworks that anchor Africa at the center of the world's green transition.
                     </p>
                 </div>
-                <div class="relative h-[600px] overflow-hidden">
+                <div class="relative h-[500px] lg:h-[600px] overflow-hidden">
                     <img src="/assets/hero-landscape-yellow.jpg" 
                          alt="Community Initiative" 
-                         class="absolute inset-0 w-full h-full object-cover object-top filter grayscale" />
+                         class="absolute inset-0 w-full h-full object-cover object-center filter grayscale" />
+                    <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black/30"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Visual Breaker 2: Parallax Quote Banner -->
-    <section class="relative my-40 w-full h-[80vh] flex items-center justify-center overflow-hidden parallax-bg" style="background-image: url('/assets/quote-culture-capital.jpg');">
-        <div class="absolute inset-0 bg-black/60"></div>
-        <div class="relative z-10 max-w-5xl mx-auto px-12 md:px-16 py-20 text-center">
-            <div class="w-24 h-0.5 mx-auto mb-12" style="background-color: var(--accent-gold);"></div>
-            <blockquote class="font-serif text-4xl md:text-5xl lg:text-7xl leading-tight italic text-white font-light">
-                <span style="color: var(--accent-gold);">"</span>An Africa that invests in its culture invests in its power, its dignity, and its place in the world.<span style="color: var(--accent-gold);">"</span>
+    <!-- QUOTE 03: Full-Screen with Third Quote -->
+    <section class="relative h-screen w-full overflow-hidden">
+        <img src="/rama/quotes-1.png" 
+             alt="Dr. Ramatoulaye Diallo N'Diaye" 
+             class="absolute inset-0 w-full h-full object-contain md:object-cover object-center filter grayscale" />
+        <div class="absolute inset-0 bg-black/70"></div>
+        
+        <!-- Quote Overlay -->
+        <div class="relative z-10 h-full flex flex-col items-center justify-center p-8 md:p-16 text-center">
+            <div class="w-12 h-px bg-white/60 mb-10"></div>
+            <blockquote class="font-serif text-3xl md:text-5xl lg:text-6xl leading-tight font-light max-w-5xl italic quote-text">
+                "An Africa that invests in its culture invests in its power, its dignity, and its place in the world."
             </blockquote>
-            <div class="w-24 h-0.5 mx-auto mt-12" style="background-color: var(--accent-gold);"></div>
+            <div class="w-12 h-px bg-white/60 mt-10 mb-6"></div>
+            <p class="text-xs uppercase tracking-[0.3em] text-white/60">— Dr. Ramatoulaye Diallo N'Diaye</p>
         </div>
     </section>
 
-    <!-- Strategic Engagement (Black Background) -->
-    <section id="engagement" class="py-48 md:py-52 px-6 md:px-12" style="background-color: var(--deep-black);">
+    <!-- CHAPTER 06: Strategic Pillars -->
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-black">
         <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-32">
-                <h2 class="font-serif text-5xl md:text-6xl lg:text-7xl mb-24 italic font-light text-white">Strategic Engagement</h2>
-                <p class="text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto font-light leading-loose">
-                    Dr. Ramatoulaye Diallo N'Diaye invites institutional partners, development finance leaders, and cultural stakeholders to collaborate on the future of Africa's green transition.
-                </p>
-            </div>
+            <p class="text-xs uppercase tracking-[0.3em] text-white/40 mb-8">Chapter 06</p>
+            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl mb-8 font-light text-white">Strategic Engagement</h2>
+            <p class="text-lg md:text-xl text-white/60 max-w-3xl mb-20 font-light leading-relaxed">
+                Dr. Ramatoulaye Diallo N'Diaye invites institutional partners, development finance leaders, and cultural stakeholders to collaborate on the future of Africa's green transition.
+            </p>
 
             <!-- Pillars Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-32">
-                <div class="bg-slate-900 border-2 p-10 transition-all duration-300" style="border-color: rgba(212, 175, 55, 0.3);" onmouseover="this.style.borderColor='var(--accent-gold)'" onmouseout="this.style.borderColor='rgba(212, 175, 55, 0.3)'">
-                    <h3 class="font-serif text-2xl mb-6 text-white font-light">Strengthen Communities</h3>
-                    <p class="text-gray-400 text-base leading-relaxed font-light">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+                <div class="border border-white/10 p-10 hover:border-white/30 transition-all duration-300">
+                    <h3 class="font-serif text-xl md:text-2xl mb-4 text-white font-light">Strengthen Communities</h3>
+                    <p class="text-white/50 text-base leading-relaxed font-light">
                         Support initiatives that build resilience and prosperity at the grassroots level.
                     </p>
                 </div>
-                <div class="bg-slate-900 border-2 p-10 transition-all duration-300" style="border-color: rgba(212, 175, 55, 0.3);" onmouseover="this.style.borderColor='var(--accent-gold)'" onmouseout="this.style.borderColor='rgba(212, 175, 55, 0.3)'">
-                    <h3 class="font-serif text-2xl mb-6 text-white font-light">Empower Women & Youth</h3>
-                    <p class="text-gray-400 text-base leading-relaxed font-light">
+                <div class="border border-white/10 p-10 hover:border-white/30 transition-all duration-300">
+                    <h3 class="font-serif text-xl md:text-2xl mb-4 text-white font-light">Empower Women & Youth</h3>
+                    <p class="text-white/50 text-base leading-relaxed font-light">
                         Expand education and leadership opportunities for the continent's greatest assets.
                     </p>
                 </div>
-                <div class="bg-slate-900 border-2 p-10 transition-all duration-300" style="border-color: rgba(212, 175, 55, 0.3);" onmouseover="this.style.borderColor='var(--accent-gold)'" onmouseout="this.style.borderColor='rgba(212, 175, 55, 0.3)'">
-                    <h3 class="font-serif text-2xl mb-6 text-white font-light">Mobilize Capital</h3>
-                    <p class="text-gray-400 text-base leading-relaxed font-light">
+                <div class="border border-white/10 p-10 hover:border-white/30 transition-all duration-300">
+                    <h3 class="font-serif text-xl md:text-2xl mb-4 text-white font-light">Mobilize Capital</h3>
+                    <p class="text-white/50 text-base leading-relaxed font-light">
                         Drive investment for green industrialization and climate prosperity.
                     </p>
                 </div>
-                <div class="bg-slate-900 border-2 p-10 transition-all duration-300" style="border-color: rgba(212, 175, 55, 0.3);" onmouseover="this.style.borderColor='var(--accent-gold)'" onmouseout="this.style.borderColor='rgba(212, 175, 55, 0.3)'">
-                    <h3 class="font-serif text-2xl mb-6 text-white font-light">Restore Ecosystems</h3>
-                    <p class="text-gray-400 text-base leading-relaxed font-light">
+                <div class="border border-white/10 p-10 hover:border-white/30 transition-all duration-300">
+                    <h3 class="font-serif text-xl md:text-2xl mb-4 text-white font-light">Restore Ecosystems</h3>
+                    <p class="text-white/50 text-base leading-relaxed font-light">
                         Build peace and security through large-scale environmental restoration.
                     </p>
                 </div>
             </div>
 
-            <!-- Contact Form -->
-            <div class="max-w-3xl mx-auto mt-60">
-                <h3 class="font-serif text-4xl md:text-5xl text-center mb-12 italic font-light text-white">Get in Touch</h3>
-                <p class="text-center text-xl text-gray-400 mb-16 leading-relaxed font-light">
-                    To discuss speaking engagements, strategic advisory, or partnership opportunities regarding the Great Green Wall and cultural industrialization, please direct inquiries to her office.
-                </p>
-                <form action="/send" method="post" class="space-y-12">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                        <div>
-                            <label for="name" class="block text-sm uppercase tracking-wider text-gray-400 mb-4">Name</label>
-                            <input id="name" name="name" type="text" required placeholder="Your full name"
-                                class="ghost-input w-full text-white text-lg placeholder-gray-600" />
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm uppercase tracking-wider text-gray-400 mb-4">Email</label>
-                            <input id="email" name="email" type="email" required placeholder="your.email@example.com"
-                                class="ghost-input w-full text-white text-lg placeholder-gray-600" />
-                        </div>
-                    </div>
-                    <div>
-                        <label for="organization" class="block text-sm uppercase tracking-wider text-gray-400 mb-4">Organization</label>
-                        <input id="organization" name="organization" type="text" placeholder="Organization or institution name"
-                            class="ghost-input w-full text-white text-lg placeholder-gray-600" />
-                    </div>
-                    <div>
-                        <label for="message" class="block text-sm uppercase tracking-wider text-gray-400 mb-4">Message</label>
-                        <textarea id="message" name="message" rows="6" required placeholder="Please describe your inquiry..."
-                            class="ghost-input w-full text-white text-lg placeholder-gray-600 resize-none"></textarea>
-                    </div>
-                    <div class="text-center pt-10">
-                        <button type="submit"
-                            class="px-16 py-5 border-2 text-sm uppercase tracking-[0.2em] font-semibold transition-all duration-300 hover:bg-white hover:text-black"
-                            style="border-color: var(--accent-gold); color: var(--accent-gold);">
-                            Send Inquiry
-                        </button>
-                    </div>
-                </form>
+            <!-- CTA to Contact -->
+            <div class="text-center">
+                <a href="/contact.html" class="inline-block px-10 py-5 border border-white/40 text-sm uppercase tracking-[0.2em] text-white/80 hover:bg-white hover:text-black transition-all duration-300">
+                    Get in Touch →
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- Final Photo: Closing Image -->
+    <section class="relative h-[50vh] w-full overflow-hidden">
+        <img src="/assets/diplomatic-meeting.jpg" 
+             alt="Dr. Ramatoulaye Diallo N'Diaye" 
+             class="absolute inset-0 w-full h-full object-cover object-[center_30%] filter grayscale" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/20"></div>
+    </section>
+
     <!-- Footer -->
-    <footer class="bg-slate-950 text-white py-20 px-6 pb-32 md:pb-20 border-t border-white/10">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            <div class="col-span-1 md:col-span-2">
-                <h3 class="font-serif text-2xl mb-6">The Office of Dr. Ramatoulaye Diallo N'Diaye</h3>
-                <p class="text-gray-400 max-w-md mb-8 leading-relaxed font-light">
-                    Strategic intelligence shaping Africa's rise. Green transition powered by communities.
-                </p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm uppercase tracking-wider">LinkedIn</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm uppercase tracking-wider">Twitter</a>
+    <footer class="bg-black text-white py-20 px-6 md:px-12 border-t border-white/10">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="font-serif text-xl mb-4 text-white">The Office of Dr. Ramatoulaye Diallo N'Diaye</h3>
+                    <p class="text-white/50 max-w-md mb-6 leading-relaxed font-light text-sm">
+                        Strategic intelligence shaping Africa's rise. Green transition powered by communities.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-white/40 hover:text-white transition-colors text-xs uppercase tracking-wider">LinkedIn</a>
+                        <a href="#" class="text-white/40 hover:text-white transition-colors text-xs uppercase tracking-wider">Twitter</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="uppercase tracking-[0.2em] text-xs mb-6 text-white/40">Navigation</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="/" class="text-white/60 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/about.html" class="text-white">About</a></li>
+                        <li><a href="/vision.html" class="text-white/60 hover:text-white transition-colors">Vision</a></li>
+                        <li><a href="/contact.html" class="text-white/60 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="uppercase tracking-[0.2em] text-xs mb-6 text-white/40">Contact</h4>
+                    <p class="text-white/50 mb-4 text-sm font-light">For press, speaking, and advisory inquiries:</p>
+                    <a href="mailto:office@example.com" class="text-white hover:text-white/70 transition-colors text-sm">office@example.com</a>
                 </div>
             </div>
 
-            <div>
-                <h4 class="font-semibold uppercase tracking-wider text-xs mb-6 text-gray-500">Navigation</h4>
-                <ul class="space-y-3 text-sm text-gray-400">
-                    <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
-                    <li><a href="/about.html" class="text-white">About</a></li>
-                    <li><a href="/vision.html" class="hover:text-white transition-colors">Vision</a></li>
-                    <li><a href="#engagement" class="hover:text-white transition-colors">Contact</a></li>
-                </ul>
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-white/40 uppercase tracking-wider">
+                <p>&copy; 2025 The Office of Dr. Ramatoulaye Diallo N'Diaye.</p>
+                <p class="mt-4 md:mt-0">Africa: the world's most strategic climate frontier.</p>
             </div>
-
-            <div>
-                <h4 class="font-semibold uppercase tracking-wider text-xs mb-6 text-gray-500">Contact</h4>
-                <p class="text-gray-400 mb-4 text-sm">For press, speaking, and advisory inquiries:</p>
-                <a href="mailto:office@example.com" class="text-white hover:text-electric-blue transition-colors">office@example.com</a>
-            </div>
-        </div>
-
-        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 uppercase tracking-wider">
-            <p>&copy; 2025 The Office of Dr. Ramatoulaye Diallo N'Diaye.</p>
-            <p class="mt-4 md:mt-0">Africa: the world's most strategic climate frontier.</p>
         </div>
     </footer>
 
