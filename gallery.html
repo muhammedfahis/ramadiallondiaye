@@ -122,7 +122,7 @@
             </p>
 
             <!-- Masonry-style Gallery Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 
                 <!-- Gallery Item 1 - Large -->
                 <div class="gallery-item md:col-span-2 lg:col-span-2 relative overflow-hidden">
@@ -196,9 +196,269 @@
                     </div>
                 </div>
 
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item relative overflow-hidden">
+                    <img src="/gallery/gallery-6.jpeg" 
+                         alt="Gallery image" 
+                         class="w-full h-[350px] object-cover object-center filter grayscale transition-all duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-left">
+                        <p class="text-sm uppercase tracking-wider text-white/60 mb-2">Gallery</p>
+                        <h3 class="font-serif text-xl text-white">Documentary Moment 01</h3>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item relative overflow-hidden">
+                    <img src="/gallery/gallery-7.jpeg" 
+                         alt="Gallery image" 
+                         class="w-full h-[350px] object-cover object-center filter grayscale transition-all duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-left">
+                        <p class="text-sm uppercase tracking-wider text-white/60 mb-2">Gallery</p>
+                        <h3 class="font-serif text-xl text-white">Documentary Moment 02</h3>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9 -->
+                <div class="gallery-item relative overflow-hidden">
+                    <img src="/gallery/Picture6.JPG.jpeg" 
+                         alt="Gallery image" 
+                         class="w-full h-[350px] object-cover object-center filter grayscale transition-all duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-left">
+                        <p class="text-sm uppercase tracking-wider text-white/60 mb-2">Gallery</p>
+                        <h3 class="font-serif text-xl text-white">Documentary Moment 03</h3>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 10 -->
+                <div class="gallery-item relative overflow-hidden">
+                    <img src="/gallery/rs=w:1024_12.jpeg" 
+                         alt="Gallery image" 
+                         class="w-full h-[350px] object-cover object-center filter grayscale transition-all duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-left">
+                        <p class="text-sm uppercase tracking-wider text-white/60 mb-2">Gallery</p>
+                        <h3 class="font-serif text-xl text-white">Documentary Moment 04</h3>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 11 -->
+                <div class="gallery-item relative overflow-hidden">
+                    <img src="/gallery/rs=w:1110_25.jpeg" 
+                         alt="Gallery image" 
+                         class="w-full h-[350px] object-cover object-center filter grayscale transition-all duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-left">
+                        <p class="text-sm uppercase tracking-wider text-white/60 mb-2">Gallery</p>
+                        <h3 class="font-serif text-xl text-white">Documentary Moment 05</h3>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 12 -->
+                <div class="gallery-item relative overflow-hidden">
+                    <img src="/gallery/rs=w:740_79.jpeg" 
+                         alt="Gallery image" 
+                         class="w-full h-[350px] object-cover object-center filter grayscale transition-all duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-left">
+                        <p class="text-sm uppercase tracking-wider text-white/60 mb-2">Gallery</p>
+                        <h3 class="font-serif text-xl text-white">Documentary Moment 06</h3>
+                    </div>
+                </div>
+
             </div>
+
+            <!-- Load More Button -->
+            <div class="mt-10">
+                <button id="load-more-gallery" class="px-10 py-4 border border-white/40 text-xs tracking-[0.25em] uppercase text-white/80 hover:bg-white hover:text-black transition-colors duration-300">
+                    Load more images
+                </button>
+            </div>
+
         </div>
     </section>
+
+    <script>
+        (function() {
+            const extraImages = [
+                '/gallery/1482159206-3be1c01ec5edcc45176707b7672433bbafb31b7c7cb4d40bebde1a8d7aa40b13-d_1.jpeg',
+                '/gallery/1688846691-d79601f2ba4f55c2b9a48e3f744117ff564e3168e633f135b8aec8d2134d8aca-d.jpeg',
+                '/gallery/gallery-6.jpeg',
+                '/gallery/gallery-7.jpeg',
+                '/gallery/Picture6.JPG.jpeg',
+                '/gallery/rs=w:1008.jpeg',
+                '/gallery/rs=w:1023.jpeg',
+                '/gallery/rs=w:1023_1.jpeg',
+                '/gallery/rs=w:1023_2.jpeg',
+                '/gallery/rs=w:1024.jpeg',
+                '/gallery/rs=w:1024_1.jpeg',
+                '/gallery/rs=w:1024_2.jpeg',
+                '/gallery/rs=w:1024_3.jpeg',
+                '/gallery/rs=w:1024_4.jpeg',
+                '/gallery/rs=w:1024_5.jpeg',
+                '/gallery/rs=w:1024_6.jpeg',
+                '/gallery/rs=w:1024_7.jpeg',
+                '/gallery/rs=w:1024_8.jpeg',
+                '/gallery/rs=w:1024_9.jpeg',
+                '/gallery/rs=w:1024_10.jpeg',
+                '/gallery/rs=w:1024_11.jpeg',
+                '/gallery/rs=w:1024_12.jpeg',
+                '/gallery/rs=w:1024_13.jpeg',
+                '/gallery/rs=w:1024_14.jpeg',
+                '/gallery/rs=w:1024_15.jpeg',
+                '/gallery/rs=w:1024_16.jpeg',
+                '/gallery/rs=w:1024_17.jpeg',
+                '/gallery/rs=w:1024_18.jpeg',
+                '/gallery/rs=w:1024_19.jpeg',
+                '/gallery/rs=w:1024_20.jpeg',
+                '/gallery/rs=w:1024_21.jpeg',
+                '/gallery/rs=w:1024_22.jpeg',
+                '/gallery/rs=w:1024_23.jpeg',
+                '/gallery/rs=w:1024_24.jpeg',
+                '/gallery/rs=w:1024_25.jpeg',
+                '/gallery/rs=w:1024_26.jpeg',
+                '/gallery/rs=w:1024_27.jpeg',
+                '/gallery/rs=w:1024_28.jpeg',
+                '/gallery/rs=w:1024_29.jpeg',
+                '/gallery/rs=w:1024_30.jpeg',
+                '/gallery/rs=w:1024_31.jpeg',
+                '/gallery/rs=w:1024_32.jpeg',
+                '/gallery/rs=w:1024_33.jpeg',
+                '/gallery/rs=w:1024_34.jpeg',
+                '/gallery/rs=w:1024_35.jpeg',
+                '/gallery/rs=w:1024_36.jpeg',
+                '/gallery/rs=w:1024_37.jpeg',
+                '/gallery/rs=w:1110.jpeg',
+                '/gallery/rs=w:1110_1.jpeg',
+                '/gallery/rs=w:1110_2.jpeg',
+                '/gallery/rs=w:1110_3.jpeg',
+                '/gallery/rs=w:1110_4.jpeg',
+                '/gallery/rs=w:1110_5.jpeg',
+                '/gallery/rs=w:1110_6.jpeg',
+                '/gallery/rs=w:1110_7.jpeg',
+                '/gallery/rs=w:1110_8.jpeg',
+                '/gallery/rs=w:1110_9.jpeg',
+                '/gallery/rs=w:1110_10.jpeg',
+                '/gallery/rs=w:1110_11.jpeg',
+                '/gallery/rs=w:1110_12.jpeg',
+                '/gallery/rs=w:1110_13.jpeg',
+                '/gallery/rs=w:1110_14.jpeg',
+                '/gallery/rs=w:1110_15.jpeg',
+                '/gallery/rs=w:1110_16.jpeg',
+                '/gallery/rs=w:1110_17.jpeg',
+                '/gallery/rs=w:1110_18.jpeg',
+                '/gallery/rs=w:1110_19.jpeg',
+                '/gallery/rs=w:1110_20.jpeg',
+                '/gallery/rs=w:1110_21.jpeg',
+                '/gallery/rs=w:1110_22.jpeg',
+                '/gallery/rs=w:1110_23.jpeg',
+                '/gallery/rs=w:1110_24.jpeg',
+                '/gallery/rs=w:1110_25.jpeg',
+                '/gallery/rs=w:1110_26.jpeg',
+                '/gallery/rs=w:370.jpeg',
+                '/gallery/rs=w:370_1.jpeg',
+                '/gallery/rs=w:370_2.jpeg',
+                '/gallery/rs=w:370_3.jpeg',
+                '/gallery/rs=w:370_4.jpeg',
+                '/gallery/rs=w:370_5.jpeg',
+                '/gallery/rs=w:370_6.jpeg',
+                '/gallery/rs=w:370_7.jpeg',
+                '/gallery/rs=w:370_8.jpeg',
+                '/gallery/rs=w:370_9.jpeg',
+                '/gallery/rs=w:370_10.jpeg',
+                '/gallery/rs=w:370_11.jpeg',
+                '/gallery/rs=w:370_12.jpeg',
+                '/gallery/rs=w:370_13.jpeg',
+                '/gallery/rs=w:370_14.jpeg',
+                '/gallery/rs=w:370_15.jpeg',
+                '/gallery/rs=w:370_16.jpeg',
+                '/gallery/rs=w:370_17.jpeg',
+                '/gallery/rs=w:370_18.jpeg',
+                '/gallery/rs=w:370_19.jpeg',
+                '/gallery/rs=w:370_20.jpeg',
+                '/gallery/rs=w:740.jpeg',
+                '/gallery/rs=w:740_1.jpeg',
+                '/gallery/rs=w:740_2.jpeg',
+                '/gallery/rs=w:740_3.jpeg',
+                '/gallery/rs=w:740_4.jpeg',
+                '/gallery/rs=w:740_5.jpeg',
+                '/gallery/rs=w:740_6.jpeg',
+                '/gallery/rs=w:740_7.jpeg',
+                '/gallery/rs=w:740_8.jpeg',
+                '/gallery/rs=w:740_9.jpeg',
+                '/gallery/rs=w:740_10.jpeg',
+                '/gallery/rs=w:740_11.jpeg',
+                '/gallery/rs=w:740_12.jpeg',
+                '/gallery/rs=w:740_13.jpeg',
+                '/gallery/rs=w:740_14.jpeg',
+                '/gallery/rs=w:740_15.jpeg',
+                '/gallery/rs=w:740_16.jpeg',
+                '/gallery/rs=w:740_17.jpeg',
+                '/gallery/rs=w:740_18.jpeg',
+                '/gallery/rs=w:740_19.jpeg',
+                '/gallery/rs=w:740_20.jpeg',
+                '/gallery/rs=w:740_21.jpeg',
+                '/gallery/rs=w:740_22.jpeg',
+                '/gallery/rs=w:740_23.jpeg',
+                '/gallery/rs=w:740_24.jpeg',
+                '/gallery/rs=w:740_25.jpeg',
+                '/gallery/rs=w:740_26.jpeg',
+                '/gallery/rs=w:740_27.jpeg',
+                '/gallery/rs=w:740_28.jpeg',
+                '/gallery/rs=w:740_29.jpeg',
+                '/gallery/rs=w:594.jpeg',
+                '/gallery/rs=w:594_1.jpeg',
+                '/gallery/rs=w:594_2.jpeg',
+                '/gallery/rs=w:594_3.jpeg',
+                '/gallery/rs=w:594_4.jpeg',
+                '/gallery/rs=w:594_5.jpeg',
+                '/gallery/rs=w:594_6.jpeg',
+                '/gallery/rs=w:594_7.jpeg',
+                '/gallery/rs=w:594_8.jpeg',
+                '/gallery/rs=w:594_9.jpeg'
+            ];
+
+            const grid = document.getElementById('gallery-grid');
+            const loadMoreBtn = document.getElementById('load-more-gallery');
+            const PAGE_SIZE = 9;
+            let cursor = 0;
+            let counter = 13; // continue numbering captions after existing 12 items
+
+            function createCard(src, index) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'gallery-item relative overflow-hidden';
+                wrapper.innerHTML = `
+                    <img src="${src}" alt="Gallery image ${index}" class="w-full h-[350px] object-cover object-center filter grayscale transition-all duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-left">
+                        <p class="text-sm uppercase tracking-wider text-white/60 mb-2">Gallery</p>
+                        <h3 class="font-serif text-xl text-white">Documentary Moment ${String(index).padStart(2, '0')}</h3>
+                    </div>
+                `;
+                return wrapper;
+            }
+
+            function loadMore() {
+                const slice = extraImages.slice(cursor, cursor + PAGE_SIZE);
+                slice.forEach((src) => {
+                    const el = createCard(src, counter++);
+                    grid.appendChild(el);
+                });
+                cursor += slice.length;
+                if (cursor >= extraImages.length) {
+                    loadMoreBtn.classList.add('hidden');
+                }
+            }
+
+            if (grid && loadMoreBtn && extraImages.length) {
+                loadMoreBtn.addEventListener('click', loadMore);
+            } else if (loadMoreBtn) {
+                loadMoreBtn.classList.add('hidden');
+            }
+        })();
+    </script>
 
     <!-- Spacer -->
     <div class="h-16 md:h-24 bg-black"></div>
