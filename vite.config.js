@@ -11,6 +11,8 @@ export default defineConfig({
         about: 'about.html',
         vision: 'vision.html',
         contact: 'contact.html',
+        gallery: 'gallery.html',
+        projects: 'projects.html',
       },
     },
   },
