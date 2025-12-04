@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="/src/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -23,7 +25,7 @@
 
         /* Header text enhancement */
         .nav-text {
-            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
             font-weight: 500;
         }
 
@@ -31,6 +33,7 @@
         .section-padding {
             padding: 4rem 1rem;
         }
+
         @media (min-width: 768px) {
             .section-padding {
                 padding: 6rem 2rem;
@@ -53,7 +56,7 @@
 
         /* Section divider */
         .gallery-section {
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .gallery-section:first-of-type {
@@ -81,7 +84,7 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.95);
+            background: rgba(0, 0, 0, 0.95);
             z-index: 999999;
             align-items: center;
             justify-content: center;
@@ -118,35 +121,49 @@
             user-select: none;
         }
 
-        .lightbox-prev { left: 20px; }
-        .lightbox-next { right: 20px; }
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
     </style>
 </head>
 
 <body class="text-white antialiased bg-black">
 
     <!-- Mobile Navigation Toggle -->
-    <button id="mobile-menu-btn" class="lg:hidden fixed top-6 right-6 flex flex-col justify-center items-center w-8 h-8" style="z-index: 999999;">
+    <button id="mobile-menu-btn" class="lg:hidden fixed top-6 right-6 flex flex-col justify-center items-center w-8 h-8"
+        style="z-index: 999999;">
         <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
         <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
         <span class="block w-6 h-0.5 bg-white transition-all"></span>
     </button>
 
     <!-- Mobile Navigation Menu -->
-    <nav id="mobile-menu" class="lg:hidden fixed inset-0 bg-black/95 hidden flex-col items-center justify-center" style="z-index: 999998;">
+    <nav id="mobile-menu" class="lg:hidden fixed inset-0 bg-black/95 hidden flex-col items-center justify-center"
+        style="z-index: 999998;">
         <div class="flex flex-col items-center space-y-8">
-            <a href="/" class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Home</a>
-            <a href="/about.html" class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">About</a>
-            <a href="/vision.html" class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Vision</a>
+            <a href="/"
+                class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Home</a>
+            <a href="/about.html"
+                class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">About</a>
+            <a href="/vision.html"
+                class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Vision</a>
             <a href="/gallery.html" class="text-xl uppercase tracking-[0.3em] text-white">Gallery</a>
-            <a href="/projects.html" class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Projects</a>
-            <a href="/contact.html" class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Contact</a>
+            <a href="/projects.html"
+                class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Projects</a>
+            <a href="/contact.html"
+                class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Contact</a>
         </div>
     </nav>
 
     <!-- Desktop Fixed Navigation -->
-    <nav class="hidden lg:flex fixed left-0 right-0 items-center justify-between px-8 md:px-16 lg:px-20 top-8 md:top-12" style="z-index: 99999;">
-        <a href="/" class="font-serif text-sm uppercase tracking-[0.2em] text-white hover:text-white/70 transition-colors nav-text">
+    <nav class="hidden lg:flex fixed left-0 right-0 items-center justify-between px-8 md:px-16 lg:px-20 top-8 md:top-12"
+        style="z-index: 99999;">
+        <a href="/"
+            class="font-serif text-sm uppercase tracking-[0.2em] text-white hover:text-white/70 transition-colors nav-text">
             The Office of Dr. Ramatoulaye Diallo N'Diaye
         </a>
         <div class="flex items-center gap-4 md:gap-8 text-sm uppercase tracking-[0.15em]">
@@ -170,15 +187,15 @@
 
     <!-- Hero Section -->
     <header class="relative h-[50vh] w-full overflow-hidden">
-        <img src="/rama/vision-background.jpeg" 
-             alt="Gallery"
-             class="absolute inset-0 w-full h-full object-cover object-[center_30%] filter grayscale" />
+        <img src="/rama/vision-background.jpeg" alt="Gallery"
+            class="absolute inset-0 w-full h-full object-cover object-[center_30%] filter grayscale" />
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/30"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
-        
+
         <div class="relative z-10 h-full flex flex-col justify-end p-8 md:p-16 lg:p-24 pb-16">
             <p class="text-sm uppercase tracking-[0.3em] text-white/60 mb-6">Visual Archive</p>
-            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-[1.1] font-light" style="text-shadow: 0 4px 30px rgba(0,0,0,0.5);">
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-[1.1] font-light"
+                style="text-shadow: 0 4px 30px rgba(0,0,0,0.5);">
                 Gallery
             </h1>
             <div class="w-24 h-px bg-white/60"></div>
@@ -189,29 +206,9 @@
     <section class="py-16 md:py-20 px-4 md:px-8 bg-black">
         <div class="max-w-4xl mx-auto text-center">
             <p class="text-xl md:text-2xl text-white/60 font-light leading-relaxed">
-                Moments from diplomatic engagements, climate summits, cultural celebrations, and community initiatives across Africa and the world.
+                Moments from diplomatic engagements, climate summits, cultural celebrations, and community initiatives
+                across Africa and the world.
             </p>
-        </div>
-    </section>
-
-    <!-- SECTION: 2024 CC Forum's Global Investment -->
-    <section class="gallery-section section-padding bg-black" data-section="cc-forum-2024">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-12">
-                <p class="text-xs uppercase tracking-[0.3em] text-white/40 mb-3">2024</p>
-                <h2 class="font-serif text-2xl md:text-3xl lg:text-4xl text-white font-light leading-tight">
-                    CC Forum's Global Investment in Sustainable Development Event
-                </h2>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" data-grid="cc-forum-2024">
-            </div>
-            <div class="mt-10 text-center hidden">
-                <button class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300" data-target="cc-forum-2024">
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
-                    <span>View All Photos</span>
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
-                </button>
-            </div>
         </div>
     </section>
 
@@ -227,10 +224,14 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" data-grid="cop16-2024">
             </div>
             <div class="mt-10 text-center hidden">
-                <button class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300" data-target="cop16-2024">
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                <button
+                    class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300"
+                    data-target="cop16-2024">
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                     <span>View All Photos</span>
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                 </button>
             </div>
         </div>
@@ -248,10 +249,14 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" data-grid="summit-future-2024">
             </div>
             <div class="mt-10 text-center hidden">
-                <button class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300" data-target="summit-future-2024">
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                <button
+                    class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300"
+                    data-target="summit-future-2024">
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                     <span>View All Photos</span>
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                 </button>
             </div>
         </div>
@@ -269,10 +274,14 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" data-grid="ndc-summit-2024">
             </div>
             <div class="mt-10 text-center hidden">
-                <button class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300" data-target="ndc-summit-2024">
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                <button
+                    class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300"
+                    data-target="ndc-summit-2024">
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                     <span>View All Photos</span>
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                 </button>
             </div>
         </div>
@@ -290,10 +299,14 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" data-grid="uae-africa-2024">
             </div>
             <div class="mt-10 text-center hidden">
-                <button class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300" data-target="uae-africa-2024">
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                <button
+                    class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300"
+                    data-target="uae-africa-2024">
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                     <span>View All Photos</span>
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                 </button>
             </div>
         </div>
@@ -312,10 +325,14 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" data-grid="caaf24">
             </div>
             <div class="mt-10 text-center">
-                <button class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300" data-target="caaf24">
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                <button
+                    class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300"
+                    data-target="caaf24">
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                     <span>View All Photos</span>
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                 </button>
             </div>
         </div>
@@ -334,10 +351,14 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" data-grid="adis24">
             </div>
             <div class="mt-10 text-center hidden">
-                <button class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300" data-target="adis24">
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                <button
+                    class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300"
+                    data-target="adis24">
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                     <span>View All Photos</span>
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                 </button>
             </div>
         </div>
@@ -356,13 +377,17 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" data-grid="ggwoa">
             </div>
             <div class="mt-10 text-center">
-                <button class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300" data-target="ggwoa">
+                <button
+                    class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300"
+                    data-target="ggwoa">
                     <span class="relative">
-                        <span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span>
+                        <span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span>
                     </span>
                     <span>View All Photos</span>
                     <span class="relative">
-                        <span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span>
+                        <span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span>
                     </span>
                 </button>
             </div>
@@ -382,10 +407,14 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" data-grid="african-women">
             </div>
             <div class="mt-10 text-center">
-                <button class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300" data-target="african-women">
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                <button
+                    class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300"
+                    data-target="african-women">
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                     <span>View All Photos</span>
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                 </button>
             </div>
         </div>
@@ -404,10 +433,14 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" data-grid="private-sector">
             </div>
             <div class="mt-10 text-center">
-                <button class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300" data-target="private-sector">
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                <button
+                    class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300"
+                    data-target="private-sector">
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                     <span>View All Photos</span>
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                 </button>
             </div>
         </div>
@@ -426,10 +459,14 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" data-grid="osaa">
             </div>
             <div class="mt-10 text-center hidden">
-                <button class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300" data-target="osaa">
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                <button
+                    class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300"
+                    data-target="osaa">
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                     <span>View All Photos</span>
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                 </button>
             </div>
         </div>
@@ -448,10 +485,14 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" data-grid="us-africa">
             </div>
             <div class="mt-10 text-center hidden">
-                <button class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300" data-target="us-africa">
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                <button
+                    class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300"
+                    data-target="us-africa">
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                     <span>View All Photos</span>
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                 </button>
             </div>
         </div>
@@ -470,10 +511,14 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" data-grid="human-capital">
             </div>
             <div class="mt-10 text-center hidden">
-                <button class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300" data-target="human-capital">
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                <button
+                    class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300"
+                    data-target="human-capital">
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                     <span>View All Photos</span>
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                 </button>
             </div>
         </div>
@@ -492,10 +537,14 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" data-grid="mali-office">
             </div>
             <div class="mt-10 text-center">
-                <button class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300" data-target="mali-office">
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                <button
+                    class="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300"
+                    data-target="mali-office">
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                     <span>View All Photos</span>
-                    <span class="relative"><span class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
+                    <span class="relative"><span
+                            class="block w-12 h-px bg-white/30 group-hover:w-16 group-hover:bg-white/60 transition-all duration-300"></span></span>
                 </button>
             </div>
         </div>
@@ -508,45 +557,41 @@
                 <p class="text-xs uppercase tracking-[0.3em] text-white/40 mb-3">Media</p>
                 <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-white font-light">Videos</h2>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Video 1 - Vimeo -->
                 <div class="video-card">
                     <div class="video-container rounded-sm overflow-hidden">
-                        <iframe src="https://player.vimeo.com/video/839384564?h=73cde7eeb7&autoplay=0&title=0&portrait=0&byline=0&badge=0&loop=0&muted=0&controls=1" 
-                                frameborder="0" 
-                                allow="autoplay; fullscreen; picture-in-picture" 
-                                allowfullscreen></iframe>
+                        <iframe
+                            src="https://player.vimeo.com/video/839384564?h=73cde7eeb7&autoplay=0&title=0&portrait=0&byline=0&badge=0&loop=0&muted=0&controls=1"
+                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
 
                 <!-- Video 2 - YouTube -->
                 <div class="video-card">
                     <div class="video-container rounded-sm overflow-hidden">
-                        <iframe src="https://www.youtube.com/embed/vkNDbf6okvg" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/vkNDbf6okvg" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                     </div>
                 </div>
 
                 <!-- Video 3 - YouTube -->
                 <div class="video-card">
                     <div class="video-container rounded-sm overflow-hidden">
-                        <iframe src="https://www.youtube.com/embed/tgCGm66rsPo" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/tgCGm66rsPo" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                     </div>
                 </div>
 
                 <!-- Video 4 - Vimeo -->
                 <div class="video-card">
                     <div class="video-container rounded-sm overflow-hidden">
-                        <iframe src="https://player.vimeo.com/video/736629296?h=4fe308db03&autoplay=0&title=0&portrait=0&byline=0&badge=0&loop=0&muted=0&controls=1" 
-                                frameborder="0" 
-                                allow="autoplay; fullscreen; picture-in-picture" 
-                                allowfullscreen></iframe>
+                        <iframe
+                            src="https://player.vimeo.com/video/736629296?h=4fe308db03&autoplay=0&title=0&portrait=0&byline=0&badge=0&loop=0&muted=0&controls=1"
+                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -563,381 +608,381 @@
 
     <!-- Gallery JavaScript -->
     <script>
-    (function() {
-        // Gallery data - images organized by section
-        const gallerySections = {
-            'cc-forum-2024': {
-                folder: "2024 CC Forum's Global Investment in Sustainable Development event",
-                images: [
-                    'rs=w_740,cg_true,m.webp',
-                    'rs=w_740,cg_true,m (1).webp',
-                    'rs=w_740,cg_true,m (24).webp'
-                ]
-            },
-            'cop16-2024': {
-                folder: '2024 COP16 EVENTS',
-                images: [
-                    'rs=w_740,cg_true,m.webp',
-                    'rs=w_740,cg_true,m (1).webp',
-                    'rs=w_740,cg_true,m (2).webp',
-                    'rs=w_740,cg_true,m (3).webp',
-                    'rs=w_740,cg_true,m (4).webp'
-                ]
-            },
-            'summit-future-2024': {
-                folder: 'SUMMIT of the future 2024',
-                images: [
-                    'rs=w_740,cg_true,m.webp',
-                    'rs=w_740,cg_true,m (1).webp',
-                    'rs=w_740,cg_true,m (2).webp',
-                    'rs=w_740,cg_true,m (3).webp',
-                    'rs=w_740,cg_true,m (4).webp',
-                    'rs=w_740,cg_true,m (5).webp',
-                    'rs=w_740,cg_true,m (6).webp'
-                ]
-            },
-            'ndc-summit-2024': {
-                folder: 'NDC SUMMIT 2024',
-                images: [
-                    'rs=w_740,cg_true,m.webp',
-                    'rs=w_740,cg_true,m (1).webp',
-                    'rs=w_740,cg_true,m (2).webp',
-                    'rs=w_740,cg_true,m (7).webp',
-                    'rs=w_740,cg_true.webp'
-                ]
-            },
-            'uae-africa-2024': {
-                folder: 'UAE-AFRICA ECONOMIC CORRIDOR SUMMIT 2024',
-                images: [
-                    'rs=w_740,cg_true,m.webp',
-                    'rs=w_740,cg_true,m (1).webp',
-                    'rs=w_740,cg_true,m (2).webp',
-                    'rs=w_740,cg_true,m (3).webp',
-                    'rs=w_740,cg_true,m (4).webp'
-                ]
-            },
-            'caaf24': {
-                folder: 'climate action africa forum 2024 (CAAF24)',
-                images: [
-                    'rs=w_740,cg_true,m.webp',
-                    'rs=w_740,cg_true,m (1).webp',
-                    'rs=w_740,cg_true,m (2).webp',
-                    'rs=w_740,cg_true,m (3).webp',
-                    'rs=w_740,cg_true,m (4).webp',
-                    'rs=w_740,cg_true,m (5).webp',
-                    'rs=w_740,cg_true,m (6).webp',
-                    'rs=w_740,cg_true,m (7).webp',
-                    'rs=w_740,cg_true,m (8).webp',
-                    'rs=w_740,cg_true,m (9).webp',
-                    'rs=w_740,cg_true,m (10).webp',
-                    'rs=w_740,cg_true,m (11).webp'
-                ]
-            },
-            'adis24': {
-                folder: 'AFRICAN DIASPORA INVESTMENT SYMPOSIUM 2024 (ADIS24)',
-                images: [
-                    'rs=w_740,cg_true,m.webp',
-                    'rs=w_740,cg_true,m (1).webp',
-                    'rs=w_740,cg_true,m (2).webp',
-                    'rs=w_740,cg_true,m (3).webp',
-                    'rs=w_740,cg_true,m (12).webp'
-                ]
-            },
-            'ggwoa': {
-                folder: '2023_GGWOA-LG NOVA',
-                images: [
-                    'rs=w_475,cg_true,m.webp',
-                    'rs=w_475,cg_true,m (1).webp',
-                    'rs=w_594,cg_true,m.webp',
-                    'rs=w_594,cg_true,m (1).webp',
-                    'rs=w_594,cg_true,m (2).webp',
-                    'rs=w_594,cg_true,m (3).webp',
-                    'rs=w_594,cg_true,m (4).webp',
-                    'rs=w_594,cg_true,m (5).webp',
-                    'rs=w_594,cg_true,m (6).webp',
-                    'rs=w_594,cg_true,m (7).webp',
-                    'rs=w_594,cg_true,m (8).webp',
-                    'rs=w_594,cg_true,m (9).webp',
-                    'rs=w_594,cg_true,m (10).webp',
-                    'rs=w_594,cg_true,m (11).webp',
-                    'rs=w_594,cg_true,m (12).webp',
-                    'rs=w_594,cg_true,m (13).webp',
-                    'rs=w_594,cg_true,m (14).webp',
-                    'rs=w_594,cg_true,m (15).webp',
-                    'rs=w_594,cg_true,m (16).webp',
-                    'rs=w_594,cg_true,m (17).webp',
-                    'rs=w_594,cg_true,m (18).webp',
-                    'rs=w_594,cg_true,m (19).webp',
-                    'rs=w_740,cg_true,m.webp',
-                    'rs=w_740,cg_true,m (1).webp'
-                ]
-            },
-            'african-women': {
-                folder: '2023_AFRICAN_WOMEN',
-                images: [
-                    'rs=w_740,cg_true,m.webp',
-                    'rs=w_740,cg_true,m (1).webp',
-                    'rs=w_740,cg_true,m (2).webp',
-                    'rs=w_740,cg_true,m (3).webp',
-                    'rs=w_740,cg_true,m (4).webp',
-                    'rs=w_740,cg_true,m (5).webp',
-                    'rs=w_740,cg_true,m (6).webp',
-                    'rs=w_740,cg_true,m (7).webp',
-                    'rs=w_740,cg_true,m (8).webp',
-                    'rs=w_740,cg_true,m (9).webp',
-                    'rs=w_740,cg_true,m (10).webp',
-                    'rs=w_740,cg_true,m (11).webp',
-                    'rs=w_740,cg_true,m (12).webp',
-                    'rs=w_740,cg_true,m (13).webp',
-                    'rs=w_740,cg_true,m (14).webp',
-                    'rs=w_740,cg_true,m (15).webp',
-                    'rs=w_740,cg_true,m (16).webp',
-                    'rs=w_740,cg_true.webp'
-                ]
-            },
-            'private-sector': {
-                folder: '2023_private_sector',
-                images: [
-                    'rs=w_699,cg_true,m.webp',
-                    'rs=w_740,cg_true,m.webp',
-                    'rs=w_740,cg_true,m (1).webp',
-                    'rs=w_740,cg_true,m (2).webp',
-                    'rs=w_740,cg_true,m (3).webp',
-                    'rs=w_740,cg_true,m (4).webp',
-                    'rs=w_740,cg_true,m (5).webp',
-                    'rs=w_740,cg_true,m (6).webp',
-                    'rs=w_740,cg_true,m (7).webp',
-                    'rs=w_740,cg_true,m (8).webp',
-                    'rs=w_740,cg_true,m (9).webp',
-                    'rs=w_740,cg_true,m (10).webp',
-                    'rs=w_740,cg_true,m (11).webp',
-                    'rs=w_740,cg_true,m (12).webp',
-                    'rs=w_740,cg_true,m (13).webp',
-                    'rs=w_740,cg_true,m (14).webp',
-                    'rs=w_740,cg_true,m (15).webp',
-                    'rs=w_740,cg_true,m (16).webp',
-                    'rs=w_740,cg_true,m (17).webp',
-                    'rs=w_740,cg_true,m (18).webp',
-                    'rs=w_740,cg_true,m (19).webp',
-                    'rs=w_740,cg_true,m (20).webp',
-                    'rs=w_740,cg_true,m (21).webp',
-                    'rs=w_740,cg_true,m (22).webp',
-                    'rs=w_740,cg_true,m (23).webp',
-                    'rs=w_740,cg_true,m (24).webp',
-                    'rs=w_740,cg_true,m (25).webp',
-                    'rs=w_740,cg_true,m (26).webp',
-                    'rs=w_740,cg_true,m (27).webp',
-                    'rs=w_740,cg_true,m (28).webp',
-                    'rs=w_740,cg_true,m (29).webp',
-                    'rs=w_740,cg_true,m (30).webp',
-                    'rs=w_740,cg_true,m (31).webp',
-                    'rs=w_740,cg_true,m (32).webp'
-                ]
-            },
-            'osaa': {
-                folder: '2022_OSAA-Africa',
-                images: [
-                    'rs=w_728,cg_true,m.webp',
-                    'rs=w_740,cg_true,m.webp',
-                    'rs=w_740,cg_true,m (1).webp',
-                    'rs=w_740,cg_true,m (2).webp',
-                    'rs=w_740,cg_true,m (3).webp',
-                    'rs=w_740,cg_true,m (4).webp',
-                    'rs=w_740,cg_true,m (33).webp'
-                ]
-            },
-            'us-africa': {
-                folder: '2022_US-AFRICA ',
-                images: [
-                    'rs=w_740,cg_true,m.webp',
-                    'rs=w_740,cg_true,m (1).webp',
-                    'rs=w_740,cg_true,m (2).webp',
-                    'rs=w_740,cg_true,m (3).webp',
-                    'rs=w_740,cg_true,m (4).webp',
-                    'rs=w_740,cg_true,m (5).webp',
-                    'rs=w_740,cg_true,m (6).webp',
-                    'rs=w_740,cg_true,m (7).webp',
-                    'rs=w_740,cg_true,m (8).webp',
-                    'rs=w_740,cg_true,m (9).webp',
-                    'rs=w_740,cg_true,m (10).webp',
-                    'rs=w_740,cg_true,m (11).webp'
-                ]
-            },
-            'human-capital': {
-                folder: '2022_human_capital',
-                images: [
-                    'rs=w_618,cg_true,m.webp',
-                    'rs=w_740,cg_true,m.webp',
-                    'rs=w_740,cg_true,m (1).webp',
-                    'rs=w_740,cg_true,m (2).webp',
-                    'rs=w_740,cg_true,m (3).webp',
-                    'rs=w_740,cg_true,m (4).webp',
-                    'rs=w_740,cg_true,m (5).webp',
-                    'rs=w_740,cg_true,m (6).webp',
-                    'rs=w_740,cg_true,m (7).webp',
-                    'rs=w_740,cg_true,m (12).webp'
-                ]
-            },
-            'mali-office': {
-                folder: 'IN-GOVENMENT OFFICE - MALI',
-                images: [
-                    'rs=w_556,cg_true,m.webp',
-                    'rs=w_720,cg_true,m.webp',
-                    'rs=w_740,cg_true,m.webp',
-                    'rs=w_740,cg_true,m (1).webp',
-                    'rs=w_740,cg_true,m (2).webp',
-                    'rs=w_740,cg_true,m (3).webp',
-                    'rs=w_740,cg_true,m (4).webp',
-                    'rs=w_740,cg_true,m (5).webp',
-                    'rs=w_740,cg_true,m (6).webp',
-                    'rs=w_740,cg_true,m (7).webp',
-                    'rs=w_740,cg_true,m (8).webp',
-                    'rs=w_740,cg_true,m (9).webp',
-                    'rs=w_740,cg_true,m (10).webp',
-                    'rs=w_740,cg_true,m (11).webp',
-                    'rs=w_740,cg_true,m (12).webp',
-                    'rs=w_740,cg_true,m (13).webp',
-                    'rs=w_740,cg_true,m (14).webp',
-                    'rs=w_740,cg_true,m (15).webp',
-                    'rs=w_740,cg_true,m (16).webp',
-                    'rs=w_740,cg_true,m (17).webp',
-                    'rs=w_740,cg_true,m (18).webp',
-                    'rs=w_740,cg_true,m (19).webp',
-                    'rs=w_740,cg_true,m (20).webp',
-                    'rs=w_740,cg_true,m (21).webp',
-                    'rs=w_740,cg_true,m (22).webp',
-                    'rs=w_740,cg_true,m (23).webp'
-                ]
-            }
-        };
+        (function () {
+            // Gallery data - images organized by section
+            const gallerySections = {
+                'cc-forum-2024': {
+                    folder: "2024 CC Forum's Global Investment in Sustainable Development event",
+                    images: [
+                        'rs=w_740,cg_true,m.webp',
+                        'rs=w_740,cg_true,m (1).webp',
+                        'rs=w_740,cg_true,m (24).webp'
+                    ]
+                },
+                'cop16-2024': {
+                    folder: '2024 COP16 EVENTS',
+                    images: [
+                        'rs=w_740,cg_true,m.webp',
+                        'rs=w_740,cg_true,m (1).webp',
+                        'rs=w_740,cg_true,m (2).webp',
+                        'rs=w_740,cg_true,m (3).webp',
+                        'rs=w_740,cg_true,m (4).webp'
+                    ]
+                },
+                'summit-future-2024': {
+                    folder: 'SUMMIT of the future 2024',
+                    images: [
+                        'rs=w_740,cg_true,m.webp',
+                        'rs=w_740,cg_true,m (1).webp',
+                        'rs=w_740,cg_true,m (2).webp',
+                        'rs=w_740,cg_true,m (3).webp',
+                        'rs=w_740,cg_true,m (4).webp',
+                        'rs=w_740,cg_true,m (5).webp',
+                        'rs=w_740,cg_true,m (6).webp'
+                    ]
+                },
+                'ndc-summit-2024': {
+                    folder: 'NDC SUMMIT 2024',
+                    images: [
+                        'rs=w_740,cg_true,m.webp',
+                        'rs=w_740,cg_true,m (1).webp',
+                        'rs=w_740,cg_true,m (2).webp',
+                        'rs=w_740,cg_true,m (7).webp',
+                        'rs=w_740,cg_true.webp'
+                    ]
+                },
+                'uae-africa-2024': {
+                    folder: 'UAE-AFRICA ECONOMIC CORRIDOR SUMMIT 2024',
+                    images: [
+                        'rs=w_740,cg_true,m.webp',
+                        'rs=w_740,cg_true,m (1).webp',
+                        'rs=w_740,cg_true,m (2).webp',
+                        'rs=w_740,cg_true,m (3).webp',
+                        'rs=w_740,cg_true,m (4).webp'
+                    ]
+                },
+                'caaf24': {
+                    folder: 'climate action africa forum 2024 (CAAF24)',
+                    images: [
+                        'rs=w_740,cg_true,m.webp',
+                        'rs=w_740,cg_true,m (1).webp',
+                        'rs=w_740,cg_true,m (2).webp',
+                        'rs=w_740,cg_true,m (3).webp',
+                        'rs=w_740,cg_true,m (4).webp',
+                        'rs=w_740,cg_true,m (5).webp',
+                        'rs=w_740,cg_true,m (6).webp',
+                        'rs=w_740,cg_true,m (7).webp',
+                        'rs=w_740,cg_true,m (8).webp',
+                        'rs=w_740,cg_true,m (9).webp',
+                        'rs=w_740,cg_true,m (10).webp',
+                        'rs=w_740,cg_true,m (11).webp'
+                    ]
+                },
+                'adis24': {
+                    folder: 'AFRICAN DIASPORA INVESTMENT SYMPOSIUM 2024 (ADIS24)',
+                    images: [
+                        'rs=w_740,cg_true,m.webp',
+                        'rs=w_740,cg_true,m (1).webp',
+                        'rs=w_740,cg_true,m (2).webp',
+                        'rs=w_740,cg_true,m (3).webp',
+                        'rs=w_740,cg_true,m (12).webp'
+                    ]
+                },
+                'ggwoa': {
+                    folder: '2023_GGWOA-LG NOVA',
+                    images: [
+                        'rs=w_475,cg_true,m.webp',
+                        'rs=w_475,cg_true,m (1).webp',
+                        'rs=w_594,cg_true,m.webp',
+                        'rs=w_594,cg_true,m (1).webp',
+                        'rs=w_594,cg_true,m (2).webp',
+                        'rs=w_594,cg_true,m (3).webp',
+                        'rs=w_594,cg_true,m (4).webp',
+                        'rs=w_594,cg_true,m (5).webp',
+                        'rs=w_594,cg_true,m (6).webp',
+                        'rs=w_594,cg_true,m (7).webp',
+                        'rs=w_594,cg_true,m (8).webp',
+                        'rs=w_594,cg_true,m (9).webp',
+                        'rs=w_594,cg_true,m (10).webp',
+                        'rs=w_594,cg_true,m (11).webp',
+                        'rs=w_594,cg_true,m (12).webp',
+                        'rs=w_594,cg_true,m (13).webp',
+                        'rs=w_594,cg_true,m (14).webp',
+                        'rs=w_594,cg_true,m (15).webp',
+                        'rs=w_594,cg_true,m (16).webp',
+                        'rs=w_594,cg_true,m (17).webp',
+                        'rs=w_594,cg_true,m (18).webp',
+                        'rs=w_594,cg_true,m (19).webp',
+                        'rs=w_740,cg_true,m.webp',
+                        'rs=w_740,cg_true,m (1).webp'
+                    ]
+                },
+                'african-women': {
+                    folder: '2023_AFRICAN_WOMEN',
+                    images: [
+                        'rs=w_740,cg_true,m.webp',
+                        'rs=w_740,cg_true,m (1).webp',
+                        'rs=w_740,cg_true,m (2).webp',
+                        'rs=w_740,cg_true,m (3).webp',
+                        'rs=w_740,cg_true,m (4).webp',
+                        'rs=w_740,cg_true,m (5).webp',
+                        'rs=w_740,cg_true,m (6).webp',
+                        'rs=w_740,cg_true,m (7).webp',
+                        'rs=w_740,cg_true,m (8).webp',
+                        'rs=w_740,cg_true,m (9).webp',
+                        'rs=w_740,cg_true,m (10).webp',
+                        'rs=w_740,cg_true,m (11).webp',
+                        'rs=w_740,cg_true,m (12).webp',
+                        'rs=w_740,cg_true,m (13).webp',
+                        'rs=w_740,cg_true,m (14).webp',
+                        'rs=w_740,cg_true,m (15).webp',
+                        'rs=w_740,cg_true,m (16).webp',
+                        'rs=w_740,cg_true.webp'
+                    ]
+                },
+                'private-sector': {
+                    folder: '2023_private_sector',
+                    images: [
+                        'rs=w_699,cg_true,m.webp',
+                        'rs=w_740,cg_true,m.webp',
+                        'rs=w_740,cg_true,m (1).webp',
+                        'rs=w_740,cg_true,m (2).webp',
+                        'rs=w_740,cg_true,m (3).webp',
+                        'rs=w_740,cg_true,m (4).webp',
+                        'rs=w_740,cg_true,m (5).webp',
+                        'rs=w_740,cg_true,m (6).webp',
+                        'rs=w_740,cg_true,m (7).webp',
+                        'rs=w_740,cg_true,m (8).webp',
+                        'rs=w_740,cg_true,m (9).webp',
+                        'rs=w_740,cg_true,m (10).webp',
+                        'rs=w_740,cg_true,m (11).webp',
+                        'rs=w_740,cg_true,m (12).webp',
+                        'rs=w_740,cg_true,m (13).webp',
+                        'rs=w_740,cg_true,m (14).webp',
+                        'rs=w_740,cg_true,m (15).webp',
+                        'rs=w_740,cg_true,m (16).webp',
+                        'rs=w_740,cg_true,m (17).webp',
+                        'rs=w_740,cg_true,m (18).webp',
+                        'rs=w_740,cg_true,m (19).webp',
+                        'rs=w_740,cg_true,m (20).webp',
+                        'rs=w_740,cg_true,m (21).webp',
+                        'rs=w_740,cg_true,m (22).webp',
+                        'rs=w_740,cg_true,m (23).webp',
+                        'rs=w_740,cg_true,m (24).webp',
+                        'rs=w_740,cg_true,m (25).webp',
+                        'rs=w_740,cg_true,m (26).webp',
+                        'rs=w_740,cg_true,m (27).webp',
+                        'rs=w_740,cg_true,m (28).webp',
+                        'rs=w_740,cg_true,m (29).webp',
+                        'rs=w_740,cg_true,m (30).webp',
+                        'rs=w_740,cg_true,m (31).webp',
+                        'rs=w_740,cg_true,m (32).webp'
+                    ]
+                },
+                'osaa': {
+                    folder: '2022_OSAA-Africa',
+                    images: [
+                        'rs=w_728,cg_true,m.webp',
+                        'rs=w_740,cg_true,m.webp',
+                        'rs=w_740,cg_true,m (1).webp',
+                        'rs=w_740,cg_true,m (2).webp',
+                        'rs=w_740,cg_true,m (3).webp',
+                        'rs=w_740,cg_true,m (4).webp',
+                        'rs=w_740,cg_true,m (33).webp'
+                    ]
+                },
+                'us-africa': {
+                    folder: '2022_US-AFRICA ',
+                    images: [
+                        'rs=w_740,cg_true,m.webp',
+                        'rs=w_740,cg_true,m (1).webp',
+                        'rs=w_740,cg_true,m (2).webp',
+                        'rs=w_740,cg_true,m (3).webp',
+                        'rs=w_740,cg_true,m (4).webp',
+                        'rs=w_740,cg_true,m (5).webp',
+                        'rs=w_740,cg_true,m (6).webp',
+                        'rs=w_740,cg_true,m (7).webp',
+                        'rs=w_740,cg_true,m (8).webp',
+                        'rs=w_740,cg_true,m (9).webp',
+                        'rs=w_740,cg_true,m (10).webp',
+                        'rs=w_740,cg_true,m (11).webp'
+                    ]
+                },
+                'human-capital': {
+                    folder: '2022_human_capital',
+                    images: [
+                        'rs=w_618,cg_true,m.webp',
+                        'rs=w_740,cg_true,m.webp',
+                        'rs=w_740,cg_true,m (1).webp',
+                        'rs=w_740,cg_true,m (2).webp',
+                        'rs=w_740,cg_true,m (3).webp',
+                        'rs=w_740,cg_true,m (4).webp',
+                        'rs=w_740,cg_true,m (5).webp',
+                        'rs=w_740,cg_true,m (6).webp',
+                        'rs=w_740,cg_true,m (7).webp',
+                        'rs=w_740,cg_true,m (12).webp'
+                    ]
+                },
+                'mali-office': {
+                    folder: 'IN-GOVENMENT OFFICE - MALI',
+                    images: [
+                        'rs=w_556,cg_true,m.webp',
+                        'rs=w_720,cg_true,m.webp',
+                        'rs=w_740,cg_true,m.webp',
+                        'rs=w_740,cg_true,m (1).webp',
+                        'rs=w_740,cg_true,m (2).webp',
+                        'rs=w_740,cg_true,m (3).webp',
+                        'rs=w_740,cg_true,m (4).webp',
+                        'rs=w_740,cg_true,m (5).webp',
+                        'rs=w_740,cg_true,m (6).webp',
+                        'rs=w_740,cg_true,m (7).webp',
+                        'rs=w_740,cg_true,m (8).webp',
+                        'rs=w_740,cg_true,m (9).webp',
+                        'rs=w_740,cg_true,m (10).webp',
+                        'rs=w_740,cg_true,m (11).webp',
+                        'rs=w_740,cg_true,m (12).webp',
+                        'rs=w_740,cg_true,m (13).webp',
+                        'rs=w_740,cg_true,m (14).webp',
+                        'rs=w_740,cg_true,m (15).webp',
+                        'rs=w_740,cg_true,m (16).webp',
+                        'rs=w_740,cg_true,m (17).webp',
+                        'rs=w_740,cg_true,m (18).webp',
+                        'rs=w_740,cg_true,m (19).webp',
+                        'rs=w_740,cg_true,m (20).webp',
+                        'rs=w_740,cg_true,m (21).webp',
+                        'rs=w_740,cg_true,m (22).webp',
+                        'rs=w_740,cg_true,m (23).webp'
+                    ]
+                }
+            };
 
-        const INITIAL_COUNT = 12;
-        const sectionState = {};
-        let allImages = [];
-        let currentImageIndex = 0;
+            const INITIAL_COUNT = 12;
+            const sectionState = {};
+            let allImages = [];
+            let currentImageIndex = 0;
 
-        // Initialize each section
-        Object.keys(gallerySections).forEach(key => {
-            sectionState[key] = { loaded: INITIAL_COUNT, expanded: false };
-        });
+            // Initialize each section
+            Object.keys(gallerySections).forEach(key => {
+                sectionState[key] = { loaded: INITIAL_COUNT, expanded: false };
+            });
 
-        // Create image card
-        function createImageCard(src, sectionKey, index) {
-            const div = document.createElement('div');
-            div.className = 'gallery-item relative overflow-hidden aspect-square';
-            div.innerHTML = `
+            // Create image card
+            function createImageCard(src, sectionKey, index) {
+                const div = document.createElement('div');
+                div.className = 'gallery-item relative overflow-hidden aspect-square';
+                div.innerHTML = `
                 <img src="${src}" 
                      alt="Gallery image" 
                      loading="lazy"
-                     class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
+                     class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer"
                      onerror="this.style.display='none'" />
             `;
-            div.addEventListener('click', () => openLightbox(src, sectionKey));
-            return div;
-        }
+                div.addEventListener('click', () => openLightbox(src, sectionKey));
+                return div;
+            }
 
-        // Render images for a section
-        function renderSection(sectionKey) {
-            const section = gallerySections[sectionKey];
-            const grid = document.querySelector(`[data-grid="${sectionKey}"]`);
-            const btn = document.querySelector(`[data-target="${sectionKey}"]`);
-            
-            if (!grid || !section) return;
+            // Render images for a section
+            function renderSection(sectionKey) {
+                const section = gallerySections[sectionKey];
+                const grid = document.querySelector(`[data-grid="${sectionKey}"]`);
+                const btn = document.querySelector(`[data-target="${sectionKey}"]`);
 
-            const count = sectionState[sectionKey].loaded;
-            const imagesToShow = section.images.slice(0, count);
-            
-            grid.innerHTML = '';
-            imagesToShow.forEach((img, idx) => {
-                const src = `/gallery/${section.folder}/${img}`;
-                grid.appendChild(createImageCard(src, sectionKey, idx));
-            });
+                if (!grid || !section) return;
 
-            // Show/hide view more button
-            if (btn) {
-                const btnContainer = btn.parentElement;
-                if (count >= section.images.length) {
-                    btnContainer.classList.add('hidden');
-                } else {
-                    btnContainer.classList.remove('hidden');
+                const count = sectionState[sectionKey].loaded;
+                const imagesToShow = section.images.slice(0, count);
+
+                grid.innerHTML = '';
+                imagesToShow.forEach((img, idx) => {
+                    const src = `/gallery/${section.folder}/${img}`;
+                    grid.appendChild(createImageCard(src, sectionKey, idx));
+                });
+
+                // Show/hide view more button
+                if (btn) {
+                    const btnContainer = btn.parentElement;
+                    if (count >= section.images.length) {
+                        btnContainer.classList.add('hidden');
+                    } else {
+                        btnContainer.classList.remove('hidden');
+                    }
                 }
             }
-        }
 
-        // Load more images for a section
-        function loadMore(sectionKey) {
-            const section = gallerySections[sectionKey];
-            sectionState[sectionKey].loaded = section.images.length;
-            renderSection(sectionKey);
-        }
+            // Load more images for a section
+            function loadMore(sectionKey) {
+                const section = gallerySections[sectionKey];
+                sectionState[sectionKey].loaded = section.images.length;
+                renderSection(sectionKey);
+            }
 
-        // Lightbox functionality
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const closeBtn = document.querySelector('.lightbox-close');
-        const prevBtn = document.querySelector('.lightbox-prev');
-        const nextBtn = document.querySelector('.lightbox-next');
+            // Lightbox functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = document.querySelector('.lightbox-close');
+            const prevBtn = document.querySelector('.lightbox-prev');
+            const nextBtn = document.querySelector('.lightbox-next');
 
-        function buildAllImages() {
-            allImages = [];
-            Object.keys(gallerySections).forEach(key => {
-                const section = gallerySections[key];
-                section.images.forEach(img => {
-                    allImages.push(`/gallery/${section.folder}/${img}`);
+            function buildAllImages() {
+                allImages = [];
+                Object.keys(gallerySections).forEach(key => {
+                    const section = gallerySections[key];
+                    section.images.forEach(img => {
+                        allImages.push(`/gallery/${section.folder}/${img}`);
+                    });
+                });
+            }
+
+            function openLightbox(src, sectionKey) {
+                buildAllImages();
+                currentImageIndex = allImages.indexOf(src);
+                if (currentImageIndex === -1) currentImageIndex = 0;
+                lightboxImg.src = src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            function showPrev() {
+                currentImageIndex = (currentImageIndex - 1 + allImages.length) % allImages.length;
+                lightboxImg.src = allImages[currentImageIndex];
+            }
+
+            function showNext() {
+                currentImageIndex = (currentImageIndex + 1) % allImages.length;
+                lightboxImg.src = allImages[currentImageIndex];
+            }
+
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', showPrev);
+            nextBtn.addEventListener('click', showNext);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') showPrev();
+                if (e.key === 'ArrowRight') showNext();
+            });
+
+            // View more buttons
+            document.querySelectorAll('.view-more-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const target = btn.dataset.target;
+                    loadMore(target);
                 });
             });
-        }
 
-        function openLightbox(src, sectionKey) {
-            buildAllImages();
-            currentImageIndex = allImages.indexOf(src);
-            if (currentImageIndex === -1) currentImageIndex = 0;
-            lightboxImg.src = src;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        function showPrev() {
-            currentImageIndex = (currentImageIndex - 1 + allImages.length) % allImages.length;
-            lightboxImg.src = allImages[currentImageIndex];
-        }
-
-        function showNext() {
-            currentImageIndex = (currentImageIndex + 1) % allImages.length;
-            lightboxImg.src = allImages[currentImageIndex];
-        }
-
-        closeBtn.addEventListener('click', closeLightbox);
-        prevBtn.addEventListener('click', showPrev);
-        nextBtn.addEventListener('click', showNext);
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox();
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (!lightbox.classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') showPrev();
-            if (e.key === 'ArrowRight') showNext();
-        });
-
-        // View more buttons
-        document.querySelectorAll('.view-more-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const target = btn.dataset.target;
-                loadMore(target);
-            });
-        });
-
-        // Initial render
-        Object.keys(gallerySections).forEach(renderSection);
-    })();
+            // Initial render
+            Object.keys(gallerySections).forEach(renderSection);
+        })();
     </script>
 
     <!-- Spacer -->
@@ -953,8 +998,10 @@
                         Strategic intelligence shaping Africa's rise. Green transition powered by communities.
                     </p>
                     <div class="flex space-x-8">
-                        <a href="#" class="text-white/50 hover:text-white transition-colors text-sm uppercase tracking-wider">LinkedIn</a>
-                        <a href="#" class="text-white/50 hover:text-white transition-colors text-sm uppercase tracking-wider">Twitter</a>
+                        <a href="#"
+                            class="text-white/50 hover:text-white transition-colors text-sm uppercase tracking-wider">LinkedIn</a>
+                        <a href="#"
+                            class="text-white/50 hover:text-white transition-colors text-sm uppercase tracking-wider">Twitter</a>
                     </div>
                 </div>
 
@@ -962,22 +1009,28 @@
                     <h4 class="uppercase tracking-[0.2em] text-sm mb-6 text-white/50">Navigation</h4>
                     <ul class="space-y-4 text-base">
                         <li><a href="/" class="text-white/70 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="/about.html" class="text-white/70 hover:text-white transition-colors">About</a></li>
-                        <li><a href="/vision.html" class="text-white/70 hover:text-white transition-colors">Vision</a></li>
+                        <li><a href="/about.html" class="text-white/70 hover:text-white transition-colors">About</a>
+                        </li>
+                        <li><a href="/vision.html" class="text-white/70 hover:text-white transition-colors">Vision</a>
+                        </li>
                         <li><a href="/gallery.html" class="text-white">Gallery</a></li>
-                        <li><a href="/projects.html" class="text-white/70 hover:text-white transition-colors">Projects</a></li>
-                        <li><a href="/contact.html" class="text-white/70 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="/projects.html"
+                                class="text-white/70 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="/contact.html" class="text-white/70 hover:text-white transition-colors">Contact</a>
+                        </li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="uppercase tracking-[0.2em] text-sm mb-6 text-white/50">Contact</h4>
                     <p class="text-white/60 mb-4 text-base font-light">For press, speaking, and advisory inquiries:</p>
-                    <a href="mailto:office@example.com" class="text-white hover:text-white/70 transition-colors text-base">office@example.com</a>
+                    <a href="mailto:office@example.com"
+                        class="text-white hover:text-white/70 transition-colors text-base">office@example.com</a>
                 </div>
             </div>
 
-            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-white/50 uppercase tracking-wider">
+            <div
+                class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-white/50 uppercase tracking-wider">
                 <p>&copy; 2025 The Office of Dr. Ramatoulaye Diallo N'Diaye.</p>
                 <p class="mt-4 md:mt-0">Africa: the world's most strategic climate frontier.</p>
             </div>

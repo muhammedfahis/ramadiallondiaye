@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="/src/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -32,14 +34,17 @@
             color: #fff;
             font-size: 1rem;
         }
+
         .form-input:focus {
             outline: none;
             border-color: rgba(255, 255, 255, 0.5);
             background: rgba(255, 255, 255, 0.05);
         }
+
         .form-input::placeholder {
             color: rgba(255, 255, 255, 0.35);
         }
+
         .form-label {
             display: block;
             font-size: 0.75rem;
@@ -53,6 +58,7 @@
         .section-padding {
             padding: 4rem 1rem;
         }
+
         @media (min-width: 768px) {
             .section-padding {
                 padding: 6rem 2rem;
@@ -75,7 +81,7 @@
 
         /* Header text enhancement */
         .nav-text {
-            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
             font-weight: 500;
         }
     </style>
@@ -84,27 +90,36 @@
 <body class="text-white antialiased bg-black">
 
     <!-- Mobile Navigation Toggle -->
-    <button id="mobile-menu-btn" class="lg:hidden fixed top-6 right-6 flex flex-col justify-center items-center w-8 h-8" style="z-index: 999999;">
+    <button id="mobile-menu-btn" class="lg:hidden fixed top-6 right-6 flex flex-col justify-center items-center w-8 h-8"
+        style="z-index: 999999;">
         <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
         <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
         <span class="block w-6 h-0.5 bg-white transition-all"></span>
     </button>
 
     <!-- Mobile Navigation Menu -->
-    <nav id="mobile-menu" class="lg:hidden fixed inset-0 bg-black/95 hidden flex-col items-center justify-center" style="z-index: 999998;">
+    <nav id="mobile-menu" class="lg:hidden fixed inset-0 bg-black/95 hidden flex-col items-center justify-center"
+        style="z-index: 999998;">
         <div class="flex flex-col items-center space-y-8">
-            <a href="/" class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Home</a>
-            <a href="/about.html" class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">About</a>
-            <a href="/vision.html" class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Vision</a>
-            <a href="/gallery.html" class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Gallery</a>
-            <a href="/projects.html" class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Projects</a>
+            <a href="/"
+                class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Home</a>
+            <a href="/about.html"
+                class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">About</a>
+            <a href="/vision.html"
+                class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Vision</a>
+            <a href="/gallery.html"
+                class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Gallery</a>
+            <a href="/projects.html"
+                class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Projects</a>
             <a href="/contact.html" class="text-xl uppercase tracking-[0.3em] text-white">Contact</a>
         </div>
     </nav>
 
     <!-- Desktop Fixed Navigation -->
-    <nav class="hidden lg:flex fixed left-0 right-0 items-center justify-between px-8 md:px-16 lg:px-20 top-8 md:top-12" style="z-index: 99999;">
-        <a href="/" class="font-serif text-sm uppercase tracking-[0.2em] text-white hover:text-white/70 transition-colors nav-text">
+    <nav class="hidden lg:flex fixed left-0 right-0 items-center justify-between px-8 md:px-16 lg:px-20 top-8 md:top-12"
+        style="z-index: 99999;">
+        <a href="/"
+            class="font-serif text-sm uppercase tracking-[0.2em] text-white hover:text-white/70 transition-colors nav-text">
             The Office of Dr. Ramatoulaye Diallo N'Diaye
         </a>
         <div class="flex items-center gap-4 md:gap-8 text-sm uppercase tracking-[0.15em]">
@@ -135,10 +150,14 @@
             </h1>
             <div class="w-24 h-px bg-white/30 mx-auto mb-8"></div>
             <p class="text-lg md:text-xl text-white/60 max-w-3xl mx-auto font-light leading-relaxed">
-                Support initiatives that strengthen communities, empower women and youth, expand education, build peace and security, restore ecosystems, and mobilize capital for green industrialization and climate prosperity.
+                Support initiatives that strengthen communities, empower women and youth, expand education, build peace
+                and security, restore ecosystems, and mobilize capital for green industrialization and climate
+                prosperity.
             </p>
-            <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto font-light leading-relaxed mt-6 font-serif italic">
-                Together we can transform Africa into the world's leading hub for sustainable growth and cultural leadership.
+            <p
+                class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto font-light leading-relaxed mt-6 font-serif italic">
+                Together we can transform Africa into the world's leading hub for sustainable growth and cultural
+                leadership.
             </p>
         </div>
     </header>
@@ -148,57 +167,120 @@
         <div class="max-w-3xl mx-auto">
             <!-- Form -->
             <div class="border border-white/10 p-8 md:p-12">
-                <form action="/send" method="post" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="form-label">Name *</label>
-                            <input id="name" name="name" type="text" required 
-                                placeholder="Your full name"
-                                class="form-input" />
+                <form id="contact-form" action="https://formspree.io/f/xldqljjz" method="POST" class="space-y-6">
+                    <!-- Success Message -->
+                    <div id="form-success" class="hidden p-6 border border-green-500/30 bg-green-500/10 text-center">
+                        <p class="text-green-400 font-light text-lg">Thank you for reaching out! We'll be in touch soon.
+                        </p>
+                    </div>
+
+                    <!-- Error Message -->
+                    <div id="form-error" class="hidden p-6 border border-red-500/30 bg-red-500/10 text-center">
+                        <p class="text-red-400 font-light text-lg">Something went wrong. Please try again or email us
+                            directly.</p>
+                    </div>
+
+                    <div id="form-fields">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="form-label">Name *</label>
+                                <input id="name" name="name" type="text" required placeholder="Your full name"
+                                    class="form-input" />
+                            </div>
+                            <div>
+                                <label for="email" class="form-label">Email *</label>
+                                <input id="email" name="_replyto" type="email" required
+                                    placeholder="your.email@example.com" class="form-input" />
+                            </div>
                         </div>
+
                         <div>
-                            <label for="email" class="form-label">Email *</label>
-                            <input id="email" name="email" type="email" required 
-                                placeholder="your.email@example.com"
-                                class="form-input" />
+                            <label for="organization" class="form-label">Organization / Institution</label>
+                            <input id="organization" name="organization" type="text"
+                                placeholder="Organization or institution name" class="form-input" />
                         </div>
-                    </div>
-                    
-                    <div>
-                        <label for="organization" class="form-label">Organization / Institution</label>
-                        <input id="organization" name="organization" type="text" 
-                            placeholder="Organization or institution name"
-                            class="form-input" />
-                    </div>
-                    
-                    <div>
-                        <label for="subject" class="form-label">How would you like to contribute?</label>
-                        <select id="subject" name="subject" class="form-input">
-                            <option value="" class="bg-black">Select an area of interest</option>
-                            <option value="partnership" class="bg-black">Partnership Opportunity</option>
-                            <option value="investment" class="bg-black">Climate Investment</option>
-                            <option value="speaking" class="bg-black">Speaking Engagement</option>
-                            <option value="advisory" class="bg-black">Strategic Advisory</option>
-                            <option value="media" class="bg-black">Media Inquiry</option>
-                            <option value="volunteer" class="bg-black">Volunteer / Support</option>
-                            <option value="other" class="bg-black">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <label for="message" class="form-label">Message *</label>
-                        <textarea id="message" name="message" rows="5" required
-                            placeholder="Share how you'd like to be part of Africa's green transition..."
-                            class="form-input resize-none"></textarea>
-                    </div>
-                    
-                    <div class="pt-4 text-center">
-                        <button type="submit"
-                            class="w-full md:w-auto px-12 py-4 bg-white text-black text-sm uppercase tracking-[0.2em] hover:bg-white/90 transition-all duration-300 font-medium">
-                            Join the Movement
-                        </button>
+
+                        <div>
+                            <label for="subject" class="form-label">How would you like to contribute?</label>
+                            <select id="subject" name="subject" class="form-input">
+                                <option value="" class="bg-black">Select an area of interest</option>
+                                <option value="partnership" class="bg-black">Partnership Opportunity</option>
+                                <option value="investment" class="bg-black">Climate Investment</option>
+                                <option value="speaking" class="bg-black">Speaking Engagement</option>
+                                <option value="advisory" class="bg-black">Strategic Advisory</option>
+                                <option value="media" class="bg-black">Media Inquiry</option>
+                                <option value="volunteer" class="bg-black">Volunteer / Support</option>
+                                <option value="other" class="bg-black">Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" rows="5" required
+                                placeholder="Share how you'd like to be part of Africa's green transition..."
+                                class="form-input resize-none"></textarea>
+                        </div>
+
+                        <!-- Honeypot for spam protection -->
+                        <input type="text" name="_gotcha" style="display:none" />
+
+                        <div class="pt-4 text-center">
+                            <button type="submit" id="submit-btn"
+                                class="w-full md:w-auto px-12 py-4 bg-white text-black text-sm uppercase tracking-[0.2em] hover:bg-white/90 transition-all duration-300 font-medium">
+                                Join the Movement
+                            </button>
+                        </div>
                     </div>
                 </form>
+
+                <script>
+                    // Form submission handling
+                    const form = document.getElementById('contact-form');
+                    const submitBtn = document.getElementById('submit-btn');
+                    const formFields = document.getElementById('form-fields');
+                    const successMsg = document.getElementById('form-success');
+                    const errorMsg = document.getElementById('form-error');
+
+                    form.addEventListener('submit', async function (e) {
+                        e.preventDefault();
+
+                        // Disable submit button
+                        submitBtn.disabled = true;
+                        submitBtn.textContent = 'Sending...';
+
+                        // Get form data
+                        const formData = new FormData(form);
+
+                        try {
+                            const response = await fetch(form.action, {
+                                method: 'POST',
+                                body: formData,
+                                headers: {
+                                    'Accept': 'application/json'
+                                }
+                            });
+
+                            if (response.ok) {
+                                // Success
+                                formFields.style.display = 'none';
+                                successMsg.classList.remove('hidden');
+                                form.reset();
+                            } else {
+                                // Error
+                                errorMsg.classList.remove('hidden');
+                                setTimeout(() => errorMsg.classList.add('hidden'), 5000);
+                            }
+                        } catch (error) {
+                            // Network error
+                            errorMsg.classList.remove('hidden');
+                            setTimeout(() => errorMsg.classList.add('hidden'), 5000);
+                        } finally {
+                            // Re-enable submit button
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Join the Movement';
+                        }
+                    });
+                </script>
             </div>
 
             <!-- Contact Info Strip -->
@@ -206,7 +288,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
                     <div>
                         <h3 class="text-[10px] uppercase tracking-[0.25em] text-white/30 mb-4">Email</h3>
-                        <a href="mailto:office@ramadiallondiaye.com" class="text-white/70 hover:text-white transition-colors font-light">
+                        <a href="mailto:office@ramadiallondiaye.com"
+                            class="text-white/70 hover:text-white transition-colors font-light">
                             office@ramadiallondiaye.com
                         </a>
                     </div>
@@ -214,7 +297,8 @@
                         <h3 class="text-[10px] uppercase tracking-[0.25em] text-white/30 mb-4">Follow</h3>
                         <div class="flex justify-center gap-6">
                             <a href="#" class="text-white/70 hover:text-white transition-colors font-light">LinkedIn</a>
-                            <a href="#" class="text-white/70 hover:text-white transition-colors font-light">Twitter / X</a>
+                            <a href="#" class="text-white/70 hover:text-white transition-colors font-light">Twitter /
+                                X</a>
                         </div>
                     </div>
                     <div>
@@ -228,18 +312,19 @@
 
     <!-- Quote Section -->
     <section class="relative h-[60vh] w-full overflow-hidden">
-        <img src="/assets/portrait-professional-side.jpg" 
-             alt="Dr. Ramatoulaye Diallo N'Diaye" 
-             class="absolute inset-0 w-full h-full object-cover object-[center_20%] filter grayscale" />
-        <div class="absolute inset-0 bg-black/75"></div>
-        
+        <img src="/assets/portrait-professional-side.jpg" alt="Dr. Ramatoulaye Diallo N'Diaye"
+            class="absolute inset-0 w-full h-full object-cover object-[center_20%] filter grayscale" />
+        <!-- Strong dark overlay for text readability on any image background -->
+        <div class="absolute inset-0 bg-black/70"></div>
+
         <div class="relative z-10 h-full flex flex-col items-center justify-center p-8 md:p-16 text-center">
             <div class="w-16 h-px bg-white/40 mb-10"></div>
-            <blockquote class="font-serif text-2xl md:text-4xl lg:text-5xl leading-tight font-light max-w-4xl italic quote-text">
+            <blockquote
+                class="font-serif text-2xl md:text-4xl lg:text-5xl leading-tight font-light max-w-4xl italic text-white">
                 "Women carry the future. Youth accelerate it."
             </blockquote>
             <div class="w-16 h-px bg-white/40 mt-10 mb-6"></div>
-            <p class="text-xs uppercase tracking-[0.25em] quote-attribution">— Dr. Ramatoulaye Diallo N'Diaye</p>
+            <p class="text-xs uppercase tracking-[0.25em] text-white/80">— Dr. Ramatoulaye Diallo N'Diaye</p>
         </div>
     </section>
 
@@ -253,8 +338,11 @@
                         Strategic intelligence shaping Africa's rise. Green transition powered by communities.
                     </p>
                     <div class="flex flex-wrap gap-6">
-                        <a href="#" class="text-white/50 hover:text-white transition-colors text-sm uppercase tracking-wider">LinkedIn</a>
-                        <a href="#" class="text-white/50 hover:text-white transition-colors text-sm uppercase tracking-wider">Twitter / X</a>
+                        <a href="#"
+                            class="text-white/50 hover:text-white transition-colors text-sm uppercase tracking-wider">LinkedIn</a>
+                        <a href="#"
+                            class="text-white/50 hover:text-white transition-colors text-sm uppercase tracking-wider">Twitter
+                            / X</a>
                     </div>
                 </div>
 
@@ -262,10 +350,14 @@
                     <h4 class="uppercase tracking-[0.2em] text-sm mb-6 text-white/50">Navigation</h4>
                     <ul class="space-y-4 text-base">
                         <li><a href="/" class="text-white/70 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="/about.html" class="text-white/70 hover:text-white transition-colors">About</a></li>
-                        <li><a href="/vision.html" class="text-white/70 hover:text-white transition-colors">Vision</a></li>
-                        <li><a href="/gallery.html" class="text-white/70 hover:text-white transition-colors">Gallery</a></li>
-                        <li><a href="/projects.html" class="text-white/70 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="/about.html" class="text-white/70 hover:text-white transition-colors">About</a>
+                        </li>
+                        <li><a href="/vision.html" class="text-white/70 hover:text-white transition-colors">Vision</a>
+                        </li>
+                        <li><a href="/gallery.html" class="text-white/70 hover:text-white transition-colors">Gallery</a>
+                        </li>
+                        <li><a href="/projects.html"
+                                class="text-white/70 hover:text-white transition-colors">Projects</a></li>
                         <li><a href="/contact.html" class="text-white">Contact</a></li>
                     </ul>
                 </div>
@@ -273,11 +365,13 @@
                 <div>
                     <h4 class="uppercase tracking-[0.2em] text-sm mb-6 text-white/50">Contact</h4>
                     <p class="text-white/60 mb-4 text-base font-light">For press, speaking, and advisory inquiries:</p>
-                    <a href="mailto:office@example.com" class="text-white hover:text-white/70 transition-colors text-base">office@example.com</a>
+                    <a href="mailto:office@example.com"
+                        class="text-white hover:text-white/70 transition-colors text-base">office@example.com</a>
                 </div>
             </div>
 
-            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-white/50 uppercase tracking-wider">
+            <div
+                class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-white/50 uppercase tracking-wider">
                 <p>&copy; 2025 The Office of Dr. Ramatoulaye Diallo N'Diaye.</p>
                 <p class="mt-4 md:mt-0">Africa: the world's most strategic climate frontier.</p>
             </div>
