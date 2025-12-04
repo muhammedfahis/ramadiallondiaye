@@ -152,26 +152,26 @@
     margin-bottom: 2rem;
   }
 
-  /* Quote gradient box styling - Semi-transparent with blur for "Pro" look */
+  /* Quote gradient box styling - Enhanced for maximum readability */
   .quote-gradient-box {
     position: relative;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.70) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     padding: 3rem 2.5rem;
     border-radius: 4px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
-  /* White text with shadow for maximum readability */
+  /* White text with strong shadow for maximum readability */
   .quote-gradient-box blockquote {
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 1), 0 1px 3px rgba(0, 0, 0, 0.8);
   }
 
 
   .quote-gradient-box p {
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 1);
   }
 
   @media (min-width: 768px) {
