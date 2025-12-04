@@ -185,7 +185,8 @@
         <img src="/images/gallery-04-640.jpg" alt="Dr. Ramatoulaye Diallo N'Diaye"
             class="absolute inset-0 w-full h-full object-cover object-center filter grayscale" />
         <!-- Strong dark overlay for text readability on any image background -->
-        <div class="absolute inset-0 bg-black/70"></div>
+        <!-- Strong gradient overlay: Dark at bottom for text, transparent at top for image visibility -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
 
         <!-- Quote Gradient Box - positioned on left side at 75% height -->
         <div class="relative z-10 h-full flex items-end justify-start pb-[10%] pl-8 md:pl-16 lg:pl-24">
@@ -285,8 +286,8 @@
     <section class="relative h-screen w-full overflow-hidden">
         <img src="/assets/rama-portrait-1.jpg" alt="Dr. Ramatoulaye Diallo N'Diaye"
             class="absolute inset-0 w-full h-full object-cover object-[center_20%] filter grayscale" />
-        <!-- Strong dark overlay for text readability on any image background -->
-        <div class="absolute inset-0 bg-black/70"></div>
+        <!-- Strong gradient overlay: Dark at bottom for text, transparent at top for image visibility -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
 
         <!-- Quote Gradient Box - positioned on right side at 75% height -->
         <div class="relative z-10 h-full flex items-end justify-end pb-[10%] pr-8 md:pr-16 lg:pr-24">
@@ -323,8 +324,8 @@
     <section class="relative h-screen w-full overflow-hidden">
         <img src="/rama/quotes-1.png" alt="Dr. Ramatoulaye Diallo N'Diaye"
             class="absolute inset-0 w-full h-full object-contain md:object-cover object-center filter grayscale" />
-        <!-- Strong dark overlay for text readability on any image background -->
-        <div class="absolute inset-0 bg-black/70"></div>
+        <!-- Strong gradient overlay: Dark at bottom for text, transparent at top for image visibility -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
 
         <!-- Quote Gradient Box - centered at same height -->
         <div class="relative z-10 h-full flex items-end justify-center pb-[10%]">
@@ -403,10 +404,9 @@
 
                 <!-- Forbes Interview Card -->
                 <a href="https://www.forbes.com" target="_blank" rel="noopener noreferrer"
-                    class="group block border border-white/10 overflow-hidden hover:border-white/30 transition-all duration-300">
+                    class="media-card group block border border-white/10 overflow-hidden hover:border-white/30 transition-all duration-300">
                     <div class="h-[220px] overflow-hidden">
-                        <img src="/images/contact.jpg" alt="Forbes Interview"
-                            class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" />
+                        <img src="/images/contact.jpg" alt="Forbes Interview" class="w-full h-full object-cover" />
                     </div>
                     <div class="p-8 text-left">
                         <div class="flex items-center gap-3 mb-4">
@@ -431,10 +431,10 @@
                 <!-- Jeune Afrique Article Card -->
                 <a href="https://www.jeuneafrique.com/1502246/politique/ramatoulaye-diallo-ndiaye-la-ministre-malienne-devenue-madame-afrique/"
                     target="_blank" rel="noopener noreferrer"
-                    class="group block border border-white/10 overflow-hidden hover:border-white/30 transition-all duration-300">
+                    class="media-card group block border border-white/10 overflow-hidden hover:border-white/30 transition-all duration-300">
                     <div class="h-[220px] overflow-hidden">
                         <img src="/images/ramatoulaye-diallo (1).avif" alt="Jeune Afrique Article"
-                            class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            class="w-full h-full object-cover" />
                     </div>
                     <div class="p-8 text-left">
                         <div class="flex items-center gap-3 mb-4">

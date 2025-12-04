@@ -152,22 +152,23 @@
     margin-bottom: 2rem;
   }
 
-  /* Quote gradient box styling - DARK background for text readability on any image */
+  /* Quote gradient box styling - Semi-transparent with blur for "Pro" look */
   .quote-gradient-box {
     position: relative;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.85) 100%);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 3rem 2.5rem;
     border-radius: 4px;
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   /* White text with shadow for maximum readability */
   .quote-gradient-box blockquote {
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
   }
+
 
   .quote-gradient-box p {
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
@@ -267,4 +268,14 @@ div[class*="section"] {
 body {
   padding-bottom: 80px;
   /* Adjust based on actual nav height */
+}
+
+/* Media section hover effect - MUST be grayscale by default, color on hover */
+a.media-card img {
+  filter: grayscale(100%) !important;
+  transition: filter 0.5s ease !important;
+}
+
+a.media-card:hover img {
+  filter: grayscale(0%) !important;
 }
