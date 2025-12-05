@@ -87,13 +87,35 @@
 
 <body class="text-white antialiased bg-black">
 
-    <!-- Mobile Navigation Toggle -->
-    <button id="mobile-menu-btn" class="lg:hidden fixed top-6 right-6 flex flex-col justify-center items-center w-8 h-8"
+    <!-- Header with Gradient Background -->
+    <header
+        class="fixed top-0 left-0 right-0 bg-gradient-to-b from-black via-black/70 to-transparent pt-6 pb-16 lg:pt-8 lg:pb-20"
         style="z-index: 999999;">
-        <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
-        <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
-        <span class="block w-6 h-0.5 bg-white transition-all"></span>
-    </button>
+
+        <!-- Mobile Navigation Toggle -->
+        <button id="mobile-menu-btn"
+            class="lg:hidden absolute top-6 right-6 flex flex-col justify-center items-center w-8 h-8">
+            <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
+            <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
+            <span class="block w-6 h-0.5 bg-white transition-all"></span>
+        </button>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center justify-between px-8 md:px-16 lg:px-20">
+            <a href="/"
+                class="font-serif text-sm uppercase tracking-[0.2em] text-white hover:text-white/70 transition-colors nav-text">
+                The Office of Dr. Ramatoulaye Diallo N'Diaye
+            </a>
+            <div class="flex items-center gap-4 md:gap-8 text-sm uppercase tracking-[0.15em]">
+                <a href="/" class="text-white/80 hover:text-white transition-colors nav-text">Home</a>
+                <a href="/about.html" class="text-white border-b-2 border-white pb-0.5 nav-text">About</a>
+                <a href="/vision.html" class="text-white/80 hover:text-white transition-colors nav-text">Vision</a>
+                <a href="/gallery.html" class="text-white/80 hover:text-white transition-colors nav-text">Gallery</a>
+                <a href="/projects.html" class="text-white/80 hover:text-white transition-colors nav-text">Projects</a>
+                <a href="/contact.html" class="text-white/80 hover:text-white transition-colors nav-text">Contact</a>
+            </div>
+        </nav>
+    </header>
 
     <!-- Mobile Navigation Menu -->
     <nav id="mobile-menu" class="lg:hidden fixed inset-0 bg-black/95 hidden flex-col items-center justify-center"
@@ -113,23 +135,6 @@
         </div>
     </nav>
 
-    <!-- Desktop Fixed Navigation -->
-    <nav class="hidden lg:flex fixed left-0 right-0 items-center justify-between px-8 md:px-16 lg:px-20 top-8 md:top-12"
-        style="z-index: 99999;">
-        <a href="/"
-            class="font-serif text-sm uppercase tracking-[0.2em] text-white hover:text-white/70 transition-colors nav-text">
-            The Office of Dr. Ramatoulaye Diallo N'Diaye
-        </a>
-        <div class="flex items-center gap-4 md:gap-8 text-sm uppercase tracking-[0.15em]">
-            <a href="/" class="text-white/80 hover:text-white transition-colors nav-text">Home</a>
-            <a href="/about.html" class="text-white border-b-2 border-white pb-0.5 nav-text">About</a>
-            <a href="/vision.html" class="text-white/80 hover:text-white transition-colors nav-text">Vision</a>
-            <a href="/gallery.html" class="text-white/80 hover:text-white transition-colors nav-text">Gallery</a>
-            <a href="/projects.html" class="text-white/80 hover:text-white transition-colors nav-text">Projects</a>
-            <a href="/contact.html" class="text-white/80 hover:text-white transition-colors nav-text">Contact</a>
-        </div>
-    </nav>
-
     <script>
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -142,19 +147,19 @@
     <!-- CHAPTER 01: Full-Screen Portrait Hero -->
     <header class="relative h-screen w-full overflow-hidden">
         <img src="/assets/portrait-professional-front.jpg" alt="Dr. Ramatoulaye Diallo N'Diaye"
-            class="absolute inset-0 w-full h-full object-cover object-[center_20%] filter grayscale" />
+            class="absolute inset-0 w-full h-full object-cover object-[center_25%] filter grayscale" />
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
 
         <!-- Hero Text Overlay -->
-        <div class="relative z-10 h-full flex flex-col justify-end p-8 md:p-16 lg:p-24 pb-32">
-            <p class="text-sm uppercase tracking-[0.3em] text-white/60 mb-6">About</p>
-            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-8 leading-[1.1] font-light"
+        <div class="relative z-10 h-full flex flex-col justify-end px-6 md:px-16 lg:px-20 pb-16 md:pb-24 lg:pb-32">
+            <p class="text-sm uppercase tracking-[0.3em] text-white/60 mb-4 md:mb-6">About</p>
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl text-white mb-6 md:mb-8 leading-[1.1] font-light"
                 style="text-shadow: 0 4px 30px rgba(0,0,0,0.5);">
                 A Global African Leader
             </h1>
-            <div class="w-24 h-px bg-white/60 mb-8"></div>
-            <p class="text-xl md:text-2xl text-white/80 max-w-xl font-light tracking-wide">
+            <div class="w-24 h-px bg-white/60 mb-6 md:mb-8"></div>
+            <p class="text-lg md:text-xl lg:text-2xl text-white/80 max-w-xl font-light tracking-wide">
                 Dr. Ramatoulaye Diallo N'Diaye
             </p>
         </div>
@@ -183,20 +188,20 @@
     <!-- QUOTE 01: Image with Quote Gradient Box -->
     <section class="relative h-screen w-full overflow-hidden">
         <img src="/images/gallery-04-640.jpg" alt="Dr. Ramatoulaye Diallo N'Diaye"
-            class="absolute inset-0 w-full h-full object-cover object-center filter grayscale" />
+            class="absolute inset-0 w-full h-full object-cover object-[center_25%] filter grayscale" />
         <!-- Strong gradient overlay: Very dark at bottom for text readability, transparent at top -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent"></div>
 
-        <!-- Quote Gradient Box - positioned on left side at 75% height -->
-        <div class="relative z-10 h-full flex items-end justify-start pb-[10%] pl-8 md:pl-16 lg:pl-24">
+        <!-- Quote Gradient Box - positioned on left side -->
+        <div class="relative z-10 h-full flex items-end justify-start pb-16 md:pb-[10%] px-6 md:px-16 lg:px-20">
             <div class="quote-gradient-box max-w-2xl">
-                <div class="w-12 h-px bg-white/60 mb-6"></div>
+                <div class="w-12 h-px bg-white/60 mb-4 md:mb-6"></div>
                 <blockquote
-                    class="font-serif text-2xl md:text-4xl lg:text-5xl leading-tight font-light italic text-white">
+                    class="font-serif text-xl md:text-3xl lg:text-4xl leading-tight font-light italic text-white">
                     "The climate crisis is not Africa's burden—it is Africa's opportunity to lead the world's most
                     strategic transition."
                 </blockquote>
-                <div class="w-12 h-px bg-white/60 mt-6 mb-4"></div>
+                <div class="w-12 h-px bg-white/60 mt-4 md:mt-6 mb-3 md:mb-4"></div>
                 <p class="text-xs uppercase tracking-[0.25em] text-white/80">— Dr. Ramatoulaye Diallo N'Diaye</p>
             </div>
         </div>
@@ -284,20 +289,21 @@
     <!-- QUOTE 02: Image with Quote Gradient Box -->
     <section class="relative h-screen w-full overflow-hidden">
         <img src="/assets/rama-portrait-1.jpg" alt="Dr. Ramatoulaye Diallo N'Diaye"
-            class="absolute inset-0 w-full h-full object-cover object-[center_20%] filter grayscale" />
+            class="absolute inset-0 w-full h-full object-cover object-[center_25%] filter grayscale" />
         <!-- Strong gradient overlay: Dark at bottom for text, transparent at top for image visibility -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent"></div>
 
-        <!-- Quote Gradient Box - positioned on right side at 75% height -->
-        <div class="relative z-10 h-full flex items-end justify-end pb-[10%] pr-8 md:pr-16 lg:pr-24">
+        <!-- Quote Gradient Box - positioned on right side -->
+        <div
+            class="relative z-10 h-full flex items-end justify-start md:justify-end pb-16 md:pb-[10%] px-6 md:px-16 lg:px-20">
             <div class="quote-gradient-box max-w-2xl">
-                <div class="w-12 h-px bg-white/60 mb-6"></div>
+                <div class="w-12 h-px bg-white/60 mb-4 md:mb-6"></div>
                 <blockquote
-                    class="font-serif text-2xl md:text-4xl lg:text-5xl leading-tight font-light italic text-white">
+                    class="font-serif text-xl md:text-3xl lg:text-4xl leading-tight font-light italic text-white">
                     "Culture is wealth. Culture is value. Culture is capital that connects our past to our global
                     future."
                 </blockquote>
-                <div class="w-12 h-px bg-white/60 mt-6 mb-4"></div>
+                <div class="w-12 h-px bg-white/60 mt-4 md:mt-6 mb-3 md:mb-4"></div>
                 <p class="text-xs uppercase tracking-[0.25em] text-white/80">— Dr. Ramatoulaye Diallo N'Diaye</p>
             </div>
         </div>
@@ -322,20 +328,20 @@
     <!-- QUOTE 03: Image with Quote Gradient Box (Centered) -->
     <section class="relative h-screen w-full overflow-hidden">
         <img src="/rama/quotes-1.png" alt="Dr. Ramatoulaye Diallo N'Diaye"
-            class="absolute inset-0 w-full h-full object-contain md:object-cover object-center filter grayscale" />
+            class="absolute inset-0 w-full h-full object-cover object-[center_30%] filter grayscale" />
         <!-- Strong gradient overlay: Dark at bottom for text, transparent at top for image visibility -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent"></div>
 
-        <!-- Quote Gradient Box - centered at same height -->
-        <div class="relative z-10 h-full flex items-end justify-center pb-[10%]">
+        <!-- Quote Gradient Box - centered -->
+        <div class="relative z-10 h-full flex items-end justify-center pb-16 md:pb-[10%] px-6">
             <div class="quote-gradient-box max-w-3xl">
-                <div class="w-12 h-px bg-white/60 mb-6 mx-auto"></div>
+                <div class="w-12 h-px bg-white/60 mb-4 md:mb-6 mx-auto"></div>
                 <blockquote
-                    class="font-serif text-2xl md:text-4xl lg:text-5xl leading-tight font-light italic text-white text-center">
+                    class="font-serif text-xl md:text-3xl lg:text-4xl leading-tight font-light italic text-white text-center">
                     "An Africa that invests in its culture invests in its power, its dignity, and its place in the
                     world."
                 </blockquote>
-                <div class="w-12 h-px bg-white/60 mt-6 mb-4 mx-auto"></div>
+                <div class="w-12 h-px bg-white/60 mt-4 md:mt-6 mb-3 md:mb-4 mx-auto"></div>
                 <p class="text-xs uppercase tracking-[0.25em] text-white/80 text-center">— Dr. Ramatoulaye Diallo
                     N'Diaye</p>
             </div>
@@ -473,18 +479,12 @@
     <!-- Footer -->
     <footer class="bg-black text-white py-16 px-8 md:px-16 border-t border-white/10">
         <div class="max-w-6xl">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                <div>
                     <h3 class="font-serif text-2xl mb-6 text-white">The Office of Dr. Ramatoulaye Diallo N'Diaye</h3>
                     <p class="text-white/60 max-w-md mb-6 leading-relaxed font-light text-lg">
                         Strategic intelligence shaping Africa's rise. Green transition powered by communities.
                     </p>
-                    <div class="flex space-x-8">
-                        <a href="#"
-                            class="text-white/50 hover:text-white transition-colors text-sm uppercase tracking-wider">LinkedIn</a>
-                        <a href="#"
-                            class="text-white/50 hover:text-white transition-colors text-sm uppercase tracking-wider">Twitter</a>
-                    </div>
                 </div>
 
                 <div>
@@ -501,13 +501,6 @@
                         <li><a href="/contact.html" class="text-white/70 hover:text-white transition-colors">Contact</a>
                         </li>
                     </ul>
-                </div>
-
-                <div>
-                    <h4 class="uppercase tracking-[0.2em] text-sm mb-6 text-white/50">Contact</h4>
-                    <p class="text-white/60 mb-4 text-base font-light">For press, speaking, and advisory inquiries:</p>
-                    <a href="mailto:office@example.com"
-                        class="text-white hover:text-white/70 transition-colors text-base">office@example.com</a>
                 </div>
             </div>
 

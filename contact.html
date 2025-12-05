@@ -89,13 +89,35 @@
 
 <body class="text-white antialiased bg-black">
 
-    <!-- Mobile Navigation Toggle -->
-    <button id="mobile-menu-btn" class="lg:hidden fixed top-6 right-6 flex flex-col justify-center items-center w-8 h-8"
+    <!-- Header with Gradient Background -->
+    <header
+        class="fixed top-0 left-0 right-0 bg-gradient-to-b from-black via-black/70 to-transparent pt-6 pb-16 lg:pt-8 lg:pb-20"
         style="z-index: 999999;">
-        <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
-        <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
-        <span class="block w-6 h-0.5 bg-white transition-all"></span>
-    </button>
+
+        <!-- Mobile Navigation Toggle -->
+        <button id="mobile-menu-btn"
+            class="lg:hidden absolute top-6 right-6 flex flex-col justify-center items-center w-8 h-8">
+            <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
+            <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
+            <span class="block w-6 h-0.5 bg-white transition-all"></span>
+        </button>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center justify-between px-8 md:px-16 lg:px-20">
+            <a href="/"
+                class="font-serif text-sm uppercase tracking-[0.2em] text-white hover:text-white/70 transition-colors nav-text">
+                The Office of Dr. Ramatoulaye Diallo N'Diaye
+            </a>
+            <div class="flex items-center gap-4 md:gap-8 text-sm uppercase tracking-[0.15em]">
+                <a href="/" class="text-white/80 hover:text-white transition-colors nav-text">Home</a>
+                <a href="/about.html" class="text-white/80 hover:text-white transition-colors nav-text">About</a>
+                <a href="/vision.html" class="text-white/80 hover:text-white transition-colors nav-text">Vision</a>
+                <a href="/gallery.html" class="text-white/80 hover:text-white transition-colors nav-text">Gallery</a>
+                <a href="/projects.html" class="text-white/80 hover:text-white transition-colors nav-text">Projects</a>
+                <a href="/contact.html" class="text-white border-b-2 border-white pb-0.5 nav-text">Contact</a>
+            </div>
+        </nav>
+    </header>
 
     <!-- Mobile Navigation Menu -->
     <nav id="mobile-menu" class="lg:hidden fixed inset-0 bg-black/95 hidden flex-col items-center justify-center"
@@ -112,23 +134,6 @@
             <a href="/projects.html"
                 class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Projects</a>
             <a href="/contact.html" class="text-xl uppercase tracking-[0.3em] text-white">Contact</a>
-        </div>
-    </nav>
-
-    <!-- Desktop Fixed Navigation -->
-    <nav class="hidden lg:flex fixed left-0 right-0 items-center justify-between px-8 md:px-16 lg:px-20 top-8 md:top-12"
-        style="z-index: 99999;">
-        <a href="/"
-            class="font-serif text-sm uppercase tracking-[0.2em] text-white hover:text-white/70 transition-colors nav-text">
-            The Office of Dr. Ramatoulaye Diallo N'Diaye
-        </a>
-        <div class="flex items-center gap-4 md:gap-8 text-sm uppercase tracking-[0.15em]">
-            <a href="/" class="text-white/80 hover:text-white transition-colors nav-text">Home</a>
-            <a href="/about.html" class="text-white/80 hover:text-white transition-colors nav-text">About</a>
-            <a href="/vision.html" class="text-white/80 hover:text-white transition-colors nav-text">Vision</a>
-            <a href="/gallery.html" class="text-white/80 hover:text-white transition-colors nav-text">Gallery</a>
-            <a href="/projects.html" class="text-white/80 hover:text-white transition-colors nav-text">Projects</a>
-            <a href="/contact.html" class="text-white border-b-2 border-white pb-0.5 nav-text">Contact</a>
         </div>
     </nav>
 
@@ -297,8 +302,6 @@
                         <h3 class="text-[10px] uppercase tracking-[0.25em] text-white/30 mb-4">Follow</h3>
                         <div class="flex justify-center gap-6">
                             <a href="#" class="text-white/70 hover:text-white transition-colors font-light">LinkedIn</a>
-                            <a href="#" class="text-white/70 hover:text-white transition-colors font-light">Twitter /
-                                X</a>
                         </div>
                     </div>
                     <div>
@@ -331,19 +334,12 @@
     <!-- Footer -->
     <footer class="bg-black text-white py-16 px-4 md:px-8 border-t border-white/10">
         <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                <div>
                     <h3 class="font-serif text-2xl mb-6 text-white">The Office of Dr. Ramatoulaye Diallo N'Diaye</h3>
                     <p class="text-white/60 max-w-md mb-6 leading-relaxed font-light text-lg">
                         Strategic intelligence shaping Africa's rise. Green transition powered by communities.
                     </p>
-                    <div class="flex flex-wrap gap-6">
-                        <a href="#"
-                            class="text-white/50 hover:text-white transition-colors text-sm uppercase tracking-wider">LinkedIn</a>
-                        <a href="#"
-                            class="text-white/50 hover:text-white transition-colors text-sm uppercase tracking-wider">Twitter
-                            / X</a>
-                    </div>
                 </div>
 
                 <div>
@@ -360,13 +356,6 @@
                                 class="text-white/70 hover:text-white transition-colors">Projects</a></li>
                         <li><a href="/contact.html" class="text-white">Contact</a></li>
                     </ul>
-                </div>
-
-                <div>
-                    <h4 class="uppercase tracking-[0.2em] text-sm mb-6 text-white/50">Contact</h4>
-                    <p class="text-white/60 mb-4 text-base font-light">For press, speaking, and advisory inquiries:</p>
-                    <a href="mailto:office@example.com"
-                        class="text-white hover:text-white/70 transition-colors text-base">office@example.com</a>
                 </div>
             </div>
 
