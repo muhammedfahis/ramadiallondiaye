@@ -31,3 +31,8 @@
   from = "/projects"
   to = "/projects.html"
   status = 301
+
+[[redirects]]
+  from = "/biography"
+  to = "/biography.html"
+  status = 301

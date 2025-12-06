@@ -13,6 +13,7 @@ export default defineConfig({
         contact: 'contact.html',
         gallery: 'gallery.html',
         projects: 'projects.html',
+        biography: 'biography.html',
       },
     },
   },
