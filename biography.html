@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biography | The Office of Dr. Ramatoulaye Diallo N'Diaye</title>
+    <meta name="description"
+        content="The complete biography of Dr. Ramatoulaye Diallo N'Diaye - A visionary African leader in climate resilience, cultural power, and sustainable finance." />
+    <link rel="stylesheet" href="/src/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Drop Cap */
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 5rem;
+            line-height: 0.85;
+            padding-right: 0.75rem;
+            margin-top: 0.1rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            color: #fff;
+        }
+
+        /* Header text enhancement */
+        .nav-text {
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+            font-weight: 500;
+        }
+
+        /* Hero image responsive positioning */
+        .hero-portrait {
+            object-position: center 20%;
+        }
+
+        @media (min-width: 768px) {
+            .hero-portrait {
+                object-position: center 15%;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-white antialiased bg-black">
+
+    <!-- Header with Gradient Background -->
+    <header
+        class="fixed top-0 left-0 right-0 bg-gradient-to-b from-black via-black/70 to-transparent pt-6 pb-16 lg:pt-8 lg:pb-20"
+        style="z-index: 999999;">
+
+        <!-- Mobile Navigation Toggle -->
+        <button id="mobile-menu-btn"
+            class="lg:hidden absolute top-6 right-6 flex flex-col justify-center items-center w-8 h-8">
+            <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
+            <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
+            <span class="block w-6 h-0.5 bg-white transition-all"></span>
+        </button>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center justify-between px-8 md:px-16 lg:px-20">
+            <a href="/"
+                class="font-serif text-sm uppercase tracking-[0.2em] text-white hover:text-white/70 transition-colors nav-text">
+                The Office of Dr. Ramatoulaye Diallo N'Diaye
+            </a>
+            <div class="flex items-center gap-4 md:gap-8 text-sm uppercase tracking-[0.15em]">
+                <a href="/" class="text-white/80 hover:text-white transition-colors nav-text">Home</a>
+                <a href="/about.html" class="text-white/80 hover:text-white transition-colors nav-text">About</a>
+                <a href="/vision.html" class="text-white/80 hover:text-white transition-colors nav-text">Vision</a>
+                <a href="/gallery.html" class="text-white/80 hover:text-white transition-colors nav-text">Gallery</a>
+                <a href="/projects.html" class="text-white/80 hover:text-white transition-colors nav-text">Projects</a>
+                <a href="/contact.html" class="text-white/80 hover:text-white transition-colors nav-text">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <nav id="mobile-menu" class="lg:hidden fixed inset-0 bg-black/95 hidden flex-col items-center justify-center"
+        style="z-index: 999998;">
+        <div class="flex flex-col items-center space-y-8">
+            <a href="/"
+                class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Home</a>
+            <a href="/about.html"
+                class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">About</a>
+            <a href="/vision.html"
+                class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Vision</a>
+            <a href="/gallery.html"
+                class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Gallery</a>
+            <a href="/projects.html"
+                class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Projects</a>
+            <a href="/contact.html"
+                class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Contact</a>
+        </div>
+    </nav>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+    </script>
+
+    <!-- Hero Section with Portrait -->
+    <header class="relative h-[70vh] w-full overflow-hidden pt-24 md:pt-28">
+        <img src="/assets/portrait-professional-front.jpg" alt="Dr. Ramatoulaye Diallo N'Diaye"
+            class="absolute inset-0 w-full h-full object-cover hero-portrait filter grayscale" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
+
+        <!-- Hero Text Overlay -->
+        <div class="relative z-10 h-full flex flex-col justify-end px-6 md:px-16 lg:px-20 pb-16 md:pb-20">
+            <p class="text-sm uppercase tracking-[0.3em] text-white/60 mb-4">Biography</p>
+            <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-[1.1] font-light"
+                style="text-shadow: 0 4px 30px rgba(0,0,0,0.5);">
+                A Visionary Leader
+            </h1>
+            <div class="w-24 h-px bg-white/60 mb-6"></div>
+            <p class="text-lg md:text-xl lg:text-2xl text-white/80 max-w-2xl font-light tracking-wide">
+                The complete story of Dr. Ramatoulaye Diallo N'Diaye
+            </p>
+        </div>
+    </header>
+
+    <!-- Biography Essay Section -->
+    <section class="relative w-full py-20 md:py-32 bg-black">
+        <div class="max-w-4xl mx-auto px-8 md:px-16">
+
+            <!-- Essay-style Biography -->
+            <article class="prose prose-invert max-w-none">
+                <p class="drop-cap text-base md:text-lg text-white/80 leading-relaxed font-light mb-8">
+                    Ramatoulaye Diallo N'Diaye is a visionary African leader whose work blends diplomacy, cultural
+                    renaissance, climate action, and innovative finance into a uniquely powerful voice for
+                    transformation on the continent. Her journey reflects a lifelong commitment to dignity, heritage,
+                    ecological stewardship, and the belief that Africa's cultural and environmental wealth can serve as
+                    a foundation for a new era of prosperity.
+                </p>
+
+                <p class="text-base md:text-lg text-white/80 leading-relaxed font-light mb-8">
+                    As CEO of the Great Green Wall of Africa Foundation, she leads a continent-wide mission to restore
+                    landscapes, build climate resilience, and unlock new pathways for sustainable development. Her work
+                    focuses on mobilizing impact capital, forging strategic partnerships across global institutions, and
+                    ensuring that African communities remain at the center of the transformation of the Great Green Wall
+                    into one of the world's most ambitious ecological projects.
+                </p>
+
+                <p class="text-base md:text-lg text-white/80 leading-relaxed font-light mb-8">
+                    Ramatoulaye also serves as Chair of the Africa Impact Finance Subgroup of the Global Impact
+                    Disclosure Taskforce, a role through which she helps shape a more inclusive global financial
+                    architecture for small and medium enterprises. Her leadership emphasizes transparency, dignity, and
+                    the central role of African voices in defining new standards for sustainability and impact.
+                </p>
+
+                <p class="text-base md:text-lg text-white/80 leading-relaxed font-light mb-8">
+                    Before entering the world of climate action and finance, Ramatoulaye served as Minister of Culture,
+                    Handicrafts and Tourism of Mali. In this role, she championed the protection of cultural heritage,
+                    the creative economy, and the global visibility of African cultural assets. Her diplomatic and
+                    cultural leadership has touched global platforms including UNESCO, world expositions, multilateral
+                    initiatives, and high-level international forums.
+                </p>
+
+                <p class="text-base md:text-lg text-white/80 leading-relaxed font-light mb-8">
+                    Her signature frameworks—such as Culture as Capital, the Bridge of Dignity, and the Ubuntu Earth
+                    Fund—articulate a philosophy rooted in harmony between people, land, and identity. These concepts
+                    guide her work and inspire new models of development that honor Africa's traditions while embracing
+                    innovation, inclusion, and global collaboration.
+                </p>
+
+                <p class="text-base md:text-lg text-white/80 leading-relaxed font-light mb-8">
+                    Her contributions have earned her prestigious distinctions including the National Orders of Mali and
+                    France, the UNESCO 70th Anniversary Medal, and the UAE Government Decoration. She also serves on the
+                    boards of Human Capital Africa and the School of Politics, Policy and Governance.
+                </p>
+
+                <p class="text-base md:text-lg text-white/80 leading-relaxed font-light mb-8">
+                    Ramatoulaye holds a PhD from CEDS Dakar. Her research explores the Great Green Wall as a symbol of
+                    time, resilience, and generational responsibility. Today she stands among Africa's most influential
+                    and trusted voices working to advance climate justice, cultural sovereignty, peace, and human
+                    dignity across the continent and beyond.
+                </p>
+            </article>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-16 pt-12 border-t border-white/10">
+                <p class="text-base md:text-lg text-white/60 mb-6 font-light">
+                    Learn more about her vision and work
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="/about.html"
+                        class="inline-block px-8 py-4 border-2 border-white/50 text-sm uppercase tracking-[0.2em] text-white hover:bg-white hover:text-black transition-all duration-300">
+                        Full Profile →
+                    </a>
+                    <a href="/vision.html"
+                        class="inline-block px-8 py-4 border-2 border-white/50 text-sm uppercase tracking-[0.2em] text-white hover:bg-white hover:text-black transition-all duration-300">
+                        Vision & Frameworks →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Spacer before closing -->
+    <div class="h-16 md:h-24 bg-black"></div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16 px-8 md:px-16 border-t border-white/10">
+        <div class="max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                <div>
+                    <h3 class="font-serif text-2xl mb-6 text-white">The Office of Dr. Ramatoulaye Diallo N'Diaye</h3>
+                    <p class="text-white/60 max-w-md mb-6 leading-relaxed font-light text-lg">
+                        Strategic intelligence shaping Africa's rise. Green transition powered by communities.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="uppercase tracking-[0.2em] text-sm mb-6 text-white/50">Navigation</h4>
+                    <ul class="space-y-4 text-base">
+                        <li><a href="/" class="text-white/70 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/about.html" class="text-white/70 hover:text-white transition-colors">About</a>
+                        </li>
+                        <li><a href="/vision.html" class="text-white/70 hover:text-white transition-colors">Vision</a>
+                        </li>
+                        <li><a href="/gallery.html" class="text-white/70 hover:text-white transition-colors">Gallery</a>
+                        </li>
+                        <li><a href="/projects.html"
+                                class="text-white/70 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="/contact.html" class="text-white/70 hover:text-white transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-white/50 uppercase tracking-wider">
+                <p>&copy; 2025 The Office of Dr. Ramatoulaye Diallo N'Diaye.</p>
+                <p class="mt-4 md:mt-0">Africa: the world's most strategic climate frontier.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
