@@ -82,6 +82,17 @@
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
             font-weight: 500;
         }
+
+        /* Hero image responsive positioning */
+        .hero-portrait {
+            object-position: right 25%;
+        }
+
+        @media (min-width: 768px) {
+            .hero-portrait {
+                object-position: center 25%;
+            }
+        }
     </style>
 </head>
 
@@ -147,7 +158,7 @@
     <!-- CHAPTER 01: Full-Screen Portrait Hero -->
     <header class="relative h-screen w-full overflow-hidden">
         <img src="/assets/portrait-professional-front.jpg" alt="Dr. Ramatoulaye Diallo N'Diaye"
-            class="absolute inset-0 w-full h-full object-cover object-[center_25%] filter grayscale" />
+            class="absolute inset-0 w-full h-full object-cover hero-portrait filter grayscale" />
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
 
