@@ -91,6 +91,16 @@
     color: #fff;
   }
 
+  /* Prevent word breaks - keep complete words together */
+  * {
+    hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
   h1,
   h2,
   h3,
@@ -98,8 +108,15 @@
   h5,
   h6 {
     word-break: normal;
-    hyphens: auto;
+    hyphens: none;
     white-space: normal;
+  }
+
+  p,
+  span,
+  div {
+    hyphens: none;
+    word-break: normal;
   }
 }
 
