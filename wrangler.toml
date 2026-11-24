@@ -1,3 +1,7 @@
 name = "ramadiallondiaye"
-pages_build_output_dir = "dist"
 compatibility_date = "2024-12-07"
+
+# Static site: serve the Vite build output with Workers Static Assets.
+# /about and /about/ resolve to about.html automatically.
+[assets]
+directory = "./dist"
