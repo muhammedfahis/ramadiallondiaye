@@ -36,3 +36,8 @@
   from = "/biography"
   to = "/biography.html"
   status = 301
+
+[[redirects]]
+  from = "/insights"
+  to = "/insights.html"
+  status = 301

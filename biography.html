@@ -63,31 +63,32 @@
 
         <!-- Mobile Navigation Toggle -->
         <button id="mobile-menu-btn"
-            class="lg:hidden absolute top-6 right-6 flex flex-col justify-center items-center w-8 h-8">
+            class="xl:hidden absolute top-6 right-6 flex flex-col justify-center items-center w-8 h-8">
             <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
             <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
             <span class="block w-6 h-0.5 bg-white transition-all"></span>
         </button>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex items-center justify-between px-8 md:px-16 lg:px-20">
+        <nav class="hidden xl:flex items-center justify-between gap-12 px-10 2xl:px-20">
             <a href="/"
-                class="font-serif text-sm uppercase tracking-[0.2em] text-white hover:text-white/70 transition-colors nav-text">
+                class="site-nav-brand text-white hover:text-white/70 transition-colors nav-text">
                 The Office of Dr. Ramatoulaye Diallo N'Diaye
             </a>
-            <div class="flex items-center gap-4 md:gap-8 text-sm uppercase tracking-[0.15em]">
+            <div class="site-nav-links">
                 <a href="/" class="text-white/80 hover:text-white transition-colors nav-text">Home</a>
                 <a href="/about.html" class="text-white/80 hover:text-white transition-colors nav-text">About</a>
                 <a href="/vision.html" class="text-white/80 hover:text-white transition-colors nav-text">Vision</a>
                 <a href="/gallery.html" class="text-white/80 hover:text-white transition-colors nav-text">Gallery</a>
                 <a href="/projects.html" class="text-white/80 hover:text-white transition-colors nav-text">Projects</a>
+                <a href="/insights.html" class="text-white/80 hover:text-white transition-colors nav-text">Strategic Insights</a>
                 <a href="/contact.html" class="text-white/80 hover:text-white transition-colors nav-text">Contact</a>
             </div>
         </nav>
     </header>
 
     <!-- Mobile Navigation Menu -->
-    <nav id="mobile-menu" class="lg:hidden fixed inset-0 bg-black/95 hidden flex-col items-center justify-center"
+    <nav id="mobile-menu" class="xl:hidden fixed inset-0 bg-black/95 hidden flex-col items-center justify-center"
         style="z-index: 999998;">
         <div class="flex flex-col items-center space-y-8">
             <a href="/"
@@ -100,6 +101,7 @@
                 class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Gallery</a>
             <a href="/projects.html"
                 class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Projects</a>
+            <a href="/insights.html" class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Strategic Insights</a>
             <a href="/contact.html"
                 class="text-xl uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">Contact</a>
         </div>
@@ -241,6 +243,7 @@
                         </li>
                         <li><a href="/projects.html"
                                 class="text-white/70 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="/insights.html" class="text-white/70 hover:text-white transition-colors">Strategic Insights</a></li>
                         <li><a href="/contact.html" class="text-white/70 hover:text-white transition-colors">Contact</a>
                         </li>
                     </ul>

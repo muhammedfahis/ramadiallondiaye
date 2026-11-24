@@ -1,6 +1,6 @@
 @import './styles/theme.css';
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -295,4 +295,41 @@ a.media-card img {
 
 a.media-card:hover img {
   filter: grayscale(0%) !important;
+}
+/* ------------------------------------------------------------------
+   Shared site navigation (desktop). One definition for every page so
+   the header looks identical everywhere. Full nav shows from 1280px
+   (xl); below that the hamburger menu is used.
+------------------------------------------------------------------- */
+.site-nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (min-width: 1536px) {
+  .site-nav-brand {
+    font-size: 14px;
+    letter-spacing: 0.2em;
+  }
+
+  .site-nav-links {
+    gap: 2rem;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+  }
 }
