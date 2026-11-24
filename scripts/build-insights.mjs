@@ -139,33 +139,28 @@ ${mobile}
 function footer() {
   const links = NAV.map(([href, label]) =>
     href === ACTIVE
-      ? `                        <li><a href="${href}" class="text-white">${label}</a></li>`
-      : `                        <li><a href="${href}" class="text-white/70 hover:text-white transition-colors">${label}</a></li>`
+      ? `                <a href="${href}" aria-current="page" class="text-white">${label}</a>`
+      : `                <a href="${href}" class="text-white/60 hover:text-white transition-colors">${label}</a>`
   ).join('\n')
   return `
     <!-- Footer -->
-    <footer class="bg-black text-white py-16 px-8 md:px-16 border-t border-white/10">
-        <div class="max-w-6xl">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-                <div>
-                    <h3 class="font-serif text-2xl mb-6 text-white">${OFFICE}</h3>
-                    <p class="text-white/60 max-w-md mb-6 leading-relaxed font-light text-lg">
-                        Strategic intelligence shaping Africa's rise. Green transition powered by communities.
-                    </p>
-                </div>
+    <footer class="bg-black text-white border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-8 md:px-16 pt-20 md:pt-24 pb-10 text-center">
+            <p class="font-serif text-3xl md:text-4xl text-white font-light leading-snug">${OFFICE}</p>
+            <div class="w-16 h-px bg-white/30 mx-auto my-8"></div>
+            <p class="text-white/60 font-light text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+                Strategic intelligence shaping Africa's rise. Green transition powered by communities.
+            </p>
 
-                <div>
-                    <h4 class="uppercase tracking-[0.2em] text-sm mb-6 text-white/50">Navigation</h4>
-                    <ul class="space-y-4 text-base">
+            <div role="navigation" aria-label="Footer"
+                class="mt-12 flex flex-wrap justify-center gap-x-8 md:gap-x-10 gap-y-4 text-xs md:text-sm uppercase tracking-[0.2em]">
 ${links}
-                    </ul>
-                </div>
             </div>
 
             <div
-                class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-white/50 uppercase tracking-wider">
+                class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40 uppercase tracking-[0.15em]">
                 <p>&copy; 2025 ${OFFICE}.</p>
-                <p class="mt-4 md:mt-0">Africa: the world's most strategic climate frontier.</p>
+                <p>Africa: the world's most strategic climate frontier.</p>
             </div>
         </div>
     </footer>
