@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { AUTHOR, articleNumber, articles } from '../data/insights'
+import { AUTHOR, articleNumber, articles, formatDate } from '../data/insights'
 
 export default function Insights() {
   const [lead, ...rest] = articles
@@ -7,20 +7,20 @@ export default function Insights() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[75vh] w-full overflow-hidden bg-black">
-        <div className="absolute inset-y-0 right-0 w-full md:w-[65%]">
+      <section className="relative min-h-screen md:min-h-[75vh] w-full overflow-hidden bg-black">
+        <div className="absolute top-0 right-0 w-full h-[55%] md:h-full md:w-[60%]">
           <img
             src="/assets/rama-portrait-2.webp"
             alt={`${AUTHOR} reading in a library`}
             className="w-full h-full object-cover object-[35%_30%] filter grayscale"
           />
-          {/* Fade the photo's left edge into the black background. z-[2] because
-              index.css gives every `section img` z-index 1. */}
-          <div className="absolute inset-0 z-[2] bg-gradient-to-r from-black via-black/60 md:via-black/20 to-transparent"></div>
+          {/* Fade the photo's left edge into the black background. */}
+          <div className="absolute inset-0 z-[2] hidden md:block bg-gradient-to-r from-black via-black/60 md:via-black/20 to-transparent"></div>
+          <div className="absolute inset-0 z-[2] md:hidden bg-gradient-to-t from-black via-black/10 to-transparent"></div>
         </div>
         <div className="absolute inset-0 z-[2] bg-gradient-to-t from-black via-black/30 to-transparent"></div>
 
-        <div className="relative z-10 min-h-[75vh] flex flex-col justify-end px-6 md:px-16 lg:px-20 pb-16 md:pb-24">
+        <div className="relative z-10 min-h-screen md:min-h-[75vh] flex flex-col justify-end px-6 md:px-16 lg:px-20 pb-16 md:pb-24 md:max-w-[45%]">
           <p className="text-sm uppercase tracking-[0.3em] text-white/60 mb-4">Thought Leadership</p>
           <h1
             className="font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-[1.1] font-light"
@@ -30,8 +30,8 @@ export default function Insights() {
           </h1>
           <div className="w-24 h-px bg-white/60 mb-6"></div>
           <p className="text-lg md:text-xl lg:text-2xl text-white/80 max-w-2xl font-light tracking-wide">
-            Africa&apos;s strategic role in global supply chains, critical minerals, and the economic corridors shaping
-            the future of sustainable development.
+            Food sovereignty, continental integration, culture and opportunity: how Africa turns its agreements into
+            daily life.
           </p>
         </div>
       </section>
@@ -39,13 +39,13 @@ export default function Insights() {
       {/* Intro */}
       <section className="w-full pt-20 md:pt-28 pb-12 bg-black">
         <div className="max-w-6xl mx-auto px-8 md:px-16">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
-            <p className="md:col-span-2 text-xs uppercase tracking-[0.3em] text-white/50 pt-2">The Series</p>
-            <div className="md:col-span-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-10">
+            <p className="lg:col-span-2 text-xs uppercase tracking-[0.3em] text-white/50 lg:pt-2 whitespace-nowrap">The Series</p>
+            <div className="lg:col-span-10">
               <h2 className="font-serif text-2xl md:text-3xl text-white leading-snug font-light mb-4">
-                Sovereign resource development, strategic corridors, and global supply chains
+                Restored land, open borders, living heritage, and the young people who will carry them forward
               </h2>
-              <p className="text-base md:text-lg text-white/60 font-light">Policy-style analysis by {AUTHOR}.</p>
+              <p className="text-base md:text-lg text-white/60 font-light">Essays by {AUTHOR}.</p>
             </div>
           </div>
         </div>
@@ -62,7 +62,10 @@ export default function Insights() {
                 </span>
               </div>
               <div className="md:col-span-10">
-                <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-4">Featured Insight</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-4">
+                  Featured Insight<span className="mx-3 text-white/30">·</span>
+                  <time dateTime={lead.date}>{formatDate(lead.date)}</time>
+                </p>
                 <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6 font-light">
                   {lead.title}
                 </h2>
@@ -89,6 +92,9 @@ export default function Insights() {
                   </span>
                 </div>
                 <div className="md:col-span-7">
+                  <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-3">
+                    <time dateTime={article.date}>{formatDate(article.date)}</time>
+                  </p>
                   <h2 className="font-serif text-2xl md:text-3xl text-white leading-snug mb-4 font-light">
                     {article.title}
                   </h2>

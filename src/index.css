@@ -263,16 +263,6 @@ footer nav,
   pointer-events: auto !important;
 }
 
-/* Ensure all images stay below navigation */
-img,
-.hero-image,
-[class*="image"],
-section img {
-  position: relative;
-  z-index: 1;
-  /* Low z-index so navigation stays on top */
-}
-
 /* Ensure all sections stay below navigation */
 section,
 .section,

@@ -5,10 +5,11 @@ export default function Vision() {
     <>
       {/* CHAPTER 01: Full-Screen Hero */}
       <header className="relative h-screen w-full overflow-hidden">
-        <img src="/images/contact.webp" alt="Dr. Ramatoulaye Diallo N'Diaye" className="absolute inset-0 w-full h-full object-cover filter grayscale" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-r to-transparent"></div>
-        <div className="relative z-10 h-full flex flex-col justify-end px-6 md:px-16 lg:px-20 pb-16 md:pb-24">
+        {/* Photo shifted right so the heading sits beside her, not over her */}
+        <img src="/images/contact.webp" alt="Dr. Ramatoulaye Diallo N'Diaye" className="absolute inset-0 w-full h-full object-cover object-[62%_center] md:object-[30%_center] filter grayscale" />
+        <div className="absolute inset-0 z-[2] bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+        <div className="absolute inset-0 z-[2] bg-gradient-to-r from-black/80 via-black/30 to-transparent"></div>
+        <div className="relative z-10 h-full flex flex-col justify-end px-6 md:px-16 lg:px-20 pb-16 md:pb-24 md:max-w-[55%] lg:max-w-[50%]">
           <p className="text-sm uppercase tracking-[0.3em] text-white/60 mb-4">
             The Vision
           </p>
@@ -20,8 +21,8 @@ export default function Vision() {
       </header>
       {/* Introduction Section */}
       <section className="section-padding bg-black">
-        <article className="max-w-4xl mx-auto text-center">
-          <p className="drop-cap text-2xl md:text-3xl leading-relaxed text-white/90 font-light">
+        <article className="max-w-4xl mx-auto text-center space-y-6">
+          <p className="text-2xl md:text-3xl leading-relaxed text-white/90 font-light">
             Across Africa and beyond, culture defines identity, moves markets, shapes diplomacy, fuels creativity, and anchors social cohesion. It is the foundation upon which nations build confidence, prosperity, resilience, and unity.
           </p>
           <p className="text-xl md:text-2xl leading-relaxed text-white/70 font-light">
@@ -31,7 +32,7 @@ export default function Vision() {
       </section>
       {/* QUOTE 01: Cultural Asset (Left-aligned) */}
       <section className="relative h-screen w-full overflow-hidden" data-quote-position="left">
-        <img src="/assets/quote-culture-capital.webp" alt="Dr. Ramatoulaye Diallo N'Diaye on culture as strategic asset" className="absolute inset-0 w-full h-full object-contain filter grayscale" />
+        <img src="/assets/quote-culture-capital.webp" alt="Dr. Ramatoulaye Diallo N'Diaye on culture as strategic asset" className="absolute inset-0 w-full h-full object-contain lg:object-cover filter grayscale" />
         {/* Gradient overlay: stronger for better text backdrop */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/85 to-black/40 z-10"></div>
         {/* Quote container */}
@@ -48,7 +49,7 @@ export default function Vision() {
       </section>
       {/* The Six Pillars Section */}
       <section className="section-padding bg-black">
-        <div className="mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl font-light text-white" style={{ marginBottom: "0.8rem" }}>
             The Six Pillars
           </h2>
@@ -103,11 +104,6 @@ export default function Vision() {
             </div>
           </div>
         </div>
-      </section>
-      {/* Photo Break */}
-      <section className="relative w-full overflow-hidden mt-16">
-        <img src="/assets/community-planting.webp" alt="Community Initiative" className="absolute inset-0 w-full h-full object-cover filter grayscale" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent"></div>
       </section>
       {/* Green Future Section */}
       <section className="section-padding bg-black">

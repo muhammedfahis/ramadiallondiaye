@@ -38,8 +38,9 @@ scripts/
 ## Common edits
 
 - **Add a Strategic Insight:** append an entry to `src/data/insights.json`
-  (`slug`, `title`, `description`, `originalUrl`, `signed`, `paragraphs`). The
-  listing, the article page and the prerendered file are created automatically.
+  (`slug`, `title`, `date`, `description`, `body`; the block types are listed in
+  `src/data/insights.js`). Give each article its own date. The listing, the
+  article page and the prerendered file are created automatically.
 - **Add gallery photos:** put the WebP files in `public/gallery/<folder>/` and
   list them in `src/data/gallery.js`.
 - **Add a page:** create `src/pages/MyPage.jsx`, add it to `pages` in
@@ -55,6 +56,5 @@ URLs are clean (`/about`); the old `/about.html` links redirect automatically.
 
 - `pages.css` is imported before `index.css` on purpose: it reproduces the
   cascade order of the old static build, so the site looks exactly as before.
-- `src/index.css` contains a few legacy global rules (`section img` z-index,
-  fixed `footer nav`) that new markup has to work around; see comments in
-  `Footer.jsx` and `pages/Insights.jsx`.
+- `src/index.css` still pins any `footer nav` to the bottom of the screen
+  (legacy rule), which is why the footer links use `role="navigation"` on a div.

@@ -41,7 +41,7 @@ export default function Contact() {
                   Something went wrong. Please try again or email us directly.
                 </p>
               </FormError>
-              <FormFields>
+              <FormFields className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="form-label">
@@ -125,7 +125,7 @@ export default function Contact() {
           <div className="mt-16 pt-12 border-t border-white/10">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
               <div>
-                <h3 className="uppercase text-white/30 mb-4">
+                <h3 className="text-xs uppercase tracking-[0.25em] text-white/30 mb-4">
                   Email
                 </h3>
                 <a href="mailto:office@ramadiallondiaye.com" className="text-white/70 hover:text-white transition-colors font-light">
@@ -133,7 +133,7 @@ export default function Contact() {
                 </a>
               </div>
               <div>
-                <h3 className="uppercase text-white/30 mb-4">
+                <h3 className="text-xs uppercase tracking-[0.25em] text-white/30 mb-4">
                   Follow
                 </h3>
                 <div className="flex justify-center gap-6">
@@ -143,25 +143,34 @@ export default function Contact() {
                 </div>
               </div>
               <div>
-                <h3 className="uppercase text-white/30 mb-4">
+                <h3 className="text-xs uppercase tracking-[0.25em] text-white/30 mb-4">
                   Inquiries
                 </h3>
-                <p className="text-white/70 font-light">
-                  Speaking · Advisory · Partnerships
-                </p>
+                {/* One per line: avoids a "·" left hanging at a line break */}
+                <ul className="text-white/70 font-light space-y-1">
+                  <li>Speaking</li>
+                  <li>Advisory</li>
+                  <li>Partnerships</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
       {/* Quote Section */}
-      <section className="relative w-full overflow-hidden">
-        <img src="/assets/portrait-professional-side.webp" alt="Dr. Ramatoulaye Diallo N'Diaye" className="absolute inset-0 w-full h-full object-cover filter grayscale" />
-        {/* Strong gradient overlay: Very dark at bottom for text readability, transparent at top */}
-        <div className="absolute inset-0 bg-gradient-to-t via-black/70 to-transparent"></div>
-        <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 text-center">
+      <section className="relative min-h-[80vh] w-full overflow-hidden flex">
+        {/* Portrait photo: fills the section on phones; on wider screens it keeps its
+            upright shape, centred, with the side edges faded into the black. */}
+        <img
+          src="/assets/portrait-professional-side.webp"
+          alt="Dr. Ramatoulaye Diallo N'Diaye"
+          className="absolute inset-0 w-full h-full object-cover object-[center_30%] filter grayscale md:inset-auto md:top-0 md:left-1/2 md:-translate-x-1/2 md:w-auto md:max-w-none md:[mask-image:linear-gradient(to_right,transparent,black_30%,black_70%,transparent)]"
+        />
+        {/* Gradient: dark at the bottom for the quote, clear at the top for the face */}
+        <div className="absolute inset-0 z-[2] bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+        <div className="relative z-10 w-full flex flex-col items-center justify-end p-8 pb-16 md:pb-24 text-center">
           <div className="w-16 h-px mb-10"></div>
-          <blockquote className="font-serif text-2xl md:text-4xl lg:text-5xl leading-tight font-light max-w-4xl italic text-white">
+          <blockquote className="font-serif text-2xl md:text-4xl lg:text-5xl leading-tight font-light max-w-4xl italic text-white text-balance">
             "Women carry the future. Youth accelerate it."
           </blockquote>
           <div className="w-16 h-px mt-10 mb-6"></div>
