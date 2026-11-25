@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { AUTHOR, articleNumber, articles } from '../data/insights'
+import { AUTHOR, articleNumber, articles, formatDate } from '../data/insights'
 
 export default function Insights() {
   const [lead, ...rest] = articles
@@ -30,8 +30,8 @@ export default function Insights() {
           </h1>
           <div className="w-24 h-px bg-white/60 mb-6"></div>
           <p className="text-lg md:text-xl lg:text-2xl text-white/80 max-w-2xl font-light tracking-wide">
-            Africa&apos;s strategic role in global supply chains, critical minerals, and the economic corridors shaping
-            the future of sustainable development.
+            Food sovereignty, continental integration, culture and opportunity: how Africa turns its agreements into
+            daily life.
           </p>
         </div>
       </section>
@@ -43,9 +43,9 @@ export default function Insights() {
             <p className="lg:col-span-2 text-xs uppercase tracking-[0.3em] text-white/50 lg:pt-2 whitespace-nowrap">The Series</p>
             <div className="lg:col-span-10">
               <h2 className="font-serif text-2xl md:text-3xl text-white leading-snug font-light mb-4">
-                Sovereign resource development, strategic corridors, and global supply chains
+                Restored land, open borders, living heritage, and the young people who will carry them forward
               </h2>
-              <p className="text-base md:text-lg text-white/60 font-light">Policy-style analysis by {AUTHOR}.</p>
+              <p className="text-base md:text-lg text-white/60 font-light">Essays by {AUTHOR}.</p>
             </div>
           </div>
         </div>
@@ -62,7 +62,10 @@ export default function Insights() {
                 </span>
               </div>
               <div className="md:col-span-10">
-                <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-4">Featured Insight</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-4">
+                  Featured Insight<span className="mx-3 text-white/30">·</span>
+                  <time dateTime={lead.date}>{formatDate(lead.date)}</time>
+                </p>
                 <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6 font-light">
                   {lead.title}
                 </h2>
@@ -89,6 +92,9 @@ export default function Insights() {
                   </span>
                 </div>
                 <div className="md:col-span-7">
+                  <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-3">
+                    <time dateTime={article.date}>{formatDate(article.date)}</time>
+                  </p>
                   <h2 className="font-serif text-2xl md:text-3xl text-white leading-snug mb-4 font-light">
                     {article.title}
                   </h2>

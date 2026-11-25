@@ -5,9 +5,9 @@ export const NAV_LINKS = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/vision', label: 'Vision' },
-  { to: '/gallery', label: 'Gallery' },
   { to: '/projects', label: 'Projects' },
   { to: '/insights', label: 'Strategic Insights' },
+  { to: '/gallery', label: 'Gallery' },
   { to: '/contact', label: 'Contact' },
 ]
 

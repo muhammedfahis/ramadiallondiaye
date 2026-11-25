@@ -81,7 +81,7 @@ export const pages = [
     Component: Insights,
     title: `Strategic Insights | ${SITE_NAME}`,
     description:
-      "Strategic insights by Dr. Ramatoulaye Diallo N'Diaye on Africa's role in critical minerals, sovereign resource development, strategic corridors, and global supply chains.",
+      "Strategic insights by Dr. Ramatoulaye Diallo N'Diaye on food sovereignty, African integration, cultural heritage and opportunity for young Africans.",
   },
   {
     path: '/insights/:slug',

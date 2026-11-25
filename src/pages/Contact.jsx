@@ -159,9 +159,15 @@ export default function Contact() {
       </section>
       {/* Quote Section */}
       <section className="relative min-h-[80vh] w-full overflow-hidden flex">
-        <img src="/assets/portrait-professional-side.webp" alt="Dr. Ramatoulaye Diallo N'Diaye" className="absolute inset-0 w-full h-full object-cover object-[center_15%] filter grayscale" />
+        {/* Portrait photo: fills the section on phones; on wider screens it keeps its
+            upright shape, centred, with the side edges faded into the black. */}
+        <img
+          src="/assets/portrait-professional-side.webp"
+          alt="Dr. Ramatoulaye Diallo N'Diaye"
+          className="absolute inset-0 w-full h-full object-cover object-[center_30%] filter grayscale md:inset-auto md:top-0 md:left-1/2 md:-translate-x-1/2 md:w-auto md:max-w-none md:[mask-image:linear-gradient(to_right,transparent,black_30%,black_70%,transparent)]"
+        />
         {/* Gradient: dark at the bottom for the quote, clear at the top for the face */}
-        <div className="absolute inset-0 z-[2] bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+        <div className="absolute inset-0 z-[2] bg-gradient-to-t from-black via-black/30 to-transparent"></div>
         <div className="relative z-10 w-full flex flex-col items-center justify-end p-8 pb-16 md:pb-24 text-center">
           <div className="w-16 h-px mb-10"></div>
           <blockquote className="font-serif text-2xl md:text-4xl lg:text-5xl leading-tight font-light max-w-4xl italic text-white text-balance">

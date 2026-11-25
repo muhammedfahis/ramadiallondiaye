@@ -38,8 +38,9 @@ scripts/
 ## Common edits
 
 - **Add a Strategic Insight:** append an entry to `src/data/insights.json`
-  (`slug`, `title`, `description`, `originalUrl`, `signed`, `paragraphs`). The
-  listing, the article page and the prerendered file are created automatically.
+  (`slug`, `title`, `date`, `description`, `body`; the block types are listed in
+  `src/data/insights.js`). Give each article its own date. The listing, the
+  article page and the prerendered file are created automatically.
 - **Add gallery photos:** put the WebP files in `public/gallery/<folder>/` and
   list them in `src/data/gallery.js`.
 - **Add a page:** create `src/pages/MyPage.jsx`, add it to `pages` in

@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
-import { AUTHOR, articleNumber, articles, getArticle } from '../data/insights'
+import { AUTHOR, articleNumber, articles, formatDate, getArticle } from '../data/insights'
 import NotFound from './NotFound'
 
 function Pager({ article, index, direction }) {
@@ -15,6 +15,52 @@ function Pager({ article, index, direction }) {
       </p>
     </Link>
   )
+}
+
+const TEXT = 'text-base md:text-lg text-white/80 leading-relaxed font-light mb-8'
+
+const LINK = 'text-white underline underline-offset-4 decoration-white/40 hover:decoration-white transition-colors'
+
+// Turns { text, links: { phrase: url } } into text with the first occurrence of each phrase linked.
+function withLinks(text, links = {}) {
+  let parts = [text]
+  for (const [phrase, href] of Object.entries(links)) {
+    parts = parts.flatMap((part) => {
+      if (typeof part !== 'string' || !part.includes(phrase)) return [part]
+      const at = part.indexOf(phrase)
+      return [
+        part.slice(0, at),
+        <a key={phrase} href={href} target="_blank" rel="noopener noreferrer" className={LINK}>
+          {phrase}
+        </a>,
+        part.slice(at + phrase.length),
+      ]
+    })
+  }
+  return parts
+}
+
+function Block({ block, first }) {
+  if (typeof block === 'string') return <p className={`${first ? 'drop-cap ' : ''}${TEXT}`}>{block}</p>
+  if (block.text) return <p className={`${first ? 'drop-cap ' : ''}${TEXT}`}>{withLinks(block.text, block.links)}</p>
+  if (block.heading) {
+    return <h2 className="font-serif text-2xl md:text-3xl text-white font-light leading-snug mt-14 mb-6">{block.heading}</h2>
+  }
+  if (block.list) {
+    return (
+      <ul className="mb-8 space-y-5 border-l border-white/20 pl-6">
+        {block.list.map((item) => (
+          <li key={item.lead} className="text-base md:text-lg text-white/80 leading-relaxed font-light">
+            <strong className="font-normal text-white">{item.lead}</strong> {item.text}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+  if (block.closing) {
+    return <p className="font-serif text-xl md:text-2xl text-white leading-snug mt-12 mb-8">{block.closing}</p>
+  }
+  return null
 }
 
 export default function InsightArticle() {
@@ -44,8 +90,11 @@ export default function InsightArticle() {
             {article.title}
           </h1>
           <div className="w-24 h-px bg-white/60 mb-8"></div>
-          <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed mb-8">{article.description}</p>
-          <p className="text-sm uppercase tracking-[0.2em] text-white/50">By {AUTHOR}</p>
+          <p className="text-sm uppercase tracking-[0.2em] text-white/50">
+            By {AUTHOR}
+            <span className="mx-3 text-white/30">·</span>
+            <time dateTime={article.date}>{formatDate(article.date)}</time>
+          </p>
         </div>
       </section>
 
@@ -53,35 +102,14 @@ export default function InsightArticle() {
       <section className="w-full pb-20 md:pb-28 bg-black">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
           <article className="border-t border-white/10 pt-12 md:pt-16">
-            {article.paragraphs.map((paragraph, i) => (
-              <p
-                key={i}
-                className={`${i === 0 ? 'drop-cap ' : ''}text-base md:text-lg text-white/80 leading-relaxed font-light mb-8`}
-              >
-                {paragraph}
-              </p>
+            {article.body.map((block, i) => (
+              <Block key={i} block={block} first={i === 0} />
             ))}
           </article>
 
-          {article.signed && (
-            <div className="mt-12 pt-8 border-t border-white/10">
-              <p className="font-serif text-xl italic text-white">{AUTHOR}</p>
-              <p className="text-sm uppercase tracking-[0.2em] text-white/50 mt-2">CEO, Starcom International</p>
-            </div>
-          )}
-
-          <p className="mt-10 text-sm text-white/40 font-light">
-            Originally published by{' '}
-            <a
-              href={article.originalUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/60 underline underline-offset-4 hover:text-white transition-colors"
-            >
-              Starcom International
-            </a>
-            .
-          </p>
+          <div className="mt-12 pt-8 border-t border-white/10">
+            <p className="font-serif text-xl italic text-white">{AUTHOR}</p>
+          </div>
         </div>
       </section>
 

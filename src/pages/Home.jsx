@@ -94,7 +94,7 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-sm transform translate-x-4 translate-y-4"></div>
                 <div className="relative border-2 border-white/20 rounded-sm overflow-hidden" style={{ maxWidth: "400px" }}>
-                  <img src="/assets/rama-professional.webp" alt="Dr. Ramatoulaye Diallo N'Diaye" className="w-full h-auto object-cover filter grayscale" />
+                  <img src="/assets/rama-professional.webp" alt="Dr. Ramatoulaye Diallo N'Diaye" className="w-full h-auto object-cover" />
                 </div>
               </div>
             </div>

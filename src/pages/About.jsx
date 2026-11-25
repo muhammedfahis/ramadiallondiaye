@@ -79,11 +79,6 @@ export default function About() {
           </div>
         </div>
       </section>
-      {/* Photo Break: Side Portrait */}
-      <section className="relative h-[80vh] w-full overflow-hidden mt-16">
-        <img src="/assets/portrait-profile.webp" alt="Dr. Ramatoulaye Diallo N'Diaye" className="absolute inset-0 w-full h-full object-cover filter grayscale" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent"></div>
-      </section>
       {/* Cultural & Diplomatic Heritage Section */}
       <section className="section-padding bg-black">
         <article className="max-w-4xl mx-auto">
@@ -402,11 +397,6 @@ export default function About() {
       </section>
       {/* Spacer before closing */}
       <div className="h-16 bg-black"></div>
-      {/* Final Photo: Closing Image */}
-      <section className="relative h-[50vh] w-full overflow-hidden">
-        <img src="/assets/diplomatic-meeting.webp" alt="Dr. Ramatoulaye Diallo N'Diaye" className="absolute inset-0 w-full h-full object-cover filter grayscale" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent"></div>
-      </section>
     </>
   )
 }

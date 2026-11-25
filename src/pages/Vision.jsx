@@ -32,7 +32,7 @@ export default function Vision() {
       </section>
       {/* QUOTE 01: Cultural Asset (Left-aligned) */}
       <section className="relative h-screen w-full overflow-hidden" data-quote-position="left">
-        <img src="/assets/quote-culture-capital.webp" alt="Dr. Ramatoulaye Diallo N'Diaye on culture as strategic asset" className="absolute inset-0 w-full h-full object-cover filter grayscale" />
+        <img src="/assets/quote-culture-capital.webp" alt="Dr. Ramatoulaye Diallo N'Diaye on culture as strategic asset" className="absolute inset-0 w-full h-full object-contain lg:object-cover filter grayscale" />
         {/* Gradient overlay: stronger for better text backdrop */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/85 to-black/40 z-10"></div>
         {/* Quote container */}
@@ -104,11 +104,6 @@ export default function Vision() {
             </div>
           </div>
         </div>
-      </section>
-      {/* Photo Break */}
-      <section className="relative h-[80vh] w-full overflow-hidden mt-16">
-        <img src="/assets/community-planting.webp" alt="Community Initiative" className="absolute inset-0 w-full h-full object-cover filter grayscale" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent"></div>
       </section>
       {/* Green Future Section */}
       <section className="section-padding bg-black">
