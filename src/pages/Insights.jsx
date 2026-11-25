@@ -7,20 +7,25 @@ export default function Insights() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen md:min-h-[75vh] w-full overflow-hidden bg-black">
-        <div className="absolute top-0 right-0 w-full h-[55%] md:h-full md:w-[60%]">
+      <section className="relative md:min-h-[75vh] w-full overflow-hidden bg-black">
+        {/* Phones: the photo sits on top and the text follows straight after it.
+            Desktop: the photo fills the right 60% behind the text. */}
+        <div className="relative h-[60vh] overflow-hidden md:absolute md:top-0 md:right-0 md:h-full md:w-[60%]">
+          {/* On phones the photo is drawn taller than its box, so the bottom (the
+              lettering on her shirt) is cropped off */}
           <img
             src="/assets/rama-portrait-2.webp"
             alt={`${AUTHOR} reading in a library`}
-            className="w-full h-full object-cover object-[35%_30%] filter grayscale"
+            className="w-full h-[130%] md:h-full object-cover object-[35%_top] md:object-[35%_30%] filter grayscale"
           />
           {/* Fade the photo's left edge into the black background. */}
-          <div className="absolute inset-0 z-[2] hidden md:block bg-gradient-to-r from-black via-black/60 md:via-black/20 to-transparent"></div>
-          <div className="absolute inset-0 z-[2] md:hidden bg-gradient-to-t from-black via-black/10 to-transparent"></div>
+          <div className="absolute inset-0 z-[2] hidden md:block bg-gradient-to-r from-black via-black/20 to-transparent"></div>
+          {/* Phones: short fade at the bottom into the text */}
+          <div className="absolute inset-0 z-[2] md:hidden bg-[linear-gradient(to_top,black_0%,transparent_30%)]"></div>
         </div>
-        <div className="absolute inset-0 z-[2] bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+        <div className="absolute inset-0 z-[2] hidden md:block bg-gradient-to-t from-black via-black/30 to-transparent"></div>
 
-        <div className="relative z-10 min-h-screen md:min-h-[75vh] flex flex-col justify-end px-6 md:px-16 lg:px-20 pb-16 md:pb-24 md:max-w-[45%]">
+        <div className="relative z-10 -mt-10 md:mt-0 md:min-h-[75vh] flex flex-col justify-end px-6 md:px-16 lg:px-20 pb-16 md:pb-24 md:max-w-[45%]">
           <p className="text-sm uppercase tracking-[0.3em] text-white/60 mb-4">Thought Leadership</p>
           <h1
             className="font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-[1.1] font-light"
