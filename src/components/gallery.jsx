@@ -53,19 +53,24 @@ function useGallery() {
   return useContext(GalleryContext)
 }
 
-export function GalleryGrid({ sectionKey, className }) {
+// Flex-wrap instead of a CSS grid so a part-filled last row is centred.
+const GRID = 'flex flex-wrap justify-center gap-3'
+const TILE =
+  'gallery-item relative overflow-hidden aspect-[4/3] basis-[calc(50%-0.375rem)] md:basis-[calc(33.333%-0.5rem)]'
+
+export function GalleryGrid({ sectionKey }) {
   const { expanded, open } = useGallery()
   const section = gallerySections[sectionKey]
-  if (!section) return <div className={className} data-grid={sectionKey}></div>
+  if (!section) return <div className={GRID} data-grid={sectionKey}></div>
 
   const count = expanded[sectionKey] ? section.images.length : INITIAL_COUNT
 
   return (
-    <div className={className} data-grid={sectionKey}>
+    <div className={GRID} data-grid={sectionKey}>
       {section.images.slice(0, count).map((file) => {
         const src = imageSrc(section, file)
         return (
-          <div key={src} className="gallery-item relative overflow-hidden" onClick={() => open(src)}>
+          <div key={src} className={TILE} onClick={() => open(src)}>
             <img
               src={src}
               alt="Gallery image"

@@ -24,8 +24,8 @@ export default function About() {
       </header>
       {/* Introduction Section */}
       <section className="section-padding bg-black">
-        <article className="max-w-4xl mx-auto text-center">
-          <p className="drop-cap text-2xl md:text-3xl leading-relaxed text-white/90 font-light">
+        <article className="max-w-4xl mx-auto text-center space-y-6">
+          <p className="text-2xl md:text-3xl leading-relaxed text-white/90 font-light">
             Ramatoulaye Diallo N'Diaye is a visionary African leader whose work blends diplomacy, cultural renaissance, climate action, and innovative finance into a uniquely powerful voice for transformation on the continent.
           </p>
           <p className="text-xl md:text-2xl leading-relaxed text-white/70 font-light">
@@ -58,7 +58,7 @@ export default function About() {
             &
             {" "}Finance Leadership
           </h2>
-          <div className="">
+          <div className="space-y-12">
             <div>
               <h3 className="font-serif text-2xl md:text-3xl mb-6 text-white font-light text-center">
                 CEO, Great Green Wall of Africa Foundation
@@ -80,7 +80,7 @@ export default function About() {
         </div>
       </section>
       {/* Photo Break: Side Portrait */}
-      <section className="relative w-full overflow-hidden mt-16">
+      <section className="relative h-[80vh] w-full overflow-hidden mt-16">
         <img src="/assets/portrait-profile.webp" alt="Dr. Ramatoulaye Diallo N'Diaye" className="absolute inset-0 w-full h-full object-cover filter grayscale" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent"></div>
       </section>
@@ -105,7 +105,7 @@ export default function About() {
             <h3 className="font-serif text-2xl md:text-3xl mb-8 text-white font-light">
               Signature Frameworks
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               <div className="border border-white/10 p-8 transition-all duration-300">
                 <h4 className="font-serif text-xl mb-3 text-white font-light">
                   Culture as Capital
@@ -122,7 +122,7 @@ export default function About() {
                   Connecting communities to opportunity with respect and equity
                 </p>
               </div>
-              <div className="border border-white/10 p-8 transition-all duration-300">
+              <div className="border border-white/10 p-8 transition-all duration-300 md:col-span-2 lg:col-span-1">
                 <h4 className="font-serif text-xl mb-3 text-white font-light">
                   Ubuntu Earth Fund
                 </h4>
@@ -171,7 +171,7 @@ export default function About() {
             <h3 className="font-serif text-2xl md:text-3xl text-white font-light">
               Prestigious Distinctions
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
               {/* Award Card 1 */}
               <div className="group relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -270,11 +270,11 @@ export default function About() {
       </section>
       {/* Strategic Engagement Section */}
       <section className="section-padding bg-black">
-        <div className="mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl font-light text-white" style={{ marginBottom: "0.8rem" }}>
             Strategic Engagement
           </h2>
-          <p className="text-xl md:text-2xl text-white/60 leading-relaxed font-light mb-16">
+          <p className="text-xl md:text-2xl text-white/60 leading-relaxed font-light mb-16 max-w-3xl mx-auto">
             Dr. Ramatoulaye Diallo N'Diaye invites institutional partners, development finance leaders, and cultural stakeholders to collaborate on the future of Africa's green transition.
           </p>
           {/* Pillars Grid */}
@@ -339,12 +339,12 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Forbes Interview Card */}
             <a href="https://www.forbes.com" target="_blank" rel="noopener noreferrer" className="media-card group block border border-white/10 overflow-hidden transition-all duration-300">
-              <div className="overflow-hidden">
-                <img src="/images/contact.webp" alt="Forbes Interview" className="w-full h-full object-cover" />
+              <div className="overflow-hidden aspect-[16/10]">
+                <img src="/images/contact.webp" alt="Forbes Interview" className="w-full h-full object-cover filter grayscale" />
               </div>
               <div className="p-8 text-left">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="py-1 uppercase tracking-[0.2em] border border-white/20 text-white/50">
+                  <span className="px-3 py-1 text-xs uppercase tracking-[0.2em] border border-white/20 text-white/50">
                     Forbes
                   </span>
                   {" "}
@@ -370,12 +370,12 @@ export default function About() {
             {/* Jeune Afrique Article Card */}
             {" "}
             <a href="https://www.jeuneafrique.com/1502246/politique/ramatoulaye-diallo-ndiaye-la-ministre-malienne-devenue-madame-afrique/" target="_blank" rel="noopener noreferrer" className="media-card group block border border-white/10 overflow-hidden transition-all duration-300">
-              <div className="overflow-hidden">
-                <img src="/images/ramatoulaye-diallo (1).webp" alt="Jeune Afrique Article" className="w-full h-full object-cover" />
+              <div className="overflow-hidden aspect-[16/10]">
+                <img src="/images/ramatoulaye-diallo (1).webp" alt="Jeune Afrique Article" className="w-full h-full object-cover filter grayscale" />
               </div>
               <div className="p-8 text-left">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="py-1 uppercase tracking-[0.2em] border border-white/20 text-white/50">
+                  <span className="px-3 py-1 text-xs uppercase tracking-[0.2em] border border-white/20 text-white/50">
                     Jeune Afrique
                   </span>
                   {" "}
@@ -403,7 +403,7 @@ export default function About() {
       {/* Spacer before closing */}
       <div className="h-16 bg-black"></div>
       {/* Final Photo: Closing Image */}
-      <section className="relative w-full overflow-hidden">
+      <section className="relative h-[50vh] w-full overflow-hidden">
         <img src="/assets/diplomatic-meeting.webp" alt="Dr. Ramatoulaye Diallo N'Diaye" className="absolute inset-0 w-full h-full object-cover filter grayscale" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent"></div>
       </section>

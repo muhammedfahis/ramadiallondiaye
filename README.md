@@ -55,6 +55,5 @@ URLs are clean (`/about`); the old `/about.html` links redirect automatically.
 
 - `pages.css` is imported before `index.css` on purpose: it reproduces the
   cascade order of the old static build, so the site looks exactly as before.
-- `src/index.css` contains a few legacy global rules (`section img` z-index,
-  fixed `footer nav`) that new markup has to work around; see comments in
-  `Footer.jsx` and `pages/Insights.jsx`.
+- `src/index.css` still pins any `footer nav` to the bottom of the screen
+  (legacy rule), which is why the footer links use `role="navigation"` on a div.

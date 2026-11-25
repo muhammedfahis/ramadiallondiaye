@@ -68,10 +68,10 @@ export function FormError({ className, children }) {
   )
 }
 
-export function FormFields({ children }) {
+export function FormFields({ className, children }) {
   const { status } = useContext(FormContext)
   return (
-    <div id="form-fields" style={status === 'success' ? { display: 'none' } : undefined}>
+    <div id="form-fields" className={className} style={status === 'success' ? { display: 'none' } : undefined}>
       {children}
     </div>
   )

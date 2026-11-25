@@ -29,16 +29,14 @@
   }
 }
 
-/* Hero portrait framing differs per page. :where() keeps the original specificity. */
-:where(.page-about) .hero-portrait {
-  object-position: right 25%;
-}
-
+/* Hero portrait framing. The photo is wide with her face at ~80% across, so
+   narrow screens keep that side in view. :where() keeps the original specificity. */
+:where(.page-about) .hero-portrait,
 :where(.page-biography) .hero-portrait {
-  object-position: center 20%;
+  object-position: 80% 20%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   :where(.page-about) .hero-portrait {
     object-position: center 25%;
   }
@@ -89,6 +87,13 @@
   margin-bottom: 0.75rem;
 }
 
+@media (max-width: 639px) {
+  .form-label {
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+  }
+}
+
 /* ---------- Gallery ---------- */
 .gallery-item {
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -116,6 +121,13 @@
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
+  /* Grayscale like the photos; full colour on hover */
+  filter: grayscale(1);
+  transition: filter 0.5s ease;
+}
+
+.video-container:hover {
+  filter: none;
 }
 
 .video-container iframe {

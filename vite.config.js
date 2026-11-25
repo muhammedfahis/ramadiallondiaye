@@ -5,4 +5,8 @@ import react from '@vitejs/plugin-react'
 // HTML (see scripts/prerender.mjs).
 export default defineConfig({
   plugins: [react()],
+  define: {
+    // Footer copyright year, fixed per build.
+    __BUILD_YEAR__: JSON.stringify(new Date().getFullYear()),
+  },
 })

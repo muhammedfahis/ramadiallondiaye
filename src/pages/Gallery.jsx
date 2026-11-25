@@ -4,7 +4,7 @@ export default function Gallery() {
   return (
     <GalleryProvider>
       {/* Hero Section */}
-      <header className="relative w-full overflow-hidden">
+      <header className="relative h-screen w-full overflow-hidden">
         <img src="/rama/vision-background.webp" alt="Gallery" className="absolute inset-0 w-full h-full object-cover filter grayscale" />
         <div className="absolute inset-0 bg-gradient-to-t from-black"></div>
         <div className="absolute inset-0 bg-gradient-to-r to-transparent"></div>
@@ -37,7 +37,7 @@ export default function Gallery() {
               COP16 Events
             </h2>
           </div>
-          <GalleryGrid sectionKey="cop16-2024" className="grid md:grid-cols-3 gap-3" />
+          <GalleryGrid sectionKey="cop16-2024" />
           <ViewMore sectionKey="cop16-2024" className="mt-10 text-center" buttonClassName="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300">
             <span className="relative">
               <span className="block w-12 h-px bg-white/30 group-hover:w-16 transition-all duration-300"></span>
@@ -64,7 +64,7 @@ export default function Gallery() {
               Summit of the Future
             </h2>
           </div>
-          <GalleryGrid sectionKey="summit-future-2024" className="grid md:grid-cols-3 gap-3" />
+          <GalleryGrid sectionKey="summit-future-2024" />
           <ViewMore sectionKey="summit-future-2024" className="mt-10 text-center" buttonClassName="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300">
             <span className="relative">
               <span className="block w-12 h-px bg-white/30 group-hover:w-16 transition-all duration-300"></span>
@@ -91,7 +91,7 @@ export default function Gallery() {
               NDC Summit
             </h2>
           </div>
-          <GalleryGrid sectionKey="ndc-summit-2024" className="grid md:grid-cols-3 gap-3" />
+          <GalleryGrid sectionKey="ndc-summit-2024" />
           <ViewMore sectionKey="ndc-summit-2024" className="mt-10 text-center" buttonClassName="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300">
             <span className="relative">
               <span className="block w-12 h-px bg-white/30 group-hover:w-16 transition-all duration-300"></span>
@@ -118,7 +118,7 @@ export default function Gallery() {
               UAE-Africa Economic Corridor Summit
             </h2>
           </div>
-          <GalleryGrid sectionKey="uae-africa-2024" className="grid md:grid-cols-3 gap-3" />
+          <GalleryGrid sectionKey="uae-africa-2024" />
           <ViewMore sectionKey="uae-africa-2024" className="mt-10 text-center" buttonClassName="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300">
             <span className="relative">
               <span className="block w-12 h-px bg-white/30 group-hover:w-16 transition-all duration-300"></span>
@@ -150,7 +150,7 @@ export default function Gallery() {
               </span>
             </h2>
           </div>
-          <GalleryGrid sectionKey="caaf24" className="grid md:grid-cols-3 gap-3" />
+          <GalleryGrid sectionKey="caaf24" />
           <ViewMore sectionKey="caaf24" className="mt-10 text-center" buttonClassName="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300">
             <span className="relative">
               <span className="block w-12 h-px bg-white/30 group-hover:w-16 transition-all duration-300"></span>
@@ -182,7 +182,7 @@ export default function Gallery() {
               </span>
             </h2>
           </div>
-          <GalleryGrid sectionKey="adis24" className="grid md:grid-cols-3 gap-3" />
+          <GalleryGrid sectionKey="adis24" />
           <ViewMore sectionKey="adis24" className="mt-10 text-center" buttonClassName="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300">
             <span className="relative">
               <span className="block w-12 h-px bg-white/30 group-hover:w-16 transition-all duration-300"></span>
@@ -214,7 +214,7 @@ export default function Gallery() {
               </span>
             </h2>
           </div>
-          <GalleryGrid sectionKey="ggwoa" className="grid md:grid-cols-3 gap-3" />
+          <GalleryGrid sectionKey="ggwoa" />
           <ViewMore sectionKey="ggwoa" className="mt-10 text-center" buttonClassName="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300">
             <span className="relative">
               <span className="block w-12 h-px bg-white/30 group-hover:w-16 transition-all duration-300"></span>
@@ -246,7 +246,7 @@ export default function Gallery() {
               </span>
             </h2>
           </div>
-          <GalleryGrid sectionKey="african-women" className="grid md:grid-cols-3 gap-3" />
+          <GalleryGrid sectionKey="african-women" />
           <ViewMore sectionKey="african-women" className="mt-10 text-center" buttonClassName="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300">
             <span className="relative">
               <span className="block w-12 h-px bg-white/30 group-hover:w-16 transition-all duration-300"></span>
@@ -278,7 +278,7 @@ export default function Gallery() {
               </span>
             </h2>
           </div>
-          <GalleryGrid sectionKey="private-sector" className="grid md:grid-cols-3 gap-3" />
+          <GalleryGrid sectionKey="private-sector" />
           <ViewMore sectionKey="private-sector" className="mt-10 text-center" buttonClassName="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300">
             <span className="relative">
               <span className="block w-12 h-px bg-white/30 group-hover:w-16 transition-all duration-300"></span>
@@ -310,7 +310,7 @@ export default function Gallery() {
               </span>
             </h2>
           </div>
-          <GalleryGrid sectionKey="osaa" className="grid md:grid-cols-3 gap-3" />
+          <GalleryGrid sectionKey="osaa" />
           <ViewMore sectionKey="osaa" className="mt-10 text-center" buttonClassName="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300">
             <span className="relative">
               <span className="block w-12 h-px bg-white/30 group-hover:w-16 transition-all duration-300"></span>
@@ -342,7 +342,7 @@ export default function Gallery() {
               </span>
             </h2>
           </div>
-          <GalleryGrid sectionKey="us-africa" className="grid md:grid-cols-3 gap-3" />
+          <GalleryGrid sectionKey="us-africa" />
           <ViewMore sectionKey="us-africa" className="mt-10 text-center" buttonClassName="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300">
             <span className="relative">
               <span className="block w-12 h-px bg-white/30 group-hover:w-16 transition-all duration-300"></span>
@@ -374,7 +374,7 @@ export default function Gallery() {
               </span>
             </h2>
           </div>
-          <GalleryGrid sectionKey="human-capital" className="grid md:grid-cols-3 gap-3" />
+          <GalleryGrid sectionKey="human-capital" />
           <ViewMore sectionKey="human-capital" className="mt-10 text-center" buttonClassName="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300">
             <span className="relative">
               <span className="block w-12 h-px bg-white/30 group-hover:w-16 transition-all duration-300"></span>
@@ -406,7 +406,7 @@ export default function Gallery() {
               </span>
             </h2>
           </div>
-          <GalleryGrid sectionKey="mali-office" className="grid md:grid-cols-3 gap-3" />
+          <GalleryGrid sectionKey="mali-office" />
           <ViewMore sectionKey="mali-office" className="mt-10 text-center" buttonClassName="view-more-btn group inline-flex items-center gap-3 px-8 py-4 text-xs tracking-[0.2em] uppercase text-white/60 hover:text-white transition-all duration-300">
             <span className="relative">
               <span className="block w-12 h-px bg-white/30 group-hover:w-16 transition-all duration-300"></span>

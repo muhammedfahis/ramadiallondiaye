@@ -14,24 +14,47 @@ export default function Header() {
   // Close the mobile menu after navigating.
   useEffect(() => setMenuOpen(false), [pathname])
 
+  // Keep the page behind the open menu from scrolling.
+  useEffect(() => {
+    if (!menuOpen) return undefined
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [menuOpen])
+
   return (
     <>
       <header
         className="fixed top-0 left-0 right-0 bg-gradient-to-b from-black via-black/70 to-transparent pt-6 pb-16 lg:pt-8 lg:pb-20"
         style={{ zIndex: 999999 }}
       >
+        {/* Below 1280px: site name on the left, menu button on the right */}
+        <Link
+          to="/"
+          className="xl:hidden absolute top-6 left-6 right-20 min-h-8 flex items-center font-serif uppercase text-[11px] sm:text-[13px] tracking-[0.15em] leading-snug text-white nav-text"
+        >
+          {SITE_NAME}
+        </Link>
         <button
           id="mobile-menu-btn"
           type="button"
-          aria-label="Toggle navigation"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           onClick={() => setMenuOpen((open) => !open)}
-          className="xl:hidden absolute top-6 right-6 flex flex-col justify-center items-center w-8 h-8"
+          className="xl:hidden absolute top-6 right-6 w-8 h-8"
         >
-          <span className="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
-          <span className="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
-          <span className="block w-6 h-0.5 bg-white transition-all"></span>
+          {/* Three bars that turn into an X when the menu is open */}
+          <span
+            className={`absolute left-1 top-[9px] block w-6 h-0.5 bg-white transition-transform duration-300 ${menuOpen ? 'translate-y-[7px] rotate-45' : ''}`}
+          ></span>
+          <span
+            className={`absolute left-1 top-[16px] block w-6 h-0.5 bg-white transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`}
+          ></span>
+          <span
+            className={`absolute left-1 top-[23px] block w-6 h-0.5 bg-white transition-transform duration-300 ${menuOpen ? '-translate-y-[7px] -rotate-45' : ''}`}
+          ></span>
         </button>
 
         <nav className="hidden xl:flex items-center justify-between gap-12 px-10 2xl:px-20">
@@ -50,7 +73,7 @@ export default function Header() {
 
       <nav
         id="mobile-menu"
-        className={`xl:hidden fixed inset-0 bg-black/95 ${menuOpen ? 'flex' : 'hidden'} flex-col items-center justify-center`}
+        className={`xl:hidden fixed inset-0 bg-black ${menuOpen ? 'flex' : 'hidden'} flex-col items-center justify-center`}
         style={{ zIndex: 999998 }}
       >
         <div className="flex flex-col items-center space-y-8">

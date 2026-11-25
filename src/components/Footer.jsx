@@ -1,6 +1,9 @@
 import { Link, useLocation } from 'react-router-dom'
 import { NAV_LINKS, SITE_NAME, isActive } from '../data/navigation'
 
+// Set at build time (vite.config.js), so the prerendered HTML and the browser agree.
+const YEAR = __BUILD_YEAR__
+
 export default function Footer() {
   const { pathname } = useLocation()
 
@@ -17,7 +20,7 @@ export default function Footer() {
         <div
           role="navigation"
           aria-label="Footer"
-          className="mt-12 flex flex-wrap justify-center gap-x-8 md:gap-x-10 gap-y-4 text-xs md:text-sm uppercase tracking-[0.2em]"
+          className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-8 md:gap-x-10 text-xs md:text-sm uppercase tracking-[0.2em]"
         >
           {NAV_LINKS.map(({ to, label }) =>
             isActive(pathname, to) ? (
@@ -32,8 +35,8 @@ export default function Footer() {
           )}
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40 uppercase tracking-[0.15em]">
-          <p>&copy; 2025 {SITE_NAME}.</p>
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-3 text-xs text-white/40 uppercase tracking-[0.15em] text-balance">
+          <p>&copy; {YEAR} {SITE_NAME}.</p>
           <p>Africa: the world&apos;s most strategic climate frontier.</p>
         </div>
       </div>
