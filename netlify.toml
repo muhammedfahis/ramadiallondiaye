@@ -1,3 +1,6 @@
+# Not the live host (the site deploys to Cloudflare, see wrangler.toml), kept
+# so the project can still be built on Netlify. Netlify serves /about from
+# about.html automatically.
 [build]
   command = "npm run build"
   publish = "dist"
@@ -5,39 +8,3 @@
 [dev]
   command = "npm run dev"
   port = 5173
-
-# Pretty URLs for static inner pages
-[[redirects]]
-  from = "/about"
-  to = "/about.html"
-  status = 301
-
-[[redirects]]
-  from = "/vision"
-  to = "/vision.html"
-  status = 301
-
-[[redirects]]
-  from = "/contact"
-  to = "/contact.html"
-  status = 301
-
-[[redirects]]
-  from = "/gallery"
-  to = "/gallery.html"
-  status = 301
-
-[[redirects]]
-  from = "/projects"
-  to = "/projects.html"
-  status = 301
-
-[[redirects]]
-  from = "/biography"
-  to = "/biography.html"
-  status = 301
-
-[[redirects]]
-  from = "/insights"
-  to = "/insights.html"
-  status = 301
