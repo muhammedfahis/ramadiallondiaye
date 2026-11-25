@@ -62,6 +62,13 @@ export default function Insights() {
                 </span>
               </div>
               <div className="md:col-span-10">
+                <div className="overflow-hidden mb-10">
+                  <img
+                    src={lead.image}
+                    alt={lead.imageAlt}
+                    className="w-full aspect-[3/2] lg:aspect-[16/9] object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-700"
+                  />
+                </div>
                 <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-4">
                   Featured Insight<span className="mx-3 text-white/30">·</span>
                   <time dateTime={lead.date}>{formatDate(lead.date)}</time>
@@ -98,12 +105,18 @@ export default function Insights() {
                   <h2 className="font-serif text-2xl md:text-3xl text-white leading-snug mb-4 font-light">
                     {article.title}
                   </h2>
-                  <p className="text-base text-white/60 leading-relaxed font-light">{article.description}</p>
-                </div>
-                <div className="md:col-span-3 md:text-right md:pt-2">
+                  <p className="text-base text-white/60 leading-relaxed font-light mb-4">{article.description}</p>
                   <span className="inline-block text-sm uppercase tracking-[0.2em] text-white/70 group-hover:text-white transition-colors">
                     Read →
                   </span>
+                </div>
+                <div className="md:col-span-3 order-first md:order-none overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.imageAlt}
+                    loading="lazy"
+                    className="w-full aspect-[3/2] object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700"
+                  />
                 </div>
               </div>
             </Link>

@@ -98,6 +98,19 @@ export default function InsightArticle() {
         </div>
       </section>
 
+      {/* Article Photo: black and white like the rest of the site, colour on hover */}
+      {article.image && (
+        <section className="w-full pb-12 md:pb-16 bg-black">
+          <div className="max-w-6xl mx-auto px-0 md:px-16">
+            <img
+              src={article.image}
+              alt={article.imageAlt}
+              className="w-full aspect-[3/2] lg:aspect-[16/9] object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
+            />
+          </div>
+        </section>
+      )}
+
       {/* Article Body */}
       <section className="w-full pb-20 md:pb-28 bg-black">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
