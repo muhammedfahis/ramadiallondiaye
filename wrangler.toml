@@ -1,7 +1,9 @@
 name = "ramadiallondiaye"
 compatibility_date = "2024-12-07"
 
-# Static site: serve the Vite build output with Workers Static Assets.
-# /about and /about/ resolve to about.html automatically.
+# Static site: `npm run build` prerenders every route into dist/ (about.html,
+# insights/<slug>.html, ...). With the default html_handling
+# ("auto-trailing-slash"), /about serves about.html and /about.html redirects
+# to /about, so old links keep working.
 [assets]
 directory = "./dist"

@@ -1,0 +1,176 @@
+/* Page-level styles that used to live in each page's inline <style> block.
+   Imported before index.css, matching the cascade order of the old static build. */
+
+/* Header text enhancement */
+.nav-text {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  font-weight: 500;
+}
+
+/* Drop cap on the first paragraph of long-form text */
+.drop-cap::first-letter {
+  float: left;
+  font-size: 5rem;
+  line-height: 0.85;
+  padding-right: 0.75rem;
+  margin-top: 0.1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  color: #fff;
+}
+
+.section-padding {
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 6rem 2rem;
+  }
+}
+
+/* Hero portrait framing differs per page. :where() keeps the original specificity. */
+:where(.page-about) .hero-portrait {
+  object-position: right 25%;
+}
+
+:where(.page-biography) .hero-portrait {
+  object-position: center 20%;
+}
+
+@media (min-width: 768px) {
+  :where(.page-about) .hero-portrait {
+    object-position: center 25%;
+  }
+
+  :where(.page-biography) .hero-portrait {
+    object-position: center 15%;
+  }
+}
+
+/* ---------- Projects ---------- */
+.project-card {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-4px);
+}
+
+/* ---------- Contact form ---------- */
+.form-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0;
+  padding: 1.25rem 1.5rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.form-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0.75rem;
+}
+
+/* ---------- Gallery ---------- */
+.gallery-item {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-item:hover img {
+  filter: grayscale(0);
+}
+
+.gallery-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gallery-section:first-of-type {
+  border-top: none;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 999999;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 1000000;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  padding: 20px;
+  user-select: none;
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
